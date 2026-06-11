@@ -55,3 +55,8 @@ logging:
 
 file:
   upload-dir: ./uploads/
+
+ai:
+  dashscope:
+    api-key: ${DASHSCOPE_API_KEY:your-api-key-here}
+    base-url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
