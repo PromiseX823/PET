@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: pet-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pet_platform
+      MYSQL_USER: pet
+      MYSQL_PASSWORD: pet
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./backend/src/main/resources/sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - pet-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "pet", "-ppet"]
+      timeout: 20s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: pet-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - pet-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pet-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/pet_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: pet
+      SPRING_DATASOURCE_PASSWORD: pet
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      JWT_SECRET: your-256-bit-secret-key-here-for-jwt-signing-must-be-at-least-32-characters
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    networks:
+      - pet-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./F
+      dockerfile: Dockerfile
+    container_name: pet-frontend
+    ports:
+      - "80:80"
+    networks:
+      - pet-network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
+  redis-data:
+
+networks:
+  pet-network:
+    driver: bridge
