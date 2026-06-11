@@ -5,16 +5,19 @@ import com.example.app.dto.response.NotificationResponse;
 import com.example.app.entity.Notification;
 import com.example.app.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class NotificationService {
 
     private final NotificationRepository notificationRepository;
+    private final MessageProducerService messageProducerService;
 
     @Transactional(readOnly = true)
     public List<NotificationResponse> getUserNotifications(Long userId) {
@@ -47,15 +50,8 @@ public class NotificationService {
 
     @Transactional
     public void createNotification(Long userId, String title, String content, String type, Long relatedId) {
-        Notification notification = Notification.builder()
-                .userId(userId)
-                .title(title)
-                .content(content)
-                .type(type != null ? type : "system")
-                .relatedId(relatedId)
-                .build();
-
-        notificationRepository.save(notification);
+        log.info("Creating notification asynchronously: userId={}, title={}", userId, title);
+        messageProducerService.sendNotification(userId, title, content, type, relatedId);
     }
 
     private NotificationResponse toNotificationResponse(Notification notification) {

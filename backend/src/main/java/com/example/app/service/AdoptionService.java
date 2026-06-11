@@ -12,6 +12,7 @@ import com.example.app.repository.AdoptionRepository;
 import com.example.app.repository.PetRepository;
 import com.example.app.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AdoptionService {
@@ -31,6 +33,7 @@ public class AdoptionService {
     private final UserRepository userRepository;
     private final NotificationService notificationService;
     private final UserService userService;
+    private final DistributedLockService distributedLockService;
 
     @Transactional(readOnly = true)
     public PageResponse<AdoptionResponse> getAdoptions(String status, Long userId, Long petId, 
@@ -51,38 +54,50 @@ public class AdoptionService {
 
     @Transactional
     public AdoptionResponse createAdoption(AdoptionRequest request) {
-        Pet pet = petRepository.findById(request.getPetId())
-                .orElseThrow(() -> new BusinessException("宠物不存在"));
-
-        if (!"待领养".equals(pet.getStatus()) && !"available".equalsIgnoreCase(pet.getStatus())) {
-            throw new BusinessException("该宠物暂不可领养");
+        String lockKey = "adoption:pet:" + request.getPetId() + ":user:" + request.getUserId();
+        
+        String lockValue = distributedLockService.tryLockWithRetry(lockKey, 30, 3, 100);
+        if (lockValue == null) {
+            log.warn("获取分布式锁失败，可能存在并发提交: petId={}, userId={}", request.getPetId(), request.getUserId());
+            throw new BusinessException("请求过于频繁，请稍后重试");
         }
+        
+        try {
+            Pet pet = petRepository.findById(request.getPetId())
+                    .orElseThrow(() -> new BusinessException("宠物不存在"));
 
-        User user = userRepository.findById(request.getUserId())
-                .orElseThrow(() -> new BusinessException("用户不存在"));
+            if (!"待领养".equals(pet.getStatus()) && !"available".equalsIgnoreCase(pet.getStatus())) {
+                throw new BusinessException("该宠物暂不可领养");
+            }
 
-        if (adoptionRepository.existsActiveAdoption(request.getPetId(), request.getUserId())) {
-            throw new BusinessException("您已经申请过该宠物");
+            User user = userRepository.findById(request.getUserId())
+                    .orElseThrow(() -> new BusinessException("用户不存在"));
+
+            if (adoptionRepository.existsActiveAdoption(request.getPetId(), request.getUserId())) {
+                throw new BusinessException("您已经申请过该宠物");
+            }
+
+            Adoption adoption = Adoption.builder()
+                    .petId(request.getPetId())
+                    .applicantId(request.getUserId())
+                    .status("pending")
+                    .applicantNote(request.getReason() != null ? request.getReason() : "")
+                    .build();
+
+            adoption = adoptionRepository.save(adoption);
+
+            notificationService.createNotification(
+                    1L,
+                    "领养申请",
+                    "用户 " + user.getUsername() + " 申请领养宠物 " + pet.getName(),
+                    "adoption_request",
+                    adoption.getId()
+            );
+
+            return toAdoptionResponse(adoption);
+        } finally {
+            distributedLockService.releaseLock(lockKey, lockValue);
         }
-
-        Adoption adoption = Adoption.builder()
-                .petId(request.getPetId())
-                .applicantId(request.getUserId())
-                .status("pending")
-                .applicantNote(request.getReason() != null ? request.getReason() : "")
-                .build();
-
-        adoption = adoptionRepository.save(adoption);
-
-        notificationService.createNotification(
-                1L,
-                "领养申请",
-                "用户 " + user.getUsername() + " 申请领养宠物 " + pet.getName(),
-                "adoption_request",
-                adoption.getId()
-        );
-
-        return toAdoptionResponse(adoption);
     }
 
     @Transactional
