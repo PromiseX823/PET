@@ -1,22 +1,32 @@
 package com.example.app.service;
 
 import com.example.app.config.RabbitMQConfig;
-import com.example.app.dto.EmailMessage;
-import com.example.app.dto.NotificationMessage;
+import com.example.app.entity.Notification;
+import com.example.app.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
+/**
+ * RabbitMQ消息生产者服务
+ * 将耗时操作转为异步消息队列处理
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class MessageProducerService {
 
-    private final RabbitTemplate rabbitTemplate;
+    @Autowired(required = false)
+    private RabbitTemplate rabbitTemplate;
 
+    private final NotificationRepository notificationRepository;
+
+    /**
+     * 发送通知消息（异步）
+     * 如果RabbitMQ可用则通过消息队列发送，否则直接保存
+     */
     public void sendNotification(Long userId, String title, String content, String type, Long relatedId) {
         NotificationMessage message = NotificationMessage.builder()
                 .userId(userId)
@@ -24,47 +34,68 @@ public class MessageProducerService {
                 .content(content)
                 .type(type)
                 .relatedId(relatedId)
-                .createdAt(LocalDateTime.now())
                 .build();
 
-        log.info("Sending notification to queue: userId={}, title={}", userId, title);
-        rabbitTemplate.convertAndSend(
-                RabbitMQConfig.NOTIFICATION_EXCHANGE,
-                RabbitMQConfig.NOTIFICATION_ROUTING_KEY,
-                message
-        );
-        log.info("Notification sent successfully");
+        if (rabbitTemplate != null) {
+            log.info("通过RabbitMQ发送通知消息: userId={}, title={}", userId, title);
+            rabbitTemplate.convertAndSend(
+                    RabbitMQConfig.PET_EXCHANGE,
+                    RabbitMQConfig.NOTIFICATION_ROUTING_KEY,
+                    message
+            );
+        } else {
+            log.info("RabbitMQ不可用，直接保存通知: userId={}, title={}", userId, title);
+            saveNotificationDirectly(message);
+        }
     }
 
+    /**
+     * 直接保存通知（当RabbitMQ不可用时的备用方案）
+     */
+    private void saveNotificationDirectly(NotificationMessage message) {
+        Notification notification = Notification.builder()
+                .userId(message.getUserId())
+                .title(message.getTitle())
+                .content(message.getContent())
+                .type(message.getType())
+                .relatedId(message.getRelatedId())
+                .isRead(false)
+                .build();
+        
+        notificationRepository.save(notification);
+    }
+
+    /**
+     * 发送邮件消息（异步）
+     */
     public void sendEmail(String to, String subject, String content) {
-        EmailMessage message = EmailMessage.builder()
-                .to(to)
-                .subject(subject)
-                .content(content)
-                .build();
-
-        log.info("Sending email to queue: to={}, subject={}", to, subject);
-        rabbitTemplate.convertAndSend(
-                RabbitMQConfig.EMAIL_EXCHANGE,
-                RabbitMQConfig.EMAIL_ROUTING_KEY,
-                message
-        );
-        log.info("Email sent successfully");
+        if (rabbitTemplate != null) {
+            MessageConsumerService.EmailMessage message = MessageConsumerService.EmailMessage.builder()
+                    .to(to)
+                    .subject(subject)
+                    .content(content)
+                    .build();
+            
+            log.info("通过RabbitMQ发送邮件消息: to={}, subject={}", to, subject);
+            rabbitTemplate.convertAndSend(
+                    RabbitMQConfig.PET_EXCHANGE,
+                    RabbitMQConfig.EMAIL_ROUTING_KEY,
+                    message
+            );
+        } else {
+            log.warn("RabbitMQ不可用，无法发送邮件: to={}", to);
+        }
     }
 
-    public void sendEmailWithTemplate(String to, String subject, String template) {
-        EmailMessage message = EmailMessage.builder()
-                .to(to)
-                .subject(subject)
-                .template(template)
-                .build();
-
-        log.info("Sending email template to queue: to={}, template={}", to, template);
-        rabbitTemplate.convertAndSend(
-                RabbitMQConfig.EMAIL_EXCHANGE,
-                RabbitMQConfig.EMAIL_ROUTING_KEY,
-                message
-        );
-        log.info("Email template sent successfully");
+    @lombok.Data
+    @lombok.Builder
+    @lombok.NoArgsConstructor
+    @lombok.AllArgsConstructor
+    public static class NotificationMessage {
+        private Long userId;
+        private String title;
+        private String content;
+        private String type;
+        private Long relatedId;
     }
 }

@@ -23,6 +23,7 @@ spring:
       port: 6379
       timeout: 10000ms
     rabbitmq:
+      enabled: false
       host: localhost
       port: 5672
       username: guest
@@ -58,5 +59,6 @@ file:
 
 ai:
   dashscope:
-    api-key: ${ARK_API_KEY:your-api-key-here}
+    api-key: ${DASHSCOPE_API_KEY:your-api-key-here}
     base-url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+    model: qwen-turbo

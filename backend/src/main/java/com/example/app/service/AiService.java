@@ -1,117 +1,142 @@
 package com.example.app.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+/**
+ * AI服务 - 调用阿里云DashScope API（通义千问）
+ */
 @Slf4j
 @Service
 public class AiService {
 
-    @Value("${ai.dashscope.api-key}")
+    @Value("${ai.dashscope.api-key:}")
     private String apiKey;
 
     @Value("${ai.dashscope.base-url:https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation}")
     private String baseUrl;
 
-    private final RestTemplate restTemplate;
+    @Value("${ai.dashscope.model:qwen-turbo}")
+    private String model;
 
-    public AiService() {
-        this.restTemplate = new RestTemplate();
-    }
+    private final HttpClient httpClient = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
 
-    public String generatePetDescription(String petInfo) {
-        String prompt = """
-            请根据以下宠物信息，生成一段吸引人的领养描述：
-            %s
-            
-            要求：
-            1. 语言生动有趣，突出宠物的可爱之处
-            2. 包含宠物的性格特点和适合的领养家庭
-            3. 字数在200-300字左右
-            4. 语气亲切友好
-            """.formatted(petInfo);
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-        return callDashScope(prompt);
-    }
-
-    public String analyzeAdoptionApplication(String applicationInfo) {
-        String prompt = """
-            请分析以下宠物领养申请：
-            %s
-            
-            请评估：
-            1. 申请人是否适合领养该宠物
-            2. 申请理由是否充分
-            3. 给出审核建议（通过/拒绝/需补充信息）
-            4. 说明理由
-            """.formatted(applicationInfo);
-
-        return callDashScope(prompt);
-    }
-
-    public String answerPetQuestion(String question) {
-        String prompt = """
-            请回答关于宠物养护的问题：
-            %s
-            
-            要求：
-            1. 回答准确专业
-            2. 语言通俗易懂
-            3. 如有必要，给出具体建议
-            """.formatted(question);
-
-        return callDashScope(prompt);
-    }
-
-    public String summarizeComments(String comments) {
-        String prompt = """
-            请总结以下评论内容：
-            %s
-            
-            要求：
-            1. 提取主要观点和情感倾向
-            2. 总结用户反馈的关键点
-            3. 给出改进建议
-            """.formatted(comments);
-
-        return callDashScope(prompt);
-    }
-
-    private String callDashScope(String prompt) {
-        try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer " + apiKey);
-
-            Map<String, Object> requestBody = new HashMap<>();
-            requestBody.put("model", "qwen-turbo");
-            requestBody.put("input", Map.of("messages", new Object[]{
-                Map.of("role", "user", "content", prompt)
-            }));
-            requestBody.put("parameters", Map.of("temperature", 0.7, "max_tokens", 1024));
-
-            HttpEntity<Map<String, Object>> request = new HttpEntity<>(requestBody, headers);
-            ResponseEntity<Map> response = restTemplate.exchange(baseUrl, HttpMethod.POST, request, Map.class);
-
-            if (response.getStatusCode().is2xxSuccessful()) {
-                Map<String, Object> result = response.getBody();
-                if (result != null && result.containsKey("output")) {
-                    Map<String, Object> output = (Map<String, Object>) result.get("output");
-                    return (String) output.get("text");
-                }
-            }
-
-            log.error("DashScope API call failed: {}", response);
-            return "AI服务暂时不可用，请稍后重试";
-        } catch (Exception e) {
-            log.error("Error calling DashScope API", e);
-            return "AI服务暂时不可用，请稍后重试";
+    /**
+     * 调用AI生成文本
+     * @param prompt 输入提示
+     * @return 生成的文本
+     */
+    public String generateText(String prompt) {
+        if (apiKey == null || apiKey.isEmpty() || apiKey.equals("your-api-key-here")) {
+            log.warn("DashScope API Key未配置，返回模拟响应");
+            return "AI服务暂未配置，请设置有效的API Key。提示内容：" + prompt;
         }
+
+        try {
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("model", model);
+            
+            Map<String, Object> input = new HashMap<>();
+            input.put("messages", List.of(
+                    Map.of("role", "user", "content", prompt)
+            ));
+            requestBody.put("input", input);
+            
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("max_tokens", 500);
+            parameters.put("temperature", 0.7);
+            requestBody.put("parameters", parameters);
+
+            String jsonBody = objectMapper.writeValueAsString(requestBody);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(baseUrl))
+                    .header("Authorization", "Bearer " + apiKey)
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                    .timeout(Duration.ofSeconds(30))
+                    .build();
+
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                Map<String, Object> responseMap = objectMapper.readValue(response.body(), Map.class);
+                Map<String, Object> output = (Map<String, Object>) responseMap.get("output");
+                if (output != null) {
+                    // 尝试从choices获取（新版API）
+                    List<Map<String, Object>> choices = (List<Map<String, Object>>) output.get("choices");
+                    if (choices != null && !choices.isEmpty()) {
+                        Map<String, Object> message = (Map<String, Object>) choices.get(0).get("message");
+                        return (String) message.get("content");
+                    }
+                    // 尝试从text获取（旧版API）
+                    String text = (String) output.get("text");
+                    if (text != null) {
+                        return text;
+                    }
+                }
+                log.warn("无法解析AI响应: {}", response.body());
+                return "AI响应解析失败";
+            } else {
+                log.error("AI调用失败: status={}, body={}", response.statusCode(), response.body());
+                return "AI调用失败: HTTP " + response.statusCode();
+            }
+        } catch (Exception e) {
+            log.error("AI调用异常: {}", e.getMessage(), e);
+            return "AI调用异常: " + e.getMessage();
+        }
+    }
+
+    /**
+     * 生成宠物描述
+     * @param petName 宠物名称
+     * @param petType 宠物类型
+     * @param petBreed 宠物品种
+     * @return 生成的描述
+     */
+    public String generatePetDescription(String petName, String petType, String petBreed) {
+        String prompt = String.format(
+                "请为一只名叫%s的%s（品种：%s）写一段简短的领养介绍，" +
+                "描述它的性格特点和适合领养的原因，不超过100字。",
+                petName, petType, petBreed != null ? petBreed : "未知"
+        );
+        return generateText(prompt);
+    }
+
+    /**
+     * 翻译文本
+     * @param text 待翻译文本
+     * @param targetLanguage 目标语言
+     * @return 翻译结果
+     */
+    public String translateText(String text, String targetLanguage) {
+        String prompt = String.format("请将以下文本翻译成%s，只返回翻译结果，不要其他内容：\n%s", 
+                targetLanguage, text);
+        return generateText(prompt);
+    }
+
+    /**
+     * 生成文本摘要
+     * @param text 待摘要文本
+     * @return 摘要结果
+     */
+    public String summarizeText(String text) {
+        String prompt = String.format("请对以下文本进行摘要，不超过50字：\n%s", text);
+        return generateText(prompt);
     }
 }

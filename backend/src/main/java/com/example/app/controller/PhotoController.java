@@ -77,10 +77,11 @@ public class PhotoController {
             @PathVariable("photo_id") Long photoId,
             @RequestBody Map<String, Object> request) {
         Long userId = ((Number) request.get("user_id")).longValue();
-        photoService.likePhoto(photoId, userId);
+        int likeCount = photoService.likePhoto(photoId, userId);
         
         Map<String, Object> result = new HashMap<>();
         result.put("message", "点赞成功");
+        result.put("like_count", likeCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -89,10 +90,11 @@ public class PhotoController {
             @PathVariable("photo_id") Long photoId,
             @RequestBody Map<String, Object> request) {
         Long userId = ((Number) request.get("user_id")).longValue();
-        photoService.unlikePhoto(photoId, userId);
+        int likeCount = photoService.unlikePhoto(photoId, userId);
         
         Map<String, Object> result = new HashMap<>();
         result.put("message", "取消点赞成功");
+        result.put("like_count", likeCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -112,10 +114,11 @@ public class PhotoController {
             @PathVariable("photo_id") Long photoId,
             @RequestBody Map<String, Object> request) {
         Long userId = ((Number) request.get("user_id")).longValue();
-        photoService.collectPhoto(photoId, userId);
+        int collectionCount = photoService.collectPhoto(photoId, userId);
         
         Map<String, Object> result = new HashMap<>();
         result.put("message", "收藏成功");
+        result.put("collection_count", collectionCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -124,10 +127,11 @@ public class PhotoController {
             @PathVariable("photo_id") Long photoId,
             @RequestBody Map<String, Object> request) {
         Long userId = ((Number) request.get("user_id")).longValue();
-        photoService.uncollectPhoto(photoId, userId);
+        int collectionCount = photoService.uncollectPhoto(photoId, userId);
         
         Map<String, Object> result = new HashMap<>();
         result.put("message", "取消收藏成功");
+        result.put("collection_count", collectionCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 

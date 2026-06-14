@@ -31,6 +31,24 @@ public class UserController {
     private final PetService petService;
     private final PhotoService photoService;
 
+    @PostMapping("/reset-password")
+    public ResponseEntity<ApiResponse<Void>> resetPassword(@RequestBody Map<String, String> request) {
+        String username = request.get("username");
+        String newPassword = request.get("newPassword");
+        
+        if (username == null || newPassword == null) {
+            throw new BusinessException("用户名和密码不能为空");
+        }
+        
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new BusinessException("用户不存在"));
+        
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+        
+        return ResponseEntity.ok(ApiResponse.success("密码重置成功", null));
+    }
+
     @GetMapping
     public ResponseEntity<ApiResponse<List<UserResponse>>> getAllUsers() {
         List<UserResponse> users = userRepository.findAll().stream()

@@ -131,7 +131,7 @@ public class PhotoService {
     }
 
     @Transactional
-    public void likePhoto(Long photoId, Long userId) {
+    public int likePhoto(Long photoId, Long userId) {
         Photo photo = photoRepository.findById(photoId)
                 .orElseThrow(() -> new BusinessException("照片不存在"));
 
@@ -160,10 +160,12 @@ public class PhotoService {
                 );
             }
         }
+        
+        return likeCount;
     }
 
     @Transactional
-    public void unlikePhoto(Long photoId, Long userId) {
+    public int unlikePhoto(Long photoId, Long userId) {
         Photo photo = photoRepository.findById(photoId)
                 .orElseThrow(() -> new BusinessException("照片不存在"));
 
@@ -172,6 +174,8 @@ public class PhotoService {
         int likeCount = likeRepository.countByPhotoId(photoId);
         photo.setLikeCount(likeCount);
         photoRepository.save(photo);
+        
+        return likeCount;
     }
 
     @Transactional(readOnly = true)
@@ -180,7 +184,7 @@ public class PhotoService {
     }
 
     @Transactional
-    public void collectPhoto(Long photoId, Long userId) {
+    public int collectPhoto(Long photoId, Long userId) {
         Photo photo = photoRepository.findById(photoId)
                 .orElseThrow(() -> new BusinessException("照片不存在"));
 
@@ -193,6 +197,8 @@ public class PhotoService {
         collection.setUserId(userId);
         photoCollectionRepository.save(collection);
 
+        int collectionCount = photoCollectionRepository.countByPhotoId(photoId);
+        
         if (!photo.getUserId().equals(userId)) {
             User user = userRepository.findById(userId).orElse(null);
             if (user != null) {
@@ -205,14 +211,19 @@ public class PhotoService {
                 );
             }
         }
+        
+        return collectionCount;
     }
 
     @Transactional
-    public void uncollectPhoto(Long photoId, Long userId) {
-        photoRepository.findById(photoId)
+    public int uncollectPhoto(Long photoId, Long userId) {
+        Photo photo = photoRepository.findById(photoId)
                 .orElseThrow(() -> new BusinessException("照片不存在"));
 
         photoCollectionRepository.deleteByPhotoIdAndUserId(photoId, userId);
+        
+        int collectionCount = photoCollectionRepository.countByPhotoId(photoId);
+        return collectionCount;
     }
 
     @Transactional(readOnly = true)
