@@ -178,7 +178,7 @@
           <div class="pet-item-content">
             <div class="pet-image-wrapper">
               <el-image
-                :src="pet.main_photo?.image_url || defaultPetAvatar"
+                :src="pet.mainPhoto?.imageUrl || defaultPetAvatar"
                 fit="cover"
                 class="pet-image"
               >

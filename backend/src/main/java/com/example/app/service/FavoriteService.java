@@ -1,6 +1,7 @@
 
 package com.example.app.service;
 
+import com.example.app.dto.response.PetResponse;
 import com.example.app.entity.Favorite;
 import com.example.app.entity.Pet;
 import com.example.app.entity.User;
@@ -23,6 +24,7 @@ public class FavoriteService {
     private final PetRepository petRepository;
     private final UserRepository userRepository;
     private final NotificationService notificationService;
+    private final PetService petService;
 
     @Transactional
     public void favoritePet(Long petId, Long userId) {
@@ -68,7 +70,7 @@ public class FavoriteService {
     }
 
     @Transactional(readOnly = true)
-    public List<Pet> getUserFavorites(Long userId) {
+    public List<PetResponse> getUserFavorites(Long userId) {
         List<Favorite> favorites = favoriteRepository.findByUserId(userId);
         List<Long> petIds = favorites.stream()
                 .map(Favorite::getPetId)
@@ -78,6 +80,8 @@ public class FavoriteService {
             return List.of();
         }
         
-        return petRepository.findAllById(petIds);
+        return petIds.stream()
+                .map(petService::getPet)
+                .collect(Collectors.toList());
     }
 }

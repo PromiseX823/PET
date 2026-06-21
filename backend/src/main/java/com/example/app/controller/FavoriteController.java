@@ -2,9 +2,8 @@
 package com.example.app.controller;
 
 import com.example.app.dto.response.ApiResponse;
-import com.example.app.entity.Pet;
+import com.example.app.dto.response.PetResponse;
 import com.example.app.entity.User;
-import com.example.app.repository.PetRepository;
 import com.example.app.repository.UserRepository;
 import com.example.app.service.FavoriteService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/favorites")
@@ -24,7 +22,6 @@ public class FavoriteController {
 
     private final FavoriteService favoriteService;
     private final UserRepository userRepository;
-    private final PetRepository petRepository;
 
     @PostMapping("/pets/{pet_id}")
     public ResponseEntity<ApiResponse<Void>> favoritePet(@PathVariable("pet_id") Long petId) {
@@ -53,13 +50,13 @@ public class FavoriteController {
     }
 
     @GetMapping("/my")
-    public ResponseEntity<ApiResponse<List<Pet>>> getMyFavorites() {
+    public ResponseEntity<ApiResponse<List<PetResponse>>> getMyFavorites() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("用户不存在"));
         
-        List<Pet> favoritePets = favoriteService.getUserFavorites(user.getId());
+        List<PetResponse> favoritePets = favoriteService.getUserFavorites(user.getId());
         return ResponseEntity.ok(ApiResponse.success(favoritePets));
     }
 }
