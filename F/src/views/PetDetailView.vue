@@ -98,7 +98,7 @@
               <i class="el-icon-share"></i>
               分享给朋友
             </el-button>
-            <el-button size="large" class="secondary-action-btn">
+            <el-button size="large" class="secondary-action-btn" @click="handleFavorite">
               <i class="el-icon-star-off"></i>
               收藏
             </el-button>
@@ -337,8 +337,10 @@
 import { ref, onMounted, onBeforeMount } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { useUserStore } from '../stores'
+import { useUserStore, usePetsStore } from '../stores'
 import api from '../api/index.js'
+
+const petsStore = usePetsStore()
 
 const router = useRouter()
 const route = useRoute()
@@ -550,6 +552,23 @@ const checkFollowStatus = async () => {
     }
   } catch (error) {
     isFollowingOwner.value = false
+  }
+}
+
+// 收藏宠物
+const handleFavorite = async () => {
+  if (!userStore.user || !userStore.user.id) {
+    ElMessage.warning('请先登录')
+    router.push('/login')
+    return
+  }
+  try {
+    await api.favoritePet(pet.value.id, userStore.user.id)
+    petsStore.addFavorite(pet.value)
+    ElMessage.success('已添加到收藏')
+  } catch (error) {
+    console.error('收藏失败:', error)
+    ElMessage.error(error.response?.data?.message || '收藏失败')
   }
 }
 

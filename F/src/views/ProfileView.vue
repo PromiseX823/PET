@@ -620,11 +620,12 @@ import { ref, computed, onMounted, unref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
-import { useUserStore } from '@/stores'
+import { useUserStore, usePetsStore } from '@/stores'
 import api from '@/api'
 
 const router = useRouter()
 const userStore = useUserStore()
+const petsStore = usePetsStore()
 
 // 从userStore获取用户信息
 const user = computed(() => userStore.user || {
@@ -728,8 +729,8 @@ const editFormRef = ref(null)
 // 注销账号密码
 const deletePassword = ref('')
 
-// 编辑领养信息表单数据
-const myFavorites = ref([])
+// 收藏列表 - 从共享 store 获取
+const myFavorites = computed(() => petsStore.myFavorites)
 
 const editAdoptionForm = ref({
   description: '',
@@ -832,10 +833,10 @@ async function loadUserDetail() {
     // 获取收藏列表
     try {
       const favResult = await api.getMyFavorites()
-      myFavorites.value = favResult.data || []
+      petsStore.setMyFavorites(favResult.data || []) // 同步到共享 store
     } catch (e) {
       console.error('获取收藏列表失败:', e)
-      myFavorites.value = []
+      petsStore.setMyFavorites([])
     }
   } catch (error) {
     let errorMessage = '加载用户详细信息失败，使用本地存储的用户信息'

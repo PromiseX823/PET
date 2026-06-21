@@ -67,7 +67,8 @@ export const useUserStore = defineStore('user', {
 export const usePetsStore = defineStore('pets', {
   state: () => ({
     pets: [],
-    currentPet: null
+    currentPet: null,
+    myFavorites: []
   }),
   actions: {
     setPets(pets) {
@@ -75,6 +76,17 @@ export const usePetsStore = defineStore('pets', {
     },
     setCurrentPet(pet) {
       this.currentPet = pet
+    },
+    setMyFavorites(favorites) {
+      this.myFavorites = favorites
+    },
+    addFavorite(pet) {
+      if (!this.myFavorites.find(f => f.id === pet.id)) {
+        this.myFavorites.push(pet)
+      }
+    },
+    removeFavorite(petId) {
+      this.myFavorites = this.myFavorites.filter(f => f.id !== petId)
     }
   }
 })

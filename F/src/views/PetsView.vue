@@ -150,6 +150,10 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import api from '../api/index.js'
+import { usePetsStore, useUserStore } from '../stores/index.js'
+
+const petsStore = usePetsStore()
+const userStore = useUserStore()
 
 const router = useRouter()
 
@@ -238,6 +242,10 @@ const addToFavorite = async (id) => {
   }
   try {
     await api.favoritePet(id, parsedUser.id)
+    // 获取宠物详情并添加到收藏列表
+    const petRes = await api.getPetById(id)
+    const pet = petRes.data || petRes
+    petsStore.addFavorite(pet)
     ElMessage.success('已添加到收藏')
   } catch (error) {
     console.error('收藏失败:', error)
