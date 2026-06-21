@@ -173,9 +173,8 @@
           v-for="pet in myFavorites"
           :key="pet.id"
           class="pet-item"
-          @click="viewPetDetail(pet.id)"
         >
-          <div class="pet-item-content">
+          <div class="pet-item-content" @click="viewPetDetail(pet.id)">
             <div class="pet-image-wrapper">
               <el-image
                 :src="pet.mainPhoto?.imageUrl || defaultPetAvatar"
@@ -193,6 +192,11 @@
               <div class="pet-name">{{ pet.name }}</div>
               <div class="pet-breed">{{ pet.breed || '未知品种' }}</div>
             </div>
+          </div>
+          <div class="pet-actions">
+            <el-button size="small" type="danger" plain @click.stop="removeFromFavorites(pet.id)">
+              取消收藏
+            </el-button>
           </div>
         </div>
       </div>
@@ -1161,6 +1165,18 @@ function editAdoption(app) {
   dialogVisible.value.editAdoption = true
 }
 
+// 取消收藏宠物
+async function removeFromFavorites(petId) {
+  try {
+    await api.unfavoritePet(petId, userStore.user.id)
+    petsStore.removeFavorite(petId)
+    ElMessage.success('已取消收藏')
+  } catch (error) {
+    console.error('取消收藏失败:', error)
+    ElMessage.error('取消收藏失败')
+  }
+}
+
 // 保存领养申请
 async function saveAdoption() {
   try {
@@ -1640,13 +1656,23 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pet-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pet-item-content {
+  cursor: pointer;
+}
+
+.pet-actions {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
 }
 
 .pet-image-wrapper {
