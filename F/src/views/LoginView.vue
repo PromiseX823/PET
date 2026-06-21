@@ -84,21 +84,28 @@ const handleLogin = () => {
       api.login(formData.value.username, formData.value.password)
         .then(response => {
           console.log('登录API响应:', response)
-          if (response.success && response.user) {
-            console.log('准备登录的用户数据:', response.user)
-            // 映射后端返回的字段到前端期望的格式
+          if (response && response.code === 200 && response.data) {
+            console.log('准备登录的用户数据:', response.data)
+            const authData = response.data
+            const userData = authData.user || authData
             const formattedUser = {
-              ...response.user,
-              avatar: response.user.avatar_url, // 将avatar_url映射为avatar
-              description: response.user.bio, // 将bio映射为description
-              nickname: response.user.username // 将username映射为nickname
+              id: userData.id,
+              username: userData.username,
+              email: userData.email,
+              phone: userData.phone,
+              role: userData.role,
+              avatar: userData.avatar || userData.avatarUrl || userData.avatar_url || '',
+              nickname: userData.username,
+              description: userData.bio || userData.description || '',
+              createdAt: userData.createdAt,
+              token: authData.accessToken || authData.token || ''
             }
             userStore.login(formattedUser)
             console.log('登录后用户存储:', userStore)
             ElMessage.success('登录成功')
             router.push('/')
           } else {
-            ElMessage.error('登录失败：' + (response.error || '未知错误'))
+            ElMessage.error('登录失败：' + (response?.message || '未知错误'))
           }
         })
         .catch(error => {

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -24,17 +25,40 @@ public class StatsController {
     public ResponseEntity<ApiResponse<Map<String, Object>>> getStats() {
         long totalPets = petRepository.count();
         long pendingPets = petRepository.findByStatus("待领养").size();
+        long adoptedPets = petRepository.findByStatus("已领养").size();
         long totalUsers = userRepository.count();
         long totalPhotos = photoRepository.count();
         long totalAdoptions = adoptionRepository.count();
-        
-        Map<String, Object> stats = Map.of(
-            "pets", Map.of("available", pendingPets, "total", totalPets),
-            "adoptions", Map.of("total", totalAdoptions, "approved", 0, "completed", 0),
-            "photos", Map.of("total", totalPhotos),
-            "users", Map.of("total", totalUsers)
-        );
-        
+        long approvedAdoptions = adoptionRepository.findByStatus("approved").size();
+        long pendingAdoptions = adoptionRepository.findByStatus("pending").size();
+        long rejectedAdoptions = adoptionRepository.findByStatus("rejected").size();
+        long completedAdoptions = adoptionRepository.findByStatus("completed").size();
+
+        Map<String, Object> petsStats = new HashMap<>();
+        petsStats.put("available", pendingPets);
+        petsStats.put("total", totalPets);
+        petsStats.put("adopted", adoptedPets);
+
+        Map<String, Object> adoptionsStats = new HashMap<>();
+        adoptionsStats.put("total", totalAdoptions);
+        adoptionsStats.put("approved", approvedAdoptions);
+        adoptionsStats.put("pending", pendingAdoptions);
+        adoptionsStats.put("rejected", rejectedAdoptions);
+        adoptionsStats.put("completed", completedAdoptions);
+
+        Map<String, Object> photosStats = new HashMap<>();
+        photosStats.put("total", totalPhotos);
+
+        Map<String, Object> usersStats = new HashMap<>();
+        usersStats.put("total", totalUsers);
+        usersStats.put("today", 0);
+
+        Map<String, Object> stats = new HashMap<>();
+        stats.put("pets", petsStats);
+        stats.put("adoptions", adoptionsStats);
+        stats.put("photos", photosStats);
+        stats.put("users", usersStats);
+
         return ResponseEntity.ok(ApiResponse.success(stats));
     }
 }

@@ -1,7 +1,10 @@
 import { defineStore } from 'pinia'
 
 function cleanImageUrl(url) {
-  if (!url) return url
+  if (!url) return ''
+  // 如果已经是相对路径，直接返回
+  if (url.startsWith('/')) return url
+  // 移除可能的前缀
   return url.replace('http://localhost:5000', '')
             .replace('http://localhost:8080', '')
             .replace('https://localhost:5000', '')
@@ -18,6 +21,7 @@ export const useUserStore = defineStore('user', {
       this.user = this.cleanUserUrls(user)
       this.isLoggedIn = true
       localStorage.setItem('user', JSON.stringify(this.user))
+      console.log('用户已登录，存储的数据:', this.user)
     },
     logout() {
       this.user = null
@@ -27,8 +31,17 @@ export const useUserStore = defineStore('user', {
     initializeUser() {
       const storedUser = localStorage.getItem('user')
       if (storedUser) {
-        this.user = this.cleanUserUrls(JSON.parse(storedUser))
-        this.isLoggedIn = true
+        try {
+          const parsedUser = JSON.parse(storedUser)
+          console.log('从localStorage恢复用户数据:', parsedUser)
+          if (parsedUser && parsedUser.id) {
+            this.user = this.cleanUserUrls(parsedUser)
+            this.isLoggedIn = true
+            console.log('用户登录状态已恢复:', this.isLoggedIn)
+          }
+        } catch (e) {
+          console.error('解析用户数据失败:', e)
+        }
       }
     },
     setUser(user) {

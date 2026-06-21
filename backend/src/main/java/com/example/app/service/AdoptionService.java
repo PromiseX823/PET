@@ -66,7 +66,9 @@ public class AdoptionService {
             Pet pet = petRepository.findById(request.getPetId())
                     .orElseThrow(() -> new BusinessException("宠物不存在"));
 
-            if (!"待领养".equals(pet.getStatus()) && !"available".equalsIgnoreCase(pet.getStatus())) {
+            String status = pet.getStatus();
+            if (!"待领养".equals(status) && !"available".equalsIgnoreCase(status) 
+                && !"adoption".equalsIgnoreCase(status)) {
                 throw new BusinessException("该宠物暂不可领养");
             }
 
@@ -104,10 +106,6 @@ public class AdoptionService {
     public void approveAdoption(Long adoptionId, Long reviewerId, String reviewComment) {
         Adoption adoption = adoptionRepository.findById(adoptionId)
                 .orElseThrow(() -> new BusinessException("领养申请不存在"));
-
-        if (!"pending".equals(adoption.getStatus()) && !"待审核".equals(adoption.getStatus())) {
-            throw new BusinessException("该申请已被处理");
-        }
 
         Pet pet = petRepository.findById(adoption.getPetId())
                 .orElseThrow(() -> new BusinessException("宠物不存在"));
@@ -153,16 +151,18 @@ public class AdoptionService {
         Adoption adoption = adoptionRepository.findById(adoptionId)
                 .orElseThrow(() -> new BusinessException("领养申请不存在"));
 
-        if (!"pending".equals(adoption.getStatus()) && !"待审核".equals(adoption.getStatus())) {
-            throw new BusinessException("该申请已被处理");
-        }
-
         adoption.setStatus("rejected");
         adoption.setReviewTime(LocalDateTime.now());
         adoption.setAdminNote(reviewComment);
         adoptionRepository.save(adoption);
 
+        // 如果之前是approved状态，将宠物状态改回待领养
         Pet pet = petRepository.findById(adoption.getPetId()).orElse(null);
+        if (pet != null) {
+            pet.setStatus("待领养");
+            petRepository.save(pet);
+        }
+
         User user = userRepository.findById(adoption.getApplicantId()).orElse(null);
 
         if (user != null && pet != null) {

@@ -1,0 +1,1754 @@
+﻿Apache Maven 3.9.12 (848fbb4bf2d427b72bdb2471c22fced7ebd9a7a1)
+Maven home: E:\Spring\apache-maven-3.9.12
+Java version: 17.0.17, vendor: Oracle Corporation, runtime: E:\JAVA
+Default locale: zh_CN, platform encoding: GBK
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from E:\Spring\apache-maven-3.9.12\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\30829\.m2\settings.xml
+[DEBUG] Reading global toolchains from E:\Spring\apache-maven-3.9.12\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\30829\.m2\toolchains.xml
+[DEBUG] Using local repository at C:\Users\30829\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\30829\.m2\repository
+[INFO] Scanning for projects...
+[DEBUG] Creating adapter using nameMapper 'gaecv' and factory 'rwlock-local'
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for central (https://repo.maven.apache.org/maven2).
+[DEBUG] Extension realms for project com.example:pet-backend:jar:1.0.0: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for apache.snapshots (https://repository.apache.org/snapshots).
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:3.2.5: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:3.2.5: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: com.example:pet-backend:jar:1.0.0
+[DEBUG] Tasks:   [compile]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] ----------------------< com.example:pet-backend >-----------------------
+[INFO] Building pet-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for plexus.snapshots (https://oss.sonatype.org/content/repositories/plexus-snapshots).
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       com.example:pet-backend:1.0.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile]
+[DEBUG] Repositories (dependencies): [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+[DEBUG] Repositories (plugins)     : [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <propertiesEncoding>UTF-8</propertiesEncoding>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <annotationProcessorPaths>
+    <path>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.32</version>
+    </path>
+  </annotationProcessorPaths>
+  <annotationProcessorPathsUseDepMgmt default-value="false"/>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <fileExtensions default-value="class,jar"/>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">true</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}">${maven.compiler.outputDirectory}</outputDirectory>
+  <outputTimestamp default-value="${project.build.outputTimestamp}"/>
+  <parameters default-value="false">true</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">17</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">17</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for ow2-snapshot (https://repository.ow2.org/nexus/content/repositories/snapshots).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for jboss-public-repository-group (https://repository.jboss.org/nexus/content/groups/public/).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for ossrh (https://oss.sonatype.org/content/repositories/snapshots).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for spring-release (https://repo.spring.io/release).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for spring-snapshot (https://repo.spring.io/snapshot).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for vaadin-snapshots (http://oss.sonatype.org/content/repositories/vaadin-snapshots/).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for vaadin-releases (http://oss.sonatype.org/content/repositories/vaadin-releases/).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=2857000, ConflictMarker.markTime=513300, ConflictMarker.nodeCount=328, ConflictIdSorter.graphTime=2349700, ConflictIdSorter.topsortTime=1837400, ConflictIdSorter.conflictIdCount=133, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=19769700, ConflictResolver.conflictItemCount=291, DfDependencyCollector.collectTime=901712200, DfDependencyCollector.transformTime=32342300}
+[DEBUG] com.example:pet-backend:jar:1.0.0
+[DEBUG]    org.springframework.boot:spring-boot-starter-web:jar:3.2.5:compile
+[DEBUG]       org.springframework.boot:spring-boot-starter:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework.boot:spring-boot:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework.boot:spring-boot-autoconfigure:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework.boot:spring-boot-starter-logging:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]             ch.qos.logback:logback-classic:jar:1.4.14:compile (version managed from 1.4.14)
+[DEBUG]                ch.qos.logback:logback-core:jar:1.4.14:compile (version managed from 1.4.14)
+[DEBUG]             org.apache.logging.log4j:log4j-to-slf4j:jar:2.21.1:compile (version managed from 2.21.1)
+[DEBUG]                org.apache.logging.log4j:log4j-api:jar:2.21.1:compile (version managed from 2.21.1)
+[DEBUG]             org.slf4j:jul-to-slf4j:jar:2.0.13:compile (version managed from 2.0.13)
+[DEBUG]          jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile (version managed from 2.1.1)
+[DEBUG]          org.yaml:snakeyaml:jar:2.2:compile (version managed from 2.2)
+[DEBUG]       org.springframework.boot:spring-boot-starter-json:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.15.4:compile (version managed from 2.15.4)
+[DEBUG]          com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.15.4:compile (version managed from 2.15.4)
+[DEBUG]          com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.15.4:compile (version managed from 2.15.4)
+[DEBUG]       org.springframework.boot:spring-boot-starter-tomcat:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.20:compile (version managed from 10.1.20)
+[DEBUG]          org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.20:compile (version managed from 10.1.20)
+[DEBUG]       org.springframework:spring-web:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-beans:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          io.micrometer:micrometer-observation:jar:1.12.5:compile (version managed from 1.12.5)
+[DEBUG]             io.micrometer:micrometer-commons:jar:1.12.5:compile (version managed from 1.12.5)
+[DEBUG]       org.springframework:spring-webmvc:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-context:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-expression:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]    org.springframework.boot:spring-boot-starter-data-jpa:jar:3.2.5:compile
+[DEBUG]       org.springframework.boot:spring-boot-starter-aop:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.aspectj:aspectjweaver:jar:1.9.22:compile (version managed from 1.9.22)
+[DEBUG]       org.springframework.boot:spring-boot-starter-jdbc:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          com.zaxxer:HikariCP:jar:5.0.1:compile (version managed from 5.0.1)
+[DEBUG]          org.springframework:spring-jdbc:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]       org.hibernate.orm:hibernate-core:jar:6.4.4.Final:compile (version managed from 6.4.4.Final)
+[DEBUG]          jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile (version managed from 3.1.0)
+[DEBUG]          jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile (version managed from 2.0.1)
+[DEBUG]          org.jboss.logging:jboss-logging:jar:3.5.3.Final:compile (version managed from 3.5.0.Final)
+[DEBUG]          org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[DEBUG]          io.smallrye:jandex:jar:3.1.2:runtime
+[DEBUG]          com.fasterxml:classmate:jar:1.6.0:compile (version managed from 1.5.1)
+[DEBUG]          net.bytebuddy:byte-buddy:jar:1.14.13:runtime (version managed from 1.14.11)
+[DEBUG]          org.glassfish.jaxb:jaxb-runtime:jar:4.0.5:runtime (version managed from 4.0.2)
+[DEBUG]             org.glassfish.jaxb:jaxb-core:jar:4.0.5:runtime (version managed from 4.0.5)
+[DEBUG]                org.eclipse.angus:angus-activation:jar:2.0.2:runtime (version managed from 2.0.2)
+[DEBUG]                org.glassfish.jaxb:txw2:jar:4.0.5:runtime (version managed from 4.0.5)
+[DEBUG]                com.sun.istack:istack-commons-runtime:jar:4.1.2:runtime (version managed from 4.1.2)
+[DEBUG]          jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[DEBUG]          org.antlr:antlr4-runtime:jar:4.13.0:compile
+[DEBUG]       org.springframework.data:spring-data-jpa:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework.data:spring-data-commons:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework:spring-orm:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-tx:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.slf4j:slf4j-api:jar:2.0.13:compile (version managed from 2.0.2)
+[DEBUG]       org.springframework:spring-aspects:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]    org.springframework.boot:spring-boot-starter-data-redis:jar:3.2.5:compile
+[DEBUG]       io.lettuce:lettuce-core:jar:6.3.2.RELEASE:compile (version managed from 6.3.2.RELEASE)
+[DEBUG]          io.netty:netty-common:jar:4.1.109.Final:compile (version managed from 4.1.107.Final)
+[DEBUG]          io.netty:netty-handler:jar:4.1.109.Final:compile (version managed from 4.1.107.Final)
+[DEBUG]             io.netty:netty-resolver:jar:4.1.109.Final:compile (version managed from 4.1.109.Final)
+[DEBUG]             io.netty:netty-buffer:jar:4.1.109.Final:compile (version managed from 4.1.109.Final)
+[DEBUG]             io.netty:netty-transport-native-unix-common:jar:4.1.109.Final:compile (version managed from 4.1.109.Final)
+[DEBUG]             io.netty:netty-codec:jar:4.1.109.Final:compile (version managed from 4.1.109.Final)
+[DEBUG]          io.netty:netty-transport:jar:4.1.109.Final:compile (version managed from 4.1.107.Final)
+[DEBUG]          io.projectreactor:reactor-core:jar:3.6.5:compile (version managed from 3.6.4)
+[DEBUG]             org.reactivestreams:reactive-streams:jar:1.0.4:compile (version managed from 1.0.4)
+[DEBUG]       org.springframework.data:spring-data-redis:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework.data:spring-data-keyvalue:jar:3.2.5:compile (version managed from 3.2.5)
+[DEBUG]          org.springframework:spring-oxm:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-context-support:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]    org.springframework.boot:spring-boot-starter-security:jar:3.2.5:compile
+[DEBUG]       org.springframework:spring-aop:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]       org.springframework.security:spring-security-config:jar:6.2.4:compile (version managed from 6.2.4)
+[DEBUG]       org.springframework.security:spring-security-web:jar:6.2.4:compile (version managed from 6.2.4)
+[DEBUG]    org.springframework.boot:spring-boot-starter-validation:jar:3.2.5:compile
+[DEBUG]       org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.20:compile (version managed from 10.1.20)
+[DEBUG]       org.hibernate.validator:hibernate-validator:jar:8.0.1.Final:compile (version managed from 8.0.1.Final)
+[DEBUG]          jakarta.validation:jakarta.validation-api:jar:3.0.2:compile (version managed from 3.0.2)
+[DEBUG]    com.mysql:mysql-connector-j:jar:8.3.0:runtime (exclusions managed from [com.google.protobuf:protobuf-java:*:*])
+[DEBUG]    com.h2database:h2:jar:2.2.224:runtime
+[DEBUG]    io.jsonwebtoken:jjwt-api:jar:0.12.3:compile
+[DEBUG]    io.jsonwebtoken:jjwt-impl:jar:0.12.3:runtime
+[DEBUG]    io.jsonwebtoken:jjwt-jackson:jar:0.12.3:runtime
+[DEBUG]       com.fasterxml.jackson.core:jackson-databind:jar:2.15.4:compile (version managed from 2.12.7.1)
+[DEBUG]          com.fasterxml.jackson.core:jackson-annotations:jar:2.15.4:compile (version managed from 2.15.4)
+[DEBUG]          com.fasterxml.jackson.core:jackson-core:jar:2.15.4:compile (version managed from 2.15.4)
+[DEBUG]    org.projectlombok:lombok:jar:1.18.32:provided
+[DEBUG]    org.springdoc:springdoc-openapi-starter-webmvc-ui:jar:2.3.0:compile
+[DEBUG]       org.springdoc:springdoc-openapi-starter-webmvc-api:jar:2.3.0:compile
+[DEBUG]          org.springdoc:springdoc-openapi-starter-common:jar:2.3.0:compile
+[DEBUG]             io.swagger.core.v3:swagger-core-jakarta:jar:2.2.19:compile
+[DEBUG]                org.apache.commons:commons-lang3:jar:3.13.0:compile (version managed from 3.13.0)
+[DEBUG]                io.swagger.core.v3:swagger-annotations-jakarta:jar:2.2.19:compile
+[DEBUG]                io.swagger.core.v3:swagger-models-jakarta:jar:2.2.19:compile
+[DEBUG]                com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.15.4:compile (version managed from 2.15.2)
+[DEBUG]       org.webjars:swagger-ui:jar:5.10.3:compile
+[DEBUG]    org.springframework.boot:spring-boot-starter-amqp:jar:3.2.5:compile
+[DEBUG]       org.springframework:spring-messaging:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]       org.springframework.amqp:spring-rabbit:jar:3.1.4:compile (version managed from 3.1.4)
+[DEBUG]          org.springframework.amqp:spring-amqp:jar:3.1.4:compile (version managed from 3.1.4)
+[DEBUG]             org.springframework.retry:spring-retry:jar:2.0.5:compile (version managed from 2.0.5)
+[DEBUG]          com.rabbitmq:amqp-client:jar:5.19.0:compile (version managed from 5.19.0)
+[DEBUG]    org.springframework.boot:spring-boot-starter-test:jar:3.2.5:test
+[DEBUG]       org.springframework.boot:spring-boot-test:jar:3.2.5:test (version managed from 3.2.5)
+[DEBUG]       org.springframework.boot:spring-boot-test-autoconfigure:jar:3.2.5:test (version managed from 3.2.5)
+[DEBUG]       com.jayway.jsonpath:json-path:jar:2.9.0:test (version managed from 2.9.0)
+[DEBUG]       jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:compile (version managed from 4.0.2)
+[DEBUG]          jakarta.activation:jakarta.activation-api:jar:2.1.3:compile (version managed from 2.1.3)
+[DEBUG]       net.minidev:json-smart:jar:2.5.1:test (version managed from 2.5.1)
+[DEBUG]          net.minidev:accessors-smart:jar:2.5.1:test
+[DEBUG]             org.ow2.asm:asm:jar:9.6:test
+[DEBUG]       org.assertj:assertj-core:jar:3.24.2:test (version managed from 3.24.2)
+[DEBUG]       org.awaitility:awaitility:jar:4.2.1:test (version managed from 4.2.1)
+[DEBUG]       org.hamcrest:hamcrest:jar:2.2:test (version managed from 2.2)
+[DEBUG]       org.junit.jupiter:junit-jupiter:jar:5.10.2:test (version managed from 5.10.2)
+[DEBUG]          org.junit.jupiter:junit-jupiter-api:jar:5.10.2:test (version managed from 5.10.2)
+[DEBUG]             org.opentest4j:opentest4j:jar:1.3.0:test
+[DEBUG]             org.junit.platform:junit-platform-commons:jar:1.10.2:test (version managed from 1.10.2)
+[DEBUG]             org.apiguardian:apiguardian-api:jar:1.1.2:test
+[DEBUG]          org.junit.jupiter:junit-jupiter-params:jar:5.10.2:test (version managed from 5.10.2)
+[DEBUG]          org.junit.jupiter:junit-jupiter-engine:jar:5.10.2:test (version managed from 5.10.2)
+[DEBUG]             org.junit.platform:junit-platform-engine:jar:1.10.2:test (version managed from 1.10.2)
+[DEBUG]       org.mockito:mockito-core:jar:5.7.0:test (version managed from 5.7.0)
+[DEBUG]          net.bytebuddy:byte-buddy-agent:jar:1.14.13:test (version managed from 1.14.9)
+[DEBUG]          org.objenesis:objenesis:jar:3.3:test
+[DEBUG]       org.mockito:mockito-junit-jupiter:jar:5.7.0:test (version managed from 5.7.0)
+[DEBUG]       org.skyscreamer:jsonassert:jar:1.5.1:test (version managed from 1.5.1)
+[DEBUG]          com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[DEBUG]       org.springframework:spring-core:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]          org.springframework:spring-jcl:jar:6.1.6:compile (version managed from 6.1.6)
+[DEBUG]       org.springframework:spring-test:jar:6.1.6:test (version managed from 6.1.6)
+[DEBUG]       org.xmlunit:xmlunit-core:jar:2.9.1:test (version managed from 2.9.1)
+[DEBUG]    org.springframework.security:spring-security-test:jar:6.2.4:test
+[DEBUG]       org.springframework.security:spring-security-core:jar:6.2.4:compile (version managed from 6.2.4)
+[DEBUG]          org.springframework.security:spring-security-crypto:jar:6.2.4:compile (version managed from 6.2.4)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-backend ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=145600, ConflictMarker.markTime=20000, ConflictMarker.nodeCount=13, ConflictIdSorter.graphTime=56000, ConflictIdSorter.topsortTime=12600, ConflictIdSorter.conflictIdCount=9, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=221400, ConflictResolver.conflictItemCount=13, DfDependencyCollector.collectTime=49836600, DfDependencyCollector.transformTime=473700}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.26:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.5.1:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.3.1:compile
+[DEBUG]       javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]    commons-io:commons-io:jar:2.11.0:compile
+[DEBUG]    org.apache.commons:commons-lang3:jar:3.12.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.1
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.3.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: commons-io:commons-io:jar:2.11.0
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.12.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources:default-resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (s) delimiters = [@]
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: com.example:pet-backend:1.0.0 @ E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\pom.xml
+[DEBUG]   (f) propertiesEncoding = UTF-8
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: true, FileSet {directory: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources, PatternSet [includes: {**/application*.yml, **/application*.yaml, **/application*.properties}, excludes: {}]}}, Resource {targetPath: null, filtering: false, FileSet {directory: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources, PatternSet [includes: {}, excludes: {**/application*.yml, **/application*.yaml, **/application*.properties}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4eb166a1
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = false
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] activemq.version: 5.18.4
+[DEBUG] angus-mail.version: 2.0.3
+[DEBUG] artemis.version: 2.31.2
+[DEBUG] aspectj.version: 1.9.22
+[DEBUG] assertj.version: 3.24.2
+[DEBUG] awaitility.version: 4.2.1
+[DEBUG] brave.version: 5.16.0
+[DEBUG] build-helper-maven-plugin.version: 3.4.0
+[DEBUG] byte-buddy.version: 1.14.13
+[DEBUG] cache2k.version: 2.6.1.Final
+[DEBUG] caffeine.version: 3.1.8
+[DEBUG] cassandra-driver.version: 4.17.0
+[DEBUG] classmate.version: 1.6.0
+[DEBUG] classworlds.conf: E:\Spring\apache-maven-3.9.12\bin\m2.conf
+[DEBUG] commons-codec.version: 1.16.1
+[DEBUG] commons-dbcp2.version: 2.10.0
+[DEBUG] commons-lang3.version: 3.13.0
+[DEBUG] commons-pool.version: 1.6
+[DEBUG] commons-pool2.version: 2.12.0
+[DEBUG] couchbase-client.version: 3.4.11
+[DEBUG] crac.version: 1.4.0
+[DEBUG] db2-jdbc.version: 11.5.9.0
+[DEBUG] dependency-management-plugin.version: 1.1.4
+[DEBUG] derby.version: 10.16.1.1
+[DEBUG] dropwizard-metrics.version: 4.2.25
+[DEBUG] ehcache3.version: 3.10.8
+[DEBUG] elasticsearch-client.version: 8.10.4
+[DEBUG] env.=E:: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG] env.=EXITCODE: 00000000
+[DEBUG] env.AHA_CHROME_CRASHPAD_PIPE_NAME: \\.\pipe\crashpad_1160_QQRDTTCRJOZPXDNZ
+[DEBUG] env.AI_AGENT: TRAE
+[DEBUG] env.AI_DASHSCOPE_API_KEY: sk-053547f1e865438ba0bf8a560c2e5904
+[DEBUG] env.ALLUSERSPROFILE: C:\ProgramData
+[DEBUG] env.APPCODE_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\appcode.vmoptions
+[DEBUG] env.APPDATA: C:\Users\30829\AppData\Roaming
+[DEBUG] env.ARK_API_KEY: ark-fe98e019-722f-4172-a8cd-3d71e821ac0f-59255
+[DEBUG] env.CLASSWORLDS_JAR: "E:\Spring\apache-maven-3.9.12\boot\plexus-classworlds-2.9.0.jar"
+[DEBUG] env.CLASSWORLDS_LAUNCHER: org.codehaus.plexus.classworlds.launcher.Launcher
+[DEBUG] env.CLION_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\clion.vmoptions
+[DEBUG] env.COLORTERM: truecolor
+[DEBUG] env.COMMONPROGRAMFILES: C:\Program Files\Common Files
+[DEBUG] env.COMMONPROGRAMFILES(X86): C:\Program Files (x86)\Common Files
+[DEBUG] env.COMMONPROGRAMW6432: C:\Program Files\Common Files
+[DEBUG] env.COMPUTERNAME: PROMISE
+[DEBUG] env.COMSPEC: C:\WINDOWS\system32\cmd.exe
+[DEBUG] env.CONDA_DEFAULT_ENV: base
+[DEBUG] env.CONDA_EXE: E:\Anaconda\anaconda\Scripts\conda.exe
+[DEBUG] env.CONDA_PREFIX: E:\Anaconda\anaconda
+[DEBUG] env.CONDA_PROMPT_MODIFIER: (base) 
+[DEBUG] env.CONDA_PYTHON_EXE: E:\Anaconda\anaconda\python.exe
+[DEBUG] env.CONDA_SHLVL: 1
+[DEBUG] env.COZE_API: pat_eWk4YMgXWMfNgWH8LGitb6L3jzDwSNVUAnA3CuQq6kw4vEr0De3J60KvNJDwSNJY
+[DEBUG] env.DATAGRIP_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\datagrip.vmoptions
+[DEBUG] env.DATASPELL_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\dataspell.vmoptions
+[DEBUG] env.DEVECOSTUDIO_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\devecostudio.vmoptions
+[DEBUG] env.DRIVERDATA: C:\Windows\System32\Drivers\DriverData
+[DEBUG] env.EFC_12204_1592913036: 1
+[DEBUG] env.EFC_12204_2946480783: 1
+[DEBUG] env.EFC_12204_344590478: 1
+[DEBUG] env.EFC_12204_4126798990: 1
+[DEBUG] env.ERROR_CODE: 0
+[DEBUG] env.EXEC_DIR: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG] env.FPS_BROWSER_APP_PROFILE_STRING: Internet Explorer
+[DEBUG] env.FPS_BROWSER_USER_PROFILE_STRING: Default
+[DEBUG] env.GATEWAY_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\gateway.vmoptions
+[DEBUG] env.GIT_ASKPASS: d:\TRAE\Trae CN\resources\app\extensions\git\dist\askpass.sh
+[DEBUG] env.GOLAND_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\goland.vmoptions
+[DEBUG] env.HCL_INSTALL_PATH: D:\网络\HCL
+[DEBUG] env.HDC_SERVER_PORT: 65037
+[DEBUG] env.HOMEDRIVE: C:
+[DEBUG] env.HOMEPATH: \Users\30829
+[DEBUG] env.IDEA_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\idea.vmoptions
+[DEBUG] env.INTERNAL_MAVEN_OPTS: --enable-native-access=ALL-UNNAMED 
+[DEBUG] env.ISARCHMATCHED: 1
+[DEBUG] env.JAVACMD: E:\\JAVA\bin\java.exe
+[DEBUG] env.JAVA_HOME: E:\\JAVA
+[DEBUG] env.JETBRAINSCLIENT_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\jetbrainsclient.vmoptions
+[DEBUG] env.JETBRAINS_CLIENT_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\jetbrains_client.vmoptions
+[DEBUG] env.JVMCONFIG: \.mvn\jvm.config
+[DEBUG] env.LANG: zh_CN.UTF-8
+[DEBUG] env.LOCALAPPDATA: C:\Users\30829\AppData\Local
+[DEBUG] env.LOGONSERVER: \\PROMISE
+[DEBUG] env.MAVEN_CMD_LINE_ARGS: compile -X
+[DEBUG] env.MAVEN_HOME: E:\Spring\apache-maven-3.9.12
+[DEBUG] env.MAVEN_PROJECTBASEDIR: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG] env.NUMBER_OF_PROCESSORS: 16
+[DEBUG] env.ONEDRIVE: C:\Users\30829\OneDrive
+[DEBUG] env.ONEDRIVECONSUMER: C:\Users\30829\OneDrive
+[DEBUG] env.ONLINESERVICES: Online Services
+[DEBUG] env.OS: Windows_NT
+[DEBUG] env.PATH: E:\\JAVA\\bin;C:\\Users\\30829\\.trae-cn\\tools\\maven\\latest\\bin;C:\\Users\\30829\\.trae-cn\\tools\\gradle\\latest\\bin;c:\\Users\\30829\\.trae-cn\\tools\\trae-gopls\\current;c:\\Users\\30829\\.trae-cn\\sdks\\workspaces\\815c847c\\versions\\node\\current;c:\\Users\\30829\\.trae-cn\\sdks\\versions\\node\\current;E:\Anaconda\anaconda;E:\Anaconda\anaconda\Library\mingw-w64\bin;E:\Anaconda\anaconda\Library\usr\bin;E:\Anaconda\anaconda\Library\bin;E:\Anaconda\anaconda\Scripts;E:\Anaconda\anaconda\bin;E:\Anaconda\anaconda\condabin;E:\JAVA\bin;C:\Users\30829\.trae-cn\tools\maven\latest\bin;C:\Users\30829\.trae-cn\tools\gradle\latest\bin;c:\Users\30829\.trae-cn\tools\trae-gopls\current;c:\Users\30829\.trae-cn\sdks\workspaces\815c847c\versions\node\current;c:\Users\30829\.trae-cn\sdks\versions\node\current;D:\操作系统\bin;E:\;ython\Scripts;E:\python;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;E:\mingw\mingw64\bin;E:\Anaconda\anaconda;E:\Anaconda\anaconda\Scripts;E:\Anaconda\anaconda\Library\bin;E:\Anaconda\anaconda\Library\mingw-w64;E:\Anaconda\anaconda\Library\usr\bin;E:\xshell;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;E:\JAVA\bin;E:\Node.js;E:\Spring\apache-maven-3.9.12\bin;E:\Spring\git\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\30829\AppData\Local\Microsoft\WindowsApps;E:\Microsoft VS Code\bin;C:\Users\30829\AppData\Roaming\npm;E:\devecostudio\DevEco Studio\bin;.;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\30829\AppData\Local\Pandoc;C:\Users\30829\AppData\Local\Microsoft\WindowsApps;c:\Users\30829\.trae-cn\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;d:\TRAE\Trae CN\resources\app\node_modules\@vscode\ripgrep\bin
+[DEBUG] env.PATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL
+[DEBUG] env.PHPSTORM_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\phpstorm.vmoptions
+[DEBUG] env.PLATFORMCODE: AN
+[DEBUG] env.PROCESSOR_ARCHITECTURE: AMD64
+[DEBUG] env.PROCESSOR_IDENTIFIER: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+[DEBUG] env.PROCESSOR_LEVEL: 6
+[DEBUG] env.PROCESSOR_REVISION: 9a03
+[DEBUG] env.PROGRAMDATA: C:\ProgramData
+[DEBUG] env.PROGRAMFILES: C:\Program Files
+[DEBUG] env.PROGRAMFILES(X86): C:\Program Files (x86)
+[DEBUG] env.PROGRAMW6432: C:\Program Files
+[DEBUG] env.PROMPT: $P$G
+[DEBUG] env.PSMODULEPATH: C:\Users\30829\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+[DEBUG] env.PUBLIC: C:\Users\Public
+[DEBUG] env.PYCHARM_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\pycharm.vmoptions
+[DEBUG] env.PYTHONSTARTUP: c:\Users\30829\AppData\Roaming\Trae CN\User\workspaceStorage\815c847c66d550b8aba30b2381344064\ms-python.python\pythonrc.py
+[DEBUG] env.PYTHON_BASIC_REPL: 1
+[DEBUG] env.REGIONCODE: APJ
+[DEBUG] env.RIDER_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\rider.vmoptions
+[DEBUG] env.RUBYMINE_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\rubymine.vmoptions
+[DEBUG] env.SAFE_RM_ALLOWED_PATH: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET;c:\Users\30829\.trae-cn\memory;C:\Users\30829\AppData\Roaming\Trae CN\ModularData\ai-agent\hooks_env;C:\Users\30829\Library\Caches;C:\Users\30829\.cache;C:\Users\30829\.local\lib;C:\Users\30829\.local\bin;C:\Users\30829\.local\share;C:\Users\30829\go;C:\Users\30829\.gvm;C:\Users\30829\Library\Application Support\go;C:\Users\30829\.local\share\go;C:\Users\30829\.m2;C:\Users\30829\.gradle;C:\Users\30829\.sdkman;C:\Users\30829\miniconda3;C:\Users\30829\.conda;C:\Users\30829\.pyenv;C:\Users\30829\Library\Python;C:\Users\30829\.npm;C:\Users\30829\Library\pnpm;C:\Users\30829\.fnm;C:\Users\30829\.nvm;C:\Users\30829\.rustup;C:\Users\30829\.cargo;C:\Users\30829\.cmake;C:\Users\30829\.llvm;C:\Users\30829\.bazel;C:\Users\30829\.gitlog;C:\Users\30829\.docker;C:\Users\30829\Library\Logs;C:\Users\30829\fvm;C:\Users\30829\.swiftpm;C:\Users\30829\.android;C:\Users\30829\.oracle_jre_usage;C:\Users\30829\.dart-tool;C:\Users\30829\.pub-cache;C:\Users\30829\Library\flutter;C:\Users\30829\Library\Developer\Xcode;C:\Users\30829\.yarn;C:\Users\30829\.foundry;C:\Users\30829\.asdf;C:\Users\30829\.jenv;C:\Users\30829\.gem;C:\Users\30829\.rvm;C:\Users\30829\.rbenv;C:\Users\30829\.bundle;C:\Users\30829\.dotnet;C:\Users\30829\.nuget;C:\Users\30829\.sbt;C:\Users\30829\.ivy2;C:\Users\30829\.coursier;C:\Users\30829\.hawtjni;C:\Users\30829\.local\state\pnpm;C:\Users\30829\.local\state\fnm_multishells;C:\Users\30829\.webx;C:\Users\30829\.bun;C:\Users\30829\.bash_history;C:\Users\30829\AppData\Local\go-build;C:\Users\30829\AppData\Local\pip;C:\Users\30829\AppData\Roaming\go;C:\Users\30829\AppData\Local\conda;C:\Users\30829\AppData\Local\uv;C:\Users\30829\AppData\Roaming\uv;C:\Users\30829\miniforge3;C:\Users\30829\AppData\Local\npm-cache;C:\Users\30829\AppData\Local\pnpm;C:\Users\30829\AppData\Local\Yarn;C:\Users\30829\AppData\Local\fnm_multishells;C:\Users\30829\AppData\Local\Microsoft\VSApplicationInsights;C:\Users\30829\AppData\Local\Microsoft\Windows\INetCache;C:\ProgramData\Microsoft\NetFramework\BreadcrumbStore;C:\Users\30829\AppData\Local\NuGet;C:\Users\30829\.templateengine;C:\Users\30829\.matplotlib;C:\Users\30829\AppData\Local\Microsoft\PowerShell;C:\Users\30829\AppData\Local\Microsoft\Windows\PowerShell;C:\Users\30829\AppData\Roaming\.dart-tool;C:\Users\30829\AppData\Roaming\.flutter;C:\Users\30829\AppData\Local\Temp;C:\Users\30829\AppData\LocalLow\Temp;C:\Users\30829\.Trash;C:\Users\30829\.lark-cli;C:\Users\30829\Library\Application Support\lark-cli;C:\Users\30829\.devflow-cli;C:\Users\30829\.agentbuddy;C:\Users\30829\.bits-ut
+[DEBUG] env.SAFE_RM_AUTO_ADD_TEMP: 1
+[DEBUG] env.SAFE_RM_DENIED_PATH: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\.vscode;e:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\.trae\mcp.json;e:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\.git
+[DEBUG] env.SAFE_RM_PROTECTION_FLAG: c:\Users\30829\AppData\Local\Temp\safe-rm-protection-flag-f96ecd9d-798a-46df-a3c0-6b8d35204b11
+[DEBUG] env.SAFE_RM_SOURCE_FLAG: c:\Users\30829\AppData\Local\Temp\safe-rm-source-flag-7d172ed5-b354-46ac-b1f9-a8df9a14c4a4
+[DEBUG] env.SBOX_SHARED_DATA_NAME: \Sessions\1\BaseNamedObjects\Host_Shared_TRAE-SBX-4124-1781705218123253100
+[DEBUG] env.SESSIONNAME: Console
+[DEBUG] env.SSL_CERT_DIR: E:\Anaconda\anaconda\Library\ssl\certs
+[DEBUG] env.SSL_CERT_FILE: E:\Anaconda\anaconda\Library\ssl\cacert.pem
+[DEBUG] env.STUDIO_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\studio.vmoptions
+[DEBUG] env.SYSTEMDRIVE: C:
+[DEBUG] env.SYSTEMROOT: C:\WINDOWS
+[DEBUG] env.TEMP: D:\Windows_Temp
+[DEBUG] env.TERM_PRODUCT: Trae
+[DEBUG] env.TERM_PROGRAM: vscode
+[DEBUG] env.TERM_PROGRAM_VERSION: 1.107.1
+[DEBUG] env.TMP: D:\Windows_Temp
+[DEBUG] env.TRAE_AI_SHELL_ID: 6
+[DEBUG] env.TRAE_BRAND_NAME: Trae CN
+[DEBUG] env.TRAE_JWT_TOKEN_PATH: C:\Users\30829\.trae-cn\trae-jwt-token
+[DEBUG] env.TRAE_SANDBOX_CLI_PATH: d:\TRAE\Trae CN\resources\app\modules\sandbox\trae-sandbox.exe
+[DEBUG] env.TRAE_SANDBOX_COMMAND_LINE: mvn.cmd compile -X 2>&1 | Out-File -FilePath "e:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\compile_log.txt" -Encoding utf8
+[DEBUG] env.TRAE_SANDBOX_CONFIG_NAME: 6a32a41c18d9372cddf9ded1
+[DEBUG] env.TRAE_SANDBOX_DUMP_DIR: C:\Users\30829\AppData\Roaming\Trae CN\Crashpad\sandbox-pending
+[DEBUG] env.TRAE_SANDBOX_LOG_DIR: c:\Users\30829\AppData\Roaming\Trae CN\logs\20260617T164336\Modular
+[DEBUG] env.TRAE_SANDBOX_SOURCE_FLAG_PATH: c:\Users\30829\AppData\Local\Temp\sandbox-source-flag-a4e2a640-fbf9-4105-8d31-3ece5dc1943a
+[DEBUG] env.TRAE_SANDBOX_STORAGE_PATH: C:\Users\30829\AppData\Roaming\Trae CN\ModularData\ai-agent\sandbox
+[DEBUG] env.TRAE_SANDBOX_TRACE_FILE: c:\Users\30829\AppData\Local\Temp\trae_sandbox_trace_19900b22-507c-4228-9484-5ce7dbd3145c.jsonl
+[DEBUG] env.USERDOMAIN: PROMISE
+[DEBUG] env.USERDOMAIN_ROAMINGPROFILE: PROMISE
+[DEBUG] env.USERNAME: 30829
+[DEBUG] env.USERPROFILE: C:\Users\30829
+[DEBUG] env.VBOX_MSI_INSTALL_PATH: E:\操作系统\virtual box\
+[DEBUG] env.VSCODE_GIT_ASKPASS_EXTRA_ARGS: 
+[DEBUG] env.VSCODE_GIT_ASKPASS_MAIN: d:\TRAE\Trae CN\resources\app\extensions\git\dist\askpass-main.js
+[DEBUG] env.VSCODE_GIT_ASKPASS_NODE: D:\TRAE\Trae CN\Trae CN.exe
+[DEBUG] env.VSCODE_GIT_IPC_HANDLE: \\.\pipe\vscode-git-798a1d8f1b-sock
+[DEBUG] env.VSCODE_INJECTION: 1
+[DEBUG] env.VSCODE_JAVA_EXEC: E:\JAVA\bin\java
+[DEBUG] env.VSCODE_JDWP_ADAPTER_ENDPOINTS: c:\Users\30829\.trae-cn\extensions\vscjava.vscode-java-debug-0.59.0-universal\.noConfigDebugAdapterEndpoints\endpoint-15a494d46bdfa63d.txt
+[DEBUG] env.VSCODE_PYTHON_AUTOACTIVATE_GUARD: 1
+[DEBUG] env.WDIR: E:\
+[DEBUG] env.WEBIDE_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\webide.vmoptions
+[DEBUG] env.WEBSTORM_VM_OPTIONS: E:\Spring\idea\jetbra-pojie\win2021-2025\vmoptions\webstorm.vmoptions
+[DEBUG] env.WINDIR: C:\WINDOWS
+[DEBUG] env.ZES_ENABLE_SYSMAN: 1
+[DEBUG] env._CONDA_EXE: E:\Anaconda\anaconda\Scripts\conda.exe
+[DEBUG] env._CONDA_ROOT: E:\Anaconda\anaconda
+[DEBUG] env.__CONDA_OPENSSL_CERT_DIR_SET: 1
+[DEBUG] env.__CONDA_OPENSSL_CERT_FILE_SET: 1
+[DEBUG] file.encoding: GBK
+[DEBUG] file.separator: \
+[DEBUG] flyway.version: 9.22.3
+[DEBUG] freemarker.version: 2.3.32
+[DEBUG] git-commit-id-maven-plugin.version: 6.0.0
+[DEBUG] glassfish-jaxb.version: 4.0.5
+[DEBUG] glassfish-jstl.version: 3.0.1
+[DEBUG] graphql-java.version: 21.4
+[DEBUG] groovy.version: 4.0.21
+[DEBUG] gson.version: 2.10.1
+[DEBUG] h2.version: 2.2.224
+[DEBUG] hamcrest.version: 2.2
+[DEBUG] hazelcast.version: 5.3.7
+[DEBUG] hibernate-validator.version: 8.0.1.Final
+[DEBUG] hibernate.version: 6.4.4.Final
+[DEBUG] hikaricp.version: 5.0.1
+[DEBUG] hsqldb.version: 2.7.2
+[DEBUG] htmlunit.version: 2.70.0
+[DEBUG] httpasyncclient.version: 4.1.5
+[DEBUG] httpclient5.version: 5.2.3
+[DEBUG] httpcore.version: 4.4.16
+[DEBUG] httpcore5.version: 5.2.4
+[DEBUG] infinispan.version: 14.0.27.Final
+[DEBUG] influxdb-java.version: 2.23
+[DEBUG] jackson-bom.version: 2.15.4
+[DEBUG] jakarta-activation.version: 2.1.3
+[DEBUG] jakarta-annotation.version: 2.1.1
+[DEBUG] jakarta-jms.version: 3.1.0
+[DEBUG] jakarta-json-bind.version: 3.0.1
+[DEBUG] jakarta-json.version: 2.1.3
+[DEBUG] jakarta-mail.version: 2.1.3
+[DEBUG] jakarta-management.version: 1.1.4
+[DEBUG] jakarta-persistence.version: 3.1.0
+[DEBUG] jakarta-servlet-jsp-jstl.version: 3.0.0
+[DEBUG] jakarta-servlet.version: 6.0.0
+[DEBUG] jakarta-transaction.version: 2.0.1
+[DEBUG] jakarta-validation.version: 3.0.2
+[DEBUG] jakarta-websocket.version: 2.1.1
+[DEBUG] jakarta-ws-rs.version: 3.1.0
+[DEBUG] jakarta-xml-bind.version: 4.0.2
+[DEBUG] jakarta-xml-soap.version: 3.0.1
+[DEBUG] jakarta-xml-ws.version: 4.0.1
+[DEBUG] janino.version: 3.1.12
+[DEBUG] java.class.path: E:\Spring\apache-maven-3.9.12\boot\plexus-classworlds-2.9.0.jar
+[DEBUG] java.class.version: 61.0
+[DEBUG] java.home: E:\JAVA
+[DEBUG] java.io.tmpdir: D:\Windows_Temp\
+[DEBUG] java.library.path: E:\JAVA\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\\JAVA\\bin;C:\\Users\\30829\\.trae-cn\\tools\\maven\\latest\\bin;C:\\Users\\30829\\.trae-cn\\tools\\gradle\\latest\\bin;c:\\Users\\30829\\.trae-cn\\tools\\trae-gopls\\current;c:\\Users\\30829\\.trae-cn\\sdks\\workspaces\\815c847c\\versions\\node\\current;c:\\Users\\30829\\.trae-cn\\sdks\\versions\\node\\current;E:\Anaconda\anaconda;E:\Anaconda\anaconda\Library\mingw-w64\bin;E:\Anaconda\anaconda\Library\usr\bin;E:\Anaconda\anaconda\Library\bin;E:\Anaconda\anaconda\Scripts;E:\Anaconda\anaconda\bin;E:\Anaconda\anaconda\condabin;E:\JAVA\bin;C:\Users\30829\.trae-cn\tools\maven\latest\bin;C:\Users\30829\.trae-cn\tools\gradle\latest\bin;c:\Users\30829\.trae-cn\tools\trae-gopls\current;c:\Users\30829\.trae-cn\sdks\workspaces\815c847c\versions\node\current;c:\Users\30829\.trae-cn\sdks\versions\node\current;D:\操作系统\bin;E:\;ython\Scripts;E:\python;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;E:\mingw\mingw64\bin;E:\Anaconda\anaconda;E:\Anaconda\anaconda\Scripts;E:\Anaconda\anaconda\Library\bin;E:\Anaconda\anaconda\Library\mingw-w64;E:\Anaconda\anaconda\Library\usr\bin;E:\xshell;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;E:\JAVA\bin;E:\Node.js;E:\Spring\apache-maven-3.9.12\bin;E:\Spring\git\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\30829\AppData\Local\Microsoft\WindowsApps;E:\Microsoft VS Code\bin;C:\Users\30829\AppData\Roaming\npm;E:\devecostudio\DevEco Studio\bin;.;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\30829\AppData\Local\Pandoc;C:\Users\30829\AppData\Local\Microsoft\WindowsApps;c:\Users\30829\.trae-cn\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;d:\TRAE\Trae CN\resources\app\node_modules\@vscode\ripgrep\bin;.
+[DEBUG] java.runtime.name: Java(TM) SE Runtime Environment
+[DEBUG] java.runtime.version: 17.0.17+8-LTS-360
+[DEBUG] java.specification.maintenance.version: 1
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 17
+[DEBUG] java.vendor: Oracle Corporation
+[DEBUG] java.vendor.url: https://java.oracle.com/
+[DEBUG] java.vendor.url.bug: https://bugreport.java.com/bugreport/
+[DEBUG] java.version: 17.0.17
+[DEBUG] java.version.date: 2025-10-21
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: Java HotSpot(TM) 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 17
+[DEBUG] java.vm.vendor: Oracle Corporation
+[DEBUG] java.vm.version: 17.0.17+8-LTS-360
+[DEBUG] javax-cache.version: 1.1.1
+[DEBUG] javax-money.version: 1.1
+[DEBUG] jaxen.version: 2.0.0
+[DEBUG] jaybird.version: 5.0.4.java11
+[DEBUG] jboss-logging.version: 3.5.3.Final
+[DEBUG] jdk.debug: release
+[DEBUG] jdom2.version: 2.0.6.1
+[DEBUG] jedis.version: 5.0.2
+[DEBUG] jersey.version: 3.1.6
+[DEBUG] jetty-reactive-httpclient.version: 4.0.3
+[DEBUG] jetty.version: 12.0.8
+[DEBUG] jmustache.version: 1.15
+[DEBUG] jooq.version: 3.18.14
+[DEBUG] json-path.version: 2.9.0
+[DEBUG] json-smart.version: 2.5.1
+[DEBUG] jsonassert.version: 1.5.1
+[DEBUG] jtds.version: 1.3.1
+[DEBUG] junit-jupiter.version: 5.10.2
+[DEBUG] junit.version: 4.13.2
+[DEBUG] kafka.version: 3.6.2
+[DEBUG] kotlin-coroutines.version: 1.7.3
+[DEBUG] kotlin-serialization.version: 1.6.3
+[DEBUG] kotlin.version: 1.9.23
+[DEBUG] lettuce.version: 6.3.2.RELEASE
+[DEBUG] library.jansi.path: E:\Spring\apache-maven-3.9.12\lib\jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] liquibase.version: 4.24.0
+[DEBUG] log4j2.version: 2.21.1
+[DEBUG] logback.version: 1.4.14
+[DEBUG] lombok.version: 1.18.32
+[DEBUG] mariadb.version: 3.3.3
+[DEBUG] maven-antrun-plugin.version: 3.1.0
+[DEBUG] maven-assembly-plugin.version: 3.6.0
+[DEBUG] maven-clean-plugin.version: 3.3.2
+[DEBUG] maven-compiler-plugin.version: 3.11.0
+[DEBUG] maven-dependency-plugin.version: 3.6.1
+[DEBUG] maven-deploy-plugin.version: 3.1.1
+[DEBUG] maven-enforcer-plugin.version: 3.4.1
+[DEBUG] maven-failsafe-plugin.version: 3.1.2
+[DEBUG] maven-help-plugin.version: 3.4.0
+[DEBUG] maven-install-plugin.version: 3.1.1
+[DEBUG] maven-invoker-plugin.version: 3.6.1
+[DEBUG] maven-jar-plugin.version: 3.3.0
+[DEBUG] maven-javadoc-plugin.version: 3.6.3
+[DEBUG] maven-resources-plugin.version: 3.3.1
+[DEBUG] maven-shade-plugin.version: 3.5.2
+[DEBUG] maven-source-plugin.version: 3.3.1
+[DEBUG] maven-surefire-plugin.version: 3.1.2
+[DEBUG] maven-war-plugin.version: 3.4.0
+[DEBUG] maven.build.timestamp: 2026-06-17T14:07:03Z
+[DEBUG] maven.build.version: Apache Maven 3.9.12 (848fbb4bf2d427b72bdb2471c22fced7ebd9a7a1)
+[DEBUG] maven.compiler.fork: true
+[DEBUG] maven.compiler.release: 17
+[DEBUG] maven.compiler.source: 17
+[DEBUG] maven.compiler.target: 17
+[DEBUG] maven.conf: E:\Spring\apache-maven-3.9.12/conf
+[DEBUG] maven.home: E:\Spring\apache-maven-3.9.12
+[DEBUG] maven.multiModuleProjectDirectory: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG] maven.version: 3.9.12
+[DEBUG] micrometer-tracing.version: 1.2.5
+[DEBUG] micrometer.version: 1.12.5
+[DEBUG] mockito.version: 5.7.0
+[DEBUG] mongodb.version: 4.11.2
+[DEBUG] mssql-jdbc.version: 12.4.2.jre11
+[DEBUG] mysql.version: 8.3.0
+[DEBUG] native-build-tools-plugin.version: 0.9.28
+[DEBUG] native.encoding: GBK
+[DEBUG] nekohtml.version: 1.9.22
+[DEBUG] neo4j-java-driver.version: 5.19.0
+[DEBUG] netty.version: 4.1.109.Final
+[DEBUG] okhttp.version: 4.12.0
+[DEBUG] opentelemetry.version: 1.31.0
+[DEBUG] oracle-database.version: 21.9.0.0
+[DEBUG] oracle-r2dbc.version: 1.1.1
+[DEBUG] os.arch: amd64
+[DEBUG] os.name: Windows 11
+[DEBUG] os.version: 10.0
+[DEBUG] path.separator: ;
+[DEBUG] pooled-jms.version: 3.1.5
+[DEBUG] postgresql.version: 42.6.2
+[DEBUG] project.baseUri: file:/E:/xwechat_files/wxid_t1mkbayteh2522_c76e/msg/file/2026-06/PET/backend/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] project.reporting.outputEncoding: UTF-8
+[DEBUG] prometheus-client.version: 0.16.0
+[DEBUG] pulsar-reactive.version: 0.5.4
+[DEBUG] pulsar.version: 3.1.3
+[DEBUG] quartz.version: 2.3.2
+[DEBUG] querydsl.version: 5.0.0
+[DEBUG] r2dbc-h2.version: 1.0.0.RELEASE
+[DEBUG] r2dbc-mariadb.version: 1.1.4
+[DEBUG] r2dbc-mssql.version: 1.0.2.RELEASE
+[DEBUG] r2dbc-mysql.version: 1.0.6
+[DEBUG] r2dbc-pool.version: 1.0.1.RELEASE
+[DEBUG] r2dbc-postgresql.version: 1.0.5.RELEASE
+[DEBUG] r2dbc-proxy.version: 1.1.4.RELEASE
+[DEBUG] r2dbc-spi.version: 1.0.0.RELEASE
+[DEBUG] rabbit-amqp-client.version: 5.19.0
+[DEBUG] rabbit-stream-client.version: 0.14.0
+[DEBUG] reactive-streams.version: 1.0.4
+[DEBUG] reactor-bom.version: 2023.0.5
+[DEBUG] resource.delimiter: @
+[DEBUG] rest-assured.version: 5.3.2
+[DEBUG] rsocket.version: 1.1.3
+[DEBUG] rxjava3.version: 3.1.8
+[DEBUG] saaj-impl.version: 3.0.3
+[DEBUG] selenium-htmlunit.version: 4.13.0
+[DEBUG] selenium.version: 4.14.1
+[DEBUG] sendgrid.version: 4.9.3
+[DEBUG] slf4j.version: 2.0.13
+[DEBUG] snakeyaml.version: 2.2
+[DEBUG] spring-amqp.version: 3.1.4
+[DEBUG] spring-authorization-server.version: 1.2.4
+[DEBUG] spring-batch.version: 5.1.1
+[DEBUG] spring-data-bom.version: 2023.1.5
+[DEBUG] spring-framework.version: 6.1.6
+[DEBUG] spring-graphql.version: 1.2.6
+[DEBUG] spring-hateoas.version: 2.2.2
+[DEBUG] spring-integration.version: 6.2.4
+[DEBUG] spring-kafka.version: 3.1.4
+[DEBUG] spring-ldap.version: 3.2.3
+[DEBUG] spring-pulsar.version: 1.0.5
+[DEBUG] spring-restdocs.version: 3.0.1
+[DEBUG] spring-retry.version: 2.0.5
+[DEBUG] spring-security.version: 6.2.4
+[DEBUG] spring-session.version: 3.2.2
+[DEBUG] spring-ws.version: 4.0.10
+[DEBUG] sqlite-jdbc.version: 3.43.2.0
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: E:\JAVA\bin
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.cpu.isalist: amd64
+[DEBUG] sun.io.unicode.encoding: UnicodeLittle
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher compile -X
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: GBK
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] sun.os.patch.level: 
+[DEBUG] testcontainers.version: 1.19.7
+[DEBUG] thymeleaf-extras-data-attribute.version: 2.0.1
+[DEBUG] thymeleaf-extras-springsecurity.version: 3.1.2.RELEASE
+[DEBUG] thymeleaf-layout-dialect.version: 3.3.0
+[DEBUG] thymeleaf.version: 3.1.2.RELEASE
+[DEBUG] tomcat.version: 10.1.20
+[DEBUG] unboundid-ldapsdk.version: 6.0.11
+[DEBUG] undertow.version: 2.3.12.Final
+[DEBUG] user.country: CN
+[DEBUG] user.dir: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG] user.home: C:\Users\30829
+[DEBUG] user.language: zh
+[DEBUG] user.name: 30829
+[DEBUG] user.script: 
+[DEBUG] user.variant: 
+[DEBUG] versions-maven-plugin.version: 2.16.2
+[DEBUG] webjars-locator-core.version: 0.55
+[DEBUG] wsdl4j.version: 1.6.3
+[DEBUG] xml-maven-plugin.version: 1.1.0
+[DEBUG] xmlunit2.version: 2.9.1
+[DEBUG] yasson.version: 3.0.3
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources
+excludes []
+includes [**/application*.yml, **/application*.yaml, **/application*.properties]
+[DEBUG] ignoreDelta true
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[DEBUG] Copying file application-dev.yml
+[DEBUG] file application-dev.yml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'application-dev.yml'.
+[DEBUG] filtering E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources\application-dev.yml to E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes\application-dev.yml
+[DEBUG] Copying file application-docker.yml
+[DEBUG] file application-docker.yml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'application-docker.yml'.
+[DEBUG] filtering E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources\application-docker.yml to E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes\application-docker.yml
+[DEBUG] Copying file application.yml
+[DEBUG] file application.yml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'application.yml'.
+[DEBUG] filtering E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources\application.yml to E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes\application.yml
+[DEBUG] resource with targetPath null
+directory E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources
+excludes [**/application*.yml, **/application*.yaml, **/application*.properties]
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[DEBUG] Copying file sql\init.sql
+[DEBUG] file init.sql has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'init.sql'.
+[DEBUG] copy E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\resources\sql\init.sql to E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes\sql\init.sql
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.12.1:compile (default-compile) @ pet-backend ---
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for apache.snapshots (http://repository.apache.org/snapshots).
+[DEBUG] Using mirror aliyunmaven (https://maven.aliyun.com/repository/public) for oss.snapshots (https://oss.sonatype.org/content/repositories/plexus-snapshots/).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=64900, ConflictMarker.markTime=26000, ConflictMarker.nodeCount=21, ConflictIdSorter.graphTime=30400, ConflictIdSorter.topsortTime=18100, ConflictIdSorter.conflictIdCount=15, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=450400, ConflictResolver.conflictItemCount=21, DfDependencyCollector.collectTime=61102900, DfDependencyCollector.transformTime=616900}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:3.12.1
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.4.2:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       commons-io:commons-io:jar:2.11.0:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:1.2.0:compile
+[DEBUG]       org.ow2.asm:asm:jar:9.6:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0.3:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.14.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.14.2:compile
+[DEBUG]       javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.codehaus.plexus:plexus-xml:jar:3.0.0:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.14.2:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:4.0.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.12.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.12.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.12.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.12.1
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.4.2
+[DEBUG]   Included: commons-io:commons-io:jar:2.11.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.2.0
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.6
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.14.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.14.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-xml:jar:3.0.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.14.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:4.0.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.12.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile:default-compile' with basic configurator -->
+[DEBUG]   (s) groupId = org.projectlombok
+[DEBUG]   (s) artifactId = lombok
+[DEBUG]   (s) version = 1.18.32
+[DEBUG]   (f) annotationProcessorPaths = [org.projectlombok:lombok:1.18.32.jar]
+[DEBUG]   (f) annotationProcessorPathsUseDepMgmt = false
+[DEBUG]   (f) basedir = E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend
+[DEBUG]   (f) buildDirectory = E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target
+[DEBUG]   (f) compilePath = [E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar, C:\Users\30829\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar, C:\Users\30829\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar, C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar, C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar, C:\Users\30829\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar, C:\Users\30829\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar, C:\Users\30829\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar, C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar, C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar, C:\Users\30829\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar, C:\Users\30829\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar, C:\Users\30829\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar, C:\Users\30829\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.5\spring-boot-starter-data-jpa-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.5\spring-boot-starter-aop-3.2.5.jar, C:\Users\30829\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar, C:\Users\30829\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar, C:\Users\30829\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar, C:\Users\30829\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar, C:\Users\30829\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar, C:\Users\30829\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar, C:\Users\30829\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar, C:\Users\30829\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar, C:\Users\30829\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar, C:\Users\30829\.m2\repository\org\springframework\data\spring-data-jpa\3.2.5\spring-data-jpa-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\data\spring-data-commons\3.2.5\spring-data-commons-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\spring-orm\6.1.6\spring-orm-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar, C:\Users\30829\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar, C:\Users\30829\.m2\repository\org\springframework\spring-aspects\6.1.6\spring-aspects-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-redis\3.2.5\spring-boot-starter-data-redis-3.2.5.jar, C:\Users\30829\.m2\repository\io\lettuce\lettuce-core\6.3.2.RELEASE\lettuce-core-6.3.2.RELEASE.jar, C:\Users\30829\.m2\repository\io\netty\netty-common\4.1.109.Final\netty-common-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-handler\4.1.109.Final\netty-handler-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-resolver\4.1.109.Final\netty-resolver-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-buffer\4.1.109.Final\netty-buffer-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.109.Final\netty-transport-native-unix-common-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-codec\4.1.109.Final\netty-codec-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\netty\netty-transport\4.1.109.Final\netty-transport-4.1.109.Final.jar, C:\Users\30829\.m2\repository\io\projectreactor\reactor-core\3.6.5\reactor-core-3.6.5.jar, C:\Users\30829\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar, C:\Users\30829\.m2\repository\org\springframework\data\spring-data-redis\3.2.5\spring-data-redis-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\data\spring-data-keyvalue\3.2.5\spring-data-keyvalue-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\spring-oxm\6.1.6\spring-oxm-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-context-support\6.1.6\spring-context-support-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar, C:\Users\30829\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar, C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar, C:\Users\30829\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar, C:\Users\30829\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar, C:\Users\30829\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.3\jjwt-api-0.12.3.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar, C:\Users\30829\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar, C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.3.0\springdoc-openapi-starter-webmvc-ui-2.3.0.jar, C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.3.0\springdoc-openapi-starter-webmvc-api-2.3.0.jar, C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.3.0\springdoc-openapi-starter-common-2.3.0.jar, C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.19\swagger-core-jakarta-2.2.19.jar, C:\Users\30829\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar, C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.19\swagger-annotations-jakarta-2.2.19.jar, C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.19\swagger-models-jakarta-2.2.19.jar, C:\Users\30829\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar, C:\Users\30829\.m2\repository\org\webjars\swagger-ui\5.10.3\swagger-ui-5.10.3.jar, C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-amqp\3.2.5\spring-boot-starter-amqp-3.2.5.jar, C:\Users\30829\.m2\repository\org\springframework\spring-messaging\6.1.6\spring-messaging-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\amqp\spring-rabbit\3.1.4\spring-rabbit-3.1.4.jar, C:\Users\30829\.m2\repository\org\springframework\amqp\spring-amqp\3.1.4\spring-amqp-3.1.4.jar, C:\Users\30829\.m2\repository\org\springframework\retry\spring-retry\2.0.5\spring-retry-2.0.5.jar, C:\Users\30829\.m2\repository\com\rabbitmq\amqp-client\5.19.0\amqp-client-5.19.0.jar, C:\Users\30829\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar, C:\Users\30829\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar, C:\Users\30829\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar, C:\Users\30829\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar, C:\Users\30829\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar]
+[DEBUG]   (f) compileSourceRoots = [E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) fileExtensions = [jar, class]
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = true
+[DEBUG]   (f) generatedSourcesDirectory = E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile {execution: default-compile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes
+[DEBUG]   (f) parameters = true
+[DEBUG]   (f) project = MavenProject: com.example:pet-backend:1.0.0 @ E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\pom.xml
+[DEBUG]   (f) projectArtifact = com.example:pet-backend:jar:1.0.0
+[DEBUG]   (s) release = 17
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4eb166a1
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 17
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 17
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations to compile source roots:
+  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java
+[DEBUG] New compile source roots:
+  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java
+  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=23900, ConflictMarker.markTime=17300, ConflictMarker.nodeCount=2, ConflictIdSorter.graphTime=4700, ConflictIdSorter.topsortTime=9800, ConflictIdSorter.conflictIdCount=1, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=98200, ConflictResolver.conflictItemCount=1, DfDependencyCollector.collectTime=3982100, DfDependencyCollector.transformTime=174100}
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Adoption.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\WebMvcConfig.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Like.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PetRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PhotoResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\AuthResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Comment.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\PhotoCollection.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\PetCreateRequest.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\UserRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\RabbitMQConfig.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\util\JwtUtil.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\EmailMessage.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\CorsConfig.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\FavoriteController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\FavoriteRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\RegisterRequest.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\PetController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\MessageConsumerService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\StatsController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\UserController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\Application.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\FavoriteService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\DistributedLockService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\OpenApiConfig.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\UserSimpleResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Favorite.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\exception\GlobalExceptionHandler.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AuthController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\PhotoRequest.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\UserResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\Permission.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PhotoCollectionRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\SecurityConfig.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\MessageProducerService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PetService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\LikeRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Photo.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\NotificationMessage.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\AdoptionResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PetSimpleResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\User.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\CommentRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PhotoRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\HealthController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PageResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UploadService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AiController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\LoginRequest.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Notification.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\AdoptionRequest.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\NotificationController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PetResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\CommentResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\CommentController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AdoptionController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\AdoptionRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\JwtAuthenticationFilter.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\NotificationResponse.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\UploadController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Pet.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\exception\BusinessException.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AdoptionService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\PhotoController.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\NotificationRepository.java
+[INFO] 	Stale source detected: E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\CommentService.java
+[INFO] Recompiling the module because of changed source code.
+[DEBUG] Classpath:
+[DEBUG]  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar
+[DEBUG]  C:\Users\30829\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.5\spring-boot-starter-data-jpa-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.5\spring-boot-starter-aop-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\data\spring-data-jpa\3.2.5\spring-data-jpa-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\data\spring-data-commons\3.2.5\spring-data-commons-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-orm\6.1.6\spring-orm-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-aspects\6.1.6\spring-aspects-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-redis\3.2.5\spring-boot-starter-data-redis-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\lettuce\lettuce-core\6.3.2.RELEASE\lettuce-core-6.3.2.RELEASE.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-common\4.1.109.Final\netty-common-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-handler\4.1.109.Final\netty-handler-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-resolver\4.1.109.Final\netty-resolver-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-buffer\4.1.109.Final\netty-buffer-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.109.Final\netty-transport-native-unix-common-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-codec\4.1.109.Final\netty-codec-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\netty\netty-transport\4.1.109.Final\netty-transport-4.1.109.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\projectreactor\reactor-core\3.6.5\reactor-core-3.6.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\data\spring-data-redis\3.2.5\spring-data-redis-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\data\spring-data-keyvalue\3.2.5\spring-data-keyvalue-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-oxm\6.1.6\spring-oxm-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-context-support\6.1.6\spring-context-support-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.3\jjwt-api-0.12.3.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.3.0\springdoc-openapi-starter-webmvc-ui-2.3.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.3.0\springdoc-openapi-starter-webmvc-api-2.3.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.3.0\springdoc-openapi-starter-common-2.3.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.19\swagger-core-jakarta-2.2.19.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.19\swagger-annotations-jakarta-2.2.19.jar
+[DEBUG]  C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.19\swagger-models-jakarta-2.2.19.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\webjars\swagger-ui\5.10.3\swagger-ui-5.10.3.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-amqp\3.2.5\spring-boot-starter-amqp-3.2.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-messaging\6.1.6\spring-messaging-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\amqp\spring-rabbit\3.1.4\spring-rabbit-3.1.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\amqp\spring-amqp\3.1.4\spring-amqp-3.1.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\retry\spring-retry\2.0.5\spring-retry-2.0.5.jar
+[DEBUG]  C:\Users\30829\.m2\repository\com\rabbitmq\amqp-client\5.19.0\amqp-client-5.19.0.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar
+[DEBUG]  C:\Users\30829\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar
+[DEBUG]  C:\Users\30829\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar
+[DEBUG] Source roots:
+[DEBUG]  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java
+[DEBUG]  E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations
+[DEBUG] Command line options:
+[DEBUG] -d E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes -classpath E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar;C:\Users\30829\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\30829\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\30829\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\30829\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar;C:\Users\30829\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\30829\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar;C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar;C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar;C:\Users\30829\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar;C:\Users\30829\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar;C:\Users\30829\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar;C:\Users\30829\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.5\spring-boot-starter-data-jpa-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.5\spring-boot-starter-aop-3.2.5.jar;C:\Users\30829\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar;C:\Users\30829\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\30829\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar;C:\Users\30829\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\30829\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\30829\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\30829\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\30829\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\30829\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\30829\.m2\repository\org\springframework\data\spring-data-jpa\3.2.5\spring-data-jpa-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\data\spring-data-commons\3.2.5\spring-data-commons-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\spring-orm\6.1.6\spring-orm-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar;C:\Users\30829\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\30829\.m2\repository\org\springframework\spring-aspects\6.1.6\spring-aspects-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-data-redis\3.2.5\spring-boot-starter-data-redis-3.2.5.jar;C:\Users\30829\.m2\repository\io\lettuce\lettuce-core\6.3.2.RELEASE\lettuce-core-6.3.2.RELEASE.jar;C:\Users\30829\.m2\repository\io\netty\netty-common\4.1.109.Final\netty-common-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-handler\4.1.109.Final\netty-handler-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-resolver\4.1.109.Final\netty-resolver-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-buffer\4.1.109.Final\netty-buffer-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.109.Final\netty-transport-native-unix-common-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-codec\4.1.109.Final\netty-codec-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\netty\netty-transport\4.1.109.Final\netty-transport-4.1.109.Final.jar;C:\Users\30829\.m2\repository\io\projectreactor\reactor-core\3.6.5\reactor-core-3.6.5.jar;C:\Users\30829\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\30829\.m2\repository\org\springframework\data\spring-data-redis\3.2.5\spring-data-redis-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\data\spring-data-keyvalue\3.2.5\spring-data-keyvalue-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\spring-oxm\6.1.6\spring-oxm-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-context-support\6.1.6\spring-context-support-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar;C:\Users\30829\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar;C:\Users\30829\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar;C:\Users\30829\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\30829\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\30829\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.3\jjwt-api-0.12.3.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\30829\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.3.0\springdoc-openapi-starter-webmvc-ui-2.3.0.jar;C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.3.0\springdoc-openapi-starter-webmvc-api-2.3.0.jar;C:\Users\30829\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.3.0\springdoc-openapi-starter-common-2.3.0.jar;C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.19\swagger-core-jakarta-2.2.19.jar;C:\Users\30829\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.19\swagger-annotations-jakarta-2.2.19.jar;C:\Users\30829\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.19\swagger-models-jakarta-2.2.19.jar;C:\Users\30829\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar;C:\Users\30829\.m2\repository\org\webjars\swagger-ui\5.10.3\swagger-ui-5.10.3.jar;C:\Users\30829\.m2\repository\org\springframework\boot\spring-boot-starter-amqp\3.2.5\spring-boot-starter-amqp-3.2.5.jar;C:\Users\30829\.m2\repository\org\springframework\spring-messaging\6.1.6\spring-messaging-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\amqp\spring-rabbit\3.1.4\spring-rabbit-3.1.4.jar;C:\Users\30829\.m2\repository\org\springframework\amqp\spring-amqp\3.1.4\spring-amqp-3.1.4.jar;C:\Users\30829\.m2\repository\org\springframework\retry\spring-retry\2.0.5\spring-retry-2.0.5.jar;C:\Users\30829\.m2\repository\com\rabbitmq\amqp-client\5.19.0\amqp-client-5.19.0.jar;C:\Users\30829\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\30829\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\30829\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar;C:\Users\30829\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar;C:\Users\30829\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar; -sourcepath E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java;E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations; E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AuthController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\CorsConfig.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PetSimpleResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Pet.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\UploadController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\util\JwtUtil.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\Application.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\OpenApiConfig.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PetService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\UserResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Notification.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\EmailMessage.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AiController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\AdoptionRequest.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\PhotoCollection.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PhotoResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PhotoCollectionRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\PetCreateRequest.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\NotificationResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UploadService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\FavoriteRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\FavoriteController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\AdoptionResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\User.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PetResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\MessageProducerService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\StatsController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\exception\BusinessException.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\FavoriteService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\DistributedLockService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\UserSimpleResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\AdoptionController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\PhotoRequest.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\PageResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\AdoptionRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\SecurityConfig.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\RegisterRequest.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Comment.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PetRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\NotificationMessage.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\MessageConsumerService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\NotificationRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\CommentRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\Permission.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AdoptionService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Photo.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\NotificationController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Adoption.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\PhotoController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\CommentResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\RabbitMQConfig.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\request\LoginRequest.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\PetController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Favorite.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\UserRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\AuthResponse.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\JwtAuthenticationFilter.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\entity\Like.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\PhotoRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\CommentService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\config\WebMvcConfig.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\repository\LikeRepository.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\HealthController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\UserController.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\exception\GlobalExceptionHandler.java E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\controller\CommentController.java -s E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\generated-sources\annotations -processorpath C:\Users\30829\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar; -g -parameters --release 17 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 73 source files with javac [forked debug parameters release 17] to target\classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\Permission.java:[13,8] 错误: 接口 RequirePermission 是公共的, 应在名为 RequirePermission.java 的文件中声明
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[29,51] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[33,48] 错误: 找不到符号
+  符号:   方法 getEmail()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[37,24] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 User
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[38,33] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[39,56] 错误: 找不到符号
+  符号:   方法 getPassword()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[40,30] 错误: 找不到符号
+  符号:   方法 getEmail()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[41,30] 错误: 找不到符号
+  符号:   方法 getPhone()
+  位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[47,49] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[48,50] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[50,27] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 AuthResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[57,57] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为LoginRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[60,44] 错误: 找不到符号
+  符号:   方法 getPassword()
+  位置: 类型为LoginRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[60,64] 错误: 找不到符号
+  符号:   方法 getPassword()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[64,49] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[65,50] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[67,27] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 AuthResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[85,47] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[86,32] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[87,38] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[88,53] 错误: 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[90,23] 错误: 不兼容的类型: Object无法转换为UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[94,27] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 UserResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[95,24] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[96,30] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[97,27] 错误: 找不到符号
+  符号:   方法 getEmail()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[98,27] 错误: 找不到符号
+  符号:   方法 getPhone()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[99,42] 错误: 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[100,26] 错误: 找不到符号
+  符号:   方法 getRole()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[101,31] 错误: 找不到符号
+  符号:   方法 getCreatedAt()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[25,26] 错误: 找不到符号
+  符号:   方法 <T>builder()
+  位置: 类 ApiResponse
+  其中, T是类型变量:
+    T扩展已在方法 <T>success(T)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[33,26] 错误: 找不到符号
+  符号:   方法 <T>builder()
+  位置: 类 ApiResponse
+  其中, T是类型变量:
+    T扩展已在方法 <T>success(String,T)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[41,26] 错误: 找不到符号
+  符号:   方法 <T>builder()
+  位置: 类 ApiResponse
+  其中, T是类型变量:
+    T扩展已在方法 <T>error(Integer,String)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[49,26] 错误: 找不到符号
+  符号:   方法 <T>builder()
+  位置: 类 ApiResponse
+  其中, T是类型变量:
+    T扩展已在方法 <T>error(String)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[26,8] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[31,8] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[37,8] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[61,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[70,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[82,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[110,8] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[24,16] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[30,16] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[37,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[53,20] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[61,20] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[68,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java:[110,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 AiService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java:[113,12] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 AiService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[89,20] 错误: 找不到符号
+  符号:   方法 getOwnerId()
+  位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[97,27] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[115,34] 错误: 找不到符号
+  符号:   方法 setCaption(String)
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[116,33] 错误: 找不到符号
+  符号:   方法 setIsMain(Boolean)
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[143,12] 错误: 找不到符号
+  符号:   方法 setPhotoId(Long)
+  位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[144,12] 错误: 找不到符号
+  符号:   方法 setUserId(Long)
+  位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[148,13] 错误: 找不到符号
+  符号:   方法 setLikeCount(int)
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[151,18] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[157,28] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[155,29] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[173,13] 错误: 找不到符号
+  符号:   方法 setLikeCount(int)
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[192,18] 错误: 找不到符号
+  符号:   方法 setPhotoId(Long)
+  位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[193,18] 错误: 找不到符号
+  符号:   方法 setUserId(Long)
+  位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[196,18] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[202,28] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[200,29] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[227,58] 错误: 找不到符号
+  符号:   方法 getPhotoId()
+  位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[229,21] 错误: 不兼容的类型: 方法引用无效
+    不兼容的类型: Object无法转换为Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[237,70] 错误: 找不到符号
+  符号:   方法 getPhotoId()
+  位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[239,21] 错误: 不兼容的类型: 方法引用无效
+    不兼容的类型: Object无法转换为Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[244,23] 错误: 找不到符号
+  符号:   方法 getPetId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[244,73] 错误: 找不到符号
+  符号:   方法 getPetId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[245,49] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[246,82] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[247,76] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[249,28] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 PhotoResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[250,25] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[251,28] 错误: 找不到符号
+  符号:   方法 getPetId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[252,29] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[253,45] 错误: 找不到符号
+  符号:   方法 getImageUrl()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[254,49] 错误: 找不到符号
+  符号:   方法 getThumbnailUrl()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[255,30] 错误: 找不到符号
+  符号:   方法 getCaption()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[256,32] 错误: 找不到符号
+  符号:   方法 getLikeCount()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[257,32] 错误: 找不到符号
+  符号:   方法 getViewCount()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[260,29] 错误: 找不到符号
+  符号:   方法 getIsMain()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[261,33] 错误: 找不到符号
+  符号:   方法 getUploadTime()
+  位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[262,81] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 PetSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,31] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,49] 错误: 找不到符号
+  符号:   方法 getName()
+  位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,69] 错误: 找不到符号
+  符号:   方法 getType()
+  位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[264,84] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,32] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,55] 错误: 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,99] 错误: 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[53,8] 错误: 找不到符号
+  符号:   变量 log
+  位置: 类 NotificationService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[58,35] 错误: 找不到符号
+  符号:   方法 builder()
+  位置: 类 NotificationResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[59,32] 错误: 找不到符号
+  符号:   方法 getId()
+  位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[60,36] 错误: 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[61,35] 错误: 找不到符号
+  符号:   方法 getTitle()
+  位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[62,37] 错误: 找不到符号
+  符号:   方法 getContent()
+  位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[63,34] 错误: 找不到符号
+  符号:   方法 getType()
+  位置: 类型为Notification的变量 notification
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.463 s
+[INFO] Finished at: 2026-06-17T22:07:08+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile (default-compile) on project pet-backend: Compilation failure: Compilation failure: 
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\Permission.java:[13,8] 错误: 接口 RequirePermission 是公共的, 应在名为 RequirePermission.java 的文件中声明
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[29,51] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[33,48] 错误: 找不到符号
+[ERROR]   符号:   方法 getEmail()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[37,24] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 User
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[38,33] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[39,56] 错误: 找不到符号
+[ERROR]   符号:   方法 getPassword()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[40,30] 错误: 找不到符号
+[ERROR]   符号:   方法 getEmail()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[41,30] 错误: 找不到符号
+[ERROR]   符号:   方法 getPhone()
+[ERROR]   位置: 类型为RegisterRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[47,49] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[48,50] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[50,27] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 AuthResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[57,57] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为LoginRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[60,44] 错误: 找不到符号
+[ERROR]   符号:   方法 getPassword()
+[ERROR]   位置: 类型为LoginRequest的变量 request
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[60,64] 错误: 找不到符号
+[ERROR]   符号:   方法 getPassword()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[64,49] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[65,50] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[67,27] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 AuthResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[85,47] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[86,32] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[87,38] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[88,53] 错误: 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[90,23] 错误: 不兼容的类型: Object无法转换为UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[94,27] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 UserResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[95,24] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[96,30] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[97,27] 错误: 找不到符号
+[ERROR]   符号:   方法 getEmail()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[98,27] 错误: 找不到符号
+[ERROR]   符号:   方法 getPhone()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[99,42] 错误: 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[100,26] 错误: 找不到符号
+[ERROR]   符号:   方法 getRole()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\UserService.java:[101,31] 错误: 找不到符号
+[ERROR]   符号:   方法 getCreatedAt()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[25,26] 错误: 找不到符号
+[ERROR]   符号:   方法 <T>builder()
+[ERROR]   位置: 类 ApiResponse
+[ERROR]   其中, T是类型变量:
+[ERROR]     T扩展已在方法 <T>success(T)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[33,26] 错误: 找不到符号
+[ERROR]   符号:   方法 <T>builder()
+[ERROR]   位置: 类 ApiResponse
+[ERROR]   其中, T是类型变量:
+[ERROR]     T扩展已在方法 <T>success(String,T)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[41,26] 错误: 找不到符号
+[ERROR]   符号:   方法 <T>builder()
+[ERROR]   位置: 类 ApiResponse
+[ERROR]   其中, T是类型变量:
+[ERROR]     T扩展已在方法 <T>error(Integer,String)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\ApiResponse.java:[49,26] 错误: 找不到符号
+[ERROR]   符号:   方法 <T>builder()
+[ERROR]   位置: 类 ApiResponse
+[ERROR]   其中, T是类型变量:
+[ERROR]     T扩展已在方法 <T>error(String)中声明的Object
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[26,8] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[31,8] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[37,8] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[61,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[70,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[82,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\RedisService.java:[110,8] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 RedisService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[24,16] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[30,16] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[37,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[53,20] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[61,20] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\security\PermissionChecker.java:[68,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 PermissionChecker
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java:[110,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 AiService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\AiService.java:[113,12] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 AiService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[89,20] 错误: 找不到符号
+[ERROR]   符号:   方法 getOwnerId()
+[ERROR]   位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[97,27] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[115,34] 错误: 找不到符号
+[ERROR]   符号:   方法 setCaption(String)
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[116,33] 错误: 找不到符号
+[ERROR]   符号:   方法 setIsMain(Boolean)
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[143,12] 错误: 找不到符号
+[ERROR]   符号:   方法 setPhotoId(Long)
+[ERROR]   位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[144,12] 错误: 找不到符号
+[ERROR]   符号:   方法 setUserId(Long)
+[ERROR]   位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[148,13] 错误: 找不到符号
+[ERROR]   符号:   方法 setLikeCount(int)
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[151,18] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[157,28] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[155,29] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[173,13] 错误: 找不到符号
+[ERROR]   符号:   方法 setLikeCount(int)
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[192,18] 错误: 找不到符号
+[ERROR]   符号:   方法 setPhotoId(Long)
+[ERROR]   位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[193,18] 错误: 找不到符号
+[ERROR]   符号:   方法 setUserId(Long)
+[ERROR]   位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[196,18] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[202,28] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[200,29] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[227,58] 错误: 找不到符号
+[ERROR]   符号:   方法 getPhotoId()
+[ERROR]   位置: 类型为Like的变量 like
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[229,21] 错误: 不兼容的类型: 方法引用无效
+[ERROR]     不兼容的类型: Object无法转换为Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[237,70] 错误: 找不到符号
+[ERROR]   符号:   方法 getPhotoId()
+[ERROR]   位置: 类型为PhotoCollection的变量 collection
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[239,21] 错误: 不兼容的类型: 方法引用无效
+[ERROR]     不兼容的类型: Object无法转换为Photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[244,23] 错误: 找不到符号
+[ERROR]   符号:   方法 getPetId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[244,73] 错误: 找不到符号
+[ERROR]   符号:   方法 getPetId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[245,49] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[246,82] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[247,76] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[249,28] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 PhotoResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[250,25] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[251,28] 错误: 找不到符号
+[ERROR]   符号:   方法 getPetId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[252,29] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[253,45] 错误: 找不到符号
+[ERROR]   符号:   方法 getImageUrl()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[254,49] 错误: 找不到符号
+[ERROR]   符号:   方法 getThumbnailUrl()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[255,30] 错误: 找不到符号
+[ERROR]   符号:   方法 getCaption()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[256,32] 错误: 找不到符号
+[ERROR]   符号:   方法 getLikeCount()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[257,32] 错误: 找不到符号
+[ERROR]   符号:   方法 getViewCount()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[260,29] 错误: 找不到符号
+[ERROR]   符号:   方法 getIsMain()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[261,33] 错误: 找不到符号
+[ERROR]   符号:   方法 getUploadTime()
+[ERROR]   位置: 类型为Photo的变量 photo
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[262,81] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 PetSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,31] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,49] 错误: 找不到符号
+[ERROR]   符号:   方法 getName()
+[ERROR]   位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[263,69] 错误: 找不到符号
+[ERROR]   符号:   方法 getType()
+[ERROR]   位置: 类型为Pet的变量 pet
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[264,84] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 UserSimpleResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,32] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,55] 错误: 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\PhotoService.java:[265,99] 错误: 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为User的变量 user
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[53,8] 错误: 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 NotificationService
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[58,35] 错误: 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 NotificationResponse
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[59,32] 错误: 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[60,36] 错误: 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[61,35] 错误: 找不到符号
+[ERROR]   符号:   方法 getTitle()
+[ERROR]   位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[62,37] 错误: 找不到符号
+[ERROR]   符号:   方法 getContent()
+[ERROR]   位置: 类型为Notification的变量 notification
+[ERROR] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\service\NotificationService.java:[63,34] 错误: 找不到符号
+[ERROR]   符号:   方法 getType()
+[ERROR]   位置: 类型为Notification的变量 notification
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile (default-compile) on project pet-backend: Compilation failure
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:333)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:919)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:285)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:207)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:568)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+Caused by: org.apache.maven.plugin.compiler.CompilationFailureException: Compilation failure
+    at org.apache.maven.plugin.compiler.AbstractCompilerMojo.execute (AbstractCompilerMojo.java:1269)
+    at org.apache.maven.plugin.compiler.CompilerMojo.execute (CompilerMojo.java:212)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:919)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:285)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:207)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:568)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory

@@ -45,6 +45,10 @@ public class User {
     @Column(columnDefinition = "TEXT")
     private String bio;
 
+    @Column(length = 20)
+    @Builder.Default
+    private String status = "enabled";
+
     @Column(name = "avatar_url", length = 255)
     @Builder.Default
     private String avatarUrl = "default_avatar.png";

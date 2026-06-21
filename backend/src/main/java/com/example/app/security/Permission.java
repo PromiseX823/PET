@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @PreAuthorize("@permissionChecker.checkPermission(#root)")
-public @interface RequirePermission {
+@interface RequirePermission {
     String[] roles() default {};
     String[] permissions() default {};
 }

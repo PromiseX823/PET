@@ -5,10 +5,15 @@ import com.example.app.dto.request.PetCreateRequest;
 import com.example.app.dto.response.ApiResponse;
 import com.example.app.dto.response.PageResponse;
 import com.example.app.dto.response.PetResponse;
+import com.example.app.entity.User;
+import com.example.app.exception.BusinessException;
+import com.example.app.repository.UserRepository;
 import com.example.app.service.PetService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class PetController {
 
     private final PetService petService;
+    private final UserRepository userRepository;
 
     @GetMapping
     public ResponseEntity<ApiResponse<PageResponse<PetResponse>>> getPets(
@@ -51,13 +57,23 @@ public class PetController {
     public ResponseEntity<ApiResponse<PetResponse>> updatePet(
             @PathVariable("pet_id") Long petId,
             @RequestBody PetCreateRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = userRepository.findByUsername(auth.getName())
+                .orElseThrow(() -> new BusinessException("用户不存在"));
+        
+        request.setOwnerId(currentUser.getId());
+        
         PetResponse result = petService.updatePet(petId, request);
         return ResponseEntity.ok(ApiResponse.success("宠物信息更新成功", result));
     }
 
     @DeleteMapping("/{pet_id}")
     public ResponseEntity<ApiResponse<Void>> deletePet(@PathVariable("pet_id") Long petId) {
-        petService.deletePet(petId);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = userRepository.findByUsername(auth.getName())
+                .orElseThrow(() -> new BusinessException("用户不存在"));
+        
+        petService.deletePet(petId, currentUser.getId());
         return ResponseEntity.ok(ApiResponse.success("宠物删除成功", null));
     }
 }

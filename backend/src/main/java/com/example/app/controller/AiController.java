@@ -5,6 +5,7 @@ import com.example.app.service.AiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -52,5 +53,15 @@ public class AiController {
         }
         String summary = aiService.summarizeComments(comments);
         return ApiResponse.success(summary);
+    }
+
+    @PostMapping("/qwen")
+    public ApiResponse<String> chatWithQwen(@RequestBody Map<String, Object> request) {
+        List<Map<String, String>> messages = (List<Map<String, String>>) request.get("messages");
+        if (messages == null || messages.isEmpty()) {
+            return ApiResponse.error("请提供对话消息");
+        }
+        String response = aiService.chat(messages);
+        return ApiResponse.success(response);
     }
 }

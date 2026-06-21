@@ -1,0 +1,365 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:pet-backend >-----------------------
+[INFO] Building pet-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.5:run (default-cli) > test-compile @ pet-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-backend ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.12.1:compile (default-compile) @ pet-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 73 source files with javac [forked debug parameters release 17] to target\classes
+[WARNING] E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\main\java\com\example\app\dto\response\AuthResponse.java:[16,19] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-backend ---
+[INFO] skip non existing resourceDirectory E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.12.1:testCompile (default-testCompile) @ pet-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.5:run (default-cli) < test-compile @ pet-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.5:run (default-cli) @ pet-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-06-17T22:11:16.194+08:00  INFO 2008 --- [           main] com.example.app.Application              : Starting Application using Java 17.0.17 with PID 2008 (E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend\target\classes started by 30829 in E:\xwechat_files\wxid_t1mkbayteh2522_c76e\msg\file\2026-06\PET\backend)
+2026-06-17T22:11:16.195+08:00 DEBUG 2008 --- [           main] com.example.app.Application              : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-06-17T22:11:16.197+08:00  INFO 2008 --- [           main] com.example.app.Application              : No active profile set, falling back to 1 default profile: "default"
+2026-06-17T22:11:16.968+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-17T22:11:16.968+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-17T22:11:17.122+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 9 JPA repository interfaces.
+2026-06-17T22:11:17.140+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-17T22:11:17.140+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-17T22:11:17.152+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.AdoptionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.156+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.CommentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.156+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.FavoriteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.LikeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.NotificationRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.PetRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.PhotoCollectionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.PhotoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.app.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-17T22:11:17.157+08:00  INFO 2008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-06-17T22:11:17.767+08:00  INFO 2008 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-17T22:11:17.778+08:00  INFO 2008 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-17T22:11:17.778+08:00  INFO 2008 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-06-17T22:11:17.845+08:00  INFO 2008 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-17T22:11:17.845+08:00  INFO 2008 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1613 ms
+2026-06-17T22:11:18.143+08:00 DEBUG 2008 --- [           main] c.e.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2026-06-17T22:11:18.241+08:00  INFO 2008 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-17T22:11:18.283+08:00  INFO 2008 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-17T22:11:18.312+08:00  INFO 2008 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-17T22:11:18.489+08:00  INFO 2008 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-17T22:11:18.509+08:00  INFO 2008 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-17T22:11:18.641+08:00  INFO 2008 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@554d040d
+2026-06-17T22:11:18.644+08:00  INFO 2008 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-17T22:11:18.698+08:00  WARN 2008 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-17T22:11:19.556+08:00  INFO 2008 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-17T22:11:19.563+08:00  INFO 2008 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-17T22:11:19.806+08:00  INFO 2008 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-17T22:11:20.762+08:00  WARN 2008 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-17T22:11:20.776+08:00 DEBUG 2008 --- [           main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-06-17T22:11:21.068+08:00  INFO 2008 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3810d15d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@627b0e71, org.springframework.security.web.context.SecurityContextHolderFilter@750c242e, org.springframework.security.web.header.HeaderWriterFilter@223f8c82, org.springframework.web.filter.CorsFilter@7d284f15, org.springframework.security.web.authentication.logout.LogoutFilter@6b82196e, com.example.app.security.JwtAuthenticationFilter@2f86f9cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e287867, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5249b9c5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63ad2a0f, org.springframework.security.web.session.SessionManagementFilter@51934be2, org.springframework.security.web.access.ExceptionTranslationFilter@fec48ec, org.springframework.security.web.access.intercept.AuthorizationFilter@203f41d7]
+2026-06-17T22:11:21.592+08:00  INFO 2008 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-06-17T22:11:21.597+08:00  INFO 2008 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.607+08:00  INFO 2008 --- [           main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:21.617+08:00  INFO 2008 --- [ntContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.618+08:00 ERROR 2008 --- [ntContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 12 common frames omitted
+
+2026-06-17T22:11:21.622+08:00  INFO 2008 --- [ntContainer#0-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.668+08:00  INFO 2008 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.669+08:00  INFO 2008 --- [           main] o.s.a.r.l.SimpleMessageListenerContainer : Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:21.670+08:00  INFO 2008 --- [ntContainer#1-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.707+08:00 ERROR 2008 --- [ntContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:727) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1478) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249) ~[amqp-client-5.19.0.jar:5.19.0]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198) ~[amqp-client-5.19.0.jar:5.19.0]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584) ~[spring-rabbit-3.1.4.jar:3.1.4]
+	... 12 common frames omitted
+
+2026-06-17T22:11:21.708+08:00  INFO 2008 --- [ntContainer#1-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:21.719+08:00  INFO 2008 --- [           main] com.example.app.Application              : Started Application in 5.875 seconds (process running for 6.305)
+2026-06-17T22:11:26.856+08:00  WARN 2008 --- [ntContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:26.862+08:00  INFO 2008 --- [ntContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6f4249cb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:26.866+08:00  INFO 2008 --- [ntContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:26.888+08:00 ERROR 2008 --- [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:26.888+08:00  INFO 2008 --- [ntContainer#0-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:26.904+08:00  WARN 2008 --- [ntContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:26.904+08:00  INFO 2008 --- [ntContainer#1-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@278d2891: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:26.906+08:00  INFO 2008 --- [ntContainer#1-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:26.920+08:00 ERROR 2008 --- [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:26.920+08:00  INFO 2008 --- [ntContainer#1-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:32.034+08:00  WARN 2008 --- [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:32.035+08:00  INFO 2008 --- [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@d1f028f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:32.037+08:00  INFO 2008 --- [ntContainer#0-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:32.040+08:00 ERROR 2008 --- [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:32.040+08:00  INFO 2008 --- [ntContainer#0-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:32.065+08:00  WARN 2008 --- [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:32.065+08:00  INFO 2008 --- [ntContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@331e7169: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:32.067+08:00  INFO 2008 --- [ntContainer#1-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:32.069+08:00 ERROR 2008 --- [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:32.069+08:00  INFO 2008 --- [ntContainer#1-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:37.065+08:00  WARN 2008 --- [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:37.066+08:00  INFO 2008 --- [ntContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@317ee0ad: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:37.067+08:00  INFO 2008 --- [ntContainer#0-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:37.068+08:00 ERROR 2008 --- [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:37.069+08:00  INFO 2008 --- [ntContainer#0-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:37.283+08:00  WARN 2008 --- [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:37.283+08:00  INFO 2008 --- [ntContainer#1-3] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@dd39a93: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:37.284+08:00  INFO 2008 --- [ntContainer#1-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:37.285+08:00 ERROR 2008 --- [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:37.285+08:00  INFO 2008 --- [ntContainer#1-4] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:42.097+08:00  WARN 2008 --- [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:42.097+08:00  INFO 2008 --- [ntContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@499c6e2c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:42.098+08:00  INFO 2008 --- [ntContainer#0-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:42.125+08:00 ERROR 2008 --- [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:42.125+08:00  INFO 2008 --- [ntContainer#0-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:42.517+08:00  WARN 2008 --- [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:42.517+08:00  INFO 2008 --- [ntContainer#1-4] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@113aa91a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:42.519+08:00  INFO 2008 --- [ntContainer#1-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:42.532+08:00 ERROR 2008 --- [ntContainer#1-5] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:42.532+08:00  INFO 2008 --- [ntContainer#1-5] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:47.296+08:00  WARN 2008 --- [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:47.296+08:00  INFO 2008 --- [ntContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2a44ddfa: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:47.296+08:00  INFO 2008 --- [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:47.312+08:00 ERROR 2008 --- [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:47.312+08:00  INFO 2008 --- [ntContainer#0-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:47.714+08:00  WARN 2008 --- [ntContainer#1-5] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:47.714+08:00  INFO 2008 --- [ntContainer#1-5] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@42eb7e95: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:47.716+08:00  INFO 2008 --- [ntContainer#1-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:47.717+08:00 ERROR 2008 --- [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:47.717+08:00  INFO 2008 --- [ntContainer#1-6] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:52.502+08:00  WARN 2008 --- [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:52.503+08:00  INFO 2008 --- [ntContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@1cfa9bf6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:52.504+08:00  INFO 2008 --- [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:52.518+08:00 ERROR 2008 --- [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:52.519+08:00  INFO 2008 --- [ntContainer#0-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:52.930+08:00  WARN 2008 --- [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:52.930+08:00  INFO 2008 --- [ntContainer#1-6] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@3f7751bf: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:52.932+08:00  INFO 2008 --- [ntContainer#1-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:52.932+08:00 ERROR 2008 --- [ntContainer#1-7] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:52.932+08:00  INFO 2008 --- [ntContainer#1-7] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:57.752+08:00  WARN 2008 --- [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:57.752+08:00  INFO 2008 --- [ntContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@65cbf6f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:57.752+08:00  INFO 2008 --- [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:57.754+08:00 ERROR 2008 --- [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:57.754+08:00  INFO 2008 --- [ntContainer#0-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:58.119+08:00  WARN 2008 --- [ntContainer#1-7] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:11:58.119+08:00  INFO 2008 --- [ntContainer#1-7] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2f6f489d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:11:58.119+08:00  INFO 2008 --- [ntContainer#1-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:11:58.121+08:00 ERROR 2008 --- [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:11:58.122+08:00  INFO 2008 --- [ntContainer#1-8] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:02.957+08:00  WARN 2008 --- [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:02.957+08:00  INFO 2008 --- [ntContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@15b23b8c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:02.957+08:00  INFO 2008 --- [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:02.990+08:00 ERROR 2008 --- [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:02.991+08:00  INFO 2008 --- [ntContainer#0-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:03.334+08:00  WARN 2008 --- [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:03.335+08:00  INFO 2008 --- [ntContainer#1-8] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@561a9711: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:03.335+08:00  INFO 2008 --- [ntContainer#1-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:03.338+08:00 ERROR 2008 --- [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:03.338+08:00  INFO 2008 --- [ntContainer#1-9] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:08.205+08:00  WARN 2008 --- [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:08.205+08:00  INFO 2008 --- [ntContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6c4a9e96: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:08.205+08:00  INFO 2008 --- [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:08.237+08:00 ERROR 2008 --- [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:08.237+08:00  INFO 2008 --- [tContainer#0-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:08.518+08:00  WARN 2008 --- [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:08.518+08:00  INFO 2008 --- [ntContainer#1-9] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@113a4640: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:08.519+08:00  INFO 2008 --- [tContainer#1-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:08.535+08:00 ERROR 2008 --- [tContainer#1-10] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:08.535+08:00  INFO 2008 --- [tContainer#1-10] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:13.436+08:00  WARN 2008 --- [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:13.436+08:00  INFO 2008 --- [tContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@36bf1b24: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:13.438+08:00  INFO 2008 --- [tContainer#0-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:13.451+08:00 ERROR 2008 --- [tContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:13.451+08:00  INFO 2008 --- [tContainer#0-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:13.726+08:00  WARN 2008 --- [tContainer#1-10] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:13.726+08:00  INFO 2008 --- [tContainer#1-10] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6ebe7427: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:13.727+08:00  INFO 2008 --- [tContainer#1-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:13.727+08:00 ERROR 2008 --- [tContainer#1-11] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:13.729+08:00  INFO 2008 --- [tContainer#1-11] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:18.661+08:00  WARN 2008 --- [tContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:18.661+08:00  INFO 2008 --- [tContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@bada81d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:18.662+08:00  INFO 2008 --- [tContainer#0-12] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:18.663+08:00 ERROR 2008 --- [tContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:18.663+08:00  INFO 2008 --- [tContainer#0-12] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:18.913+08:00  WARN 2008 --- [tContainer#1-11] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:18.913+08:00  INFO 2008 --- [tContainer#1-11] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6b3f1ff5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:18.914+08:00  INFO 2008 --- [tContainer#1-12] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:18.945+08:00 ERROR 2008 --- [tContainer#1-12] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:18.945+08:00  INFO 2008 --- [tContainer#1-12] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:23.845+08:00  WARN 2008 --- [tContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:23.845+08:00  INFO 2008 --- [tContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@28e1eb3e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:23.845+08:00  INFO 2008 --- [tContainer#0-13] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:23.861+08:00 ERROR 2008 --- [tContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:23.861+08:00  INFO 2008 --- [tContainer#0-13] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:24.151+08:00  WARN 2008 --- [tContainer#1-12] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:24.151+08:00  INFO 2008 --- [tContainer#1-12] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@b3acc51: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:24.152+08:00  INFO 2008 --- [tContainer#1-13] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:24.154+08:00 ERROR 2008 --- [tContainer#1-13] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:24.154+08:00  INFO 2008 --- [tContainer#1-13] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:29.078+08:00  WARN 2008 --- [tContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:29.078+08:00  INFO 2008 --- [tContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2f7102fa: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:29.078+08:00  INFO 2008 --- [tContainer#0-14] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:29.110+08:00 ERROR 2008 --- [tContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:29.111+08:00  INFO 2008 --- [tContainer#0-14] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:29.350+08:00  WARN 2008 --- [tContainer#1-13] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:29.350+08:00  INFO 2008 --- [tContainer#1-13] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@50face39: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:29.352+08:00  INFO 2008 --- [tContainer#1-14] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:29.372+08:00 ERROR 2008 --- [tContainer#1-14] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:29.372+08:00  INFO 2008 --- [tContainer#1-14] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:34.306+08:00  WARN 2008 --- [tContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:34.306+08:00  INFO 2008 --- [tContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@5fa8899a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:34.307+08:00  INFO 2008 --- [tContainer#0-15] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:34.322+08:00 ERROR 2008 --- [tContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:34.322+08:00  INFO 2008 --- [tContainer#0-15] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:34.596+08:00  WARN 2008 --- [tContainer#1-14] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:34.597+08:00  INFO 2008 --- [tContainer#1-14] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@28ebcfe4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:34.597+08:00  INFO 2008 --- [tContainer#1-15] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:34.599+08:00 ERROR 2008 --- [tContainer#1-15] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:34.599+08:00  INFO 2008 --- [tContainer#1-15] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:39.497+08:00  WARN 2008 --- [tContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:39.497+08:00  INFO 2008 --- [tContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7076c545: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:39.497+08:00  INFO 2008 --- [tContainer#0-16] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:39.500+08:00 ERROR 2008 --- [tContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:39.500+08:00  INFO 2008 --- [tContainer#0-16] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:39.792+08:00  WARN 2008 --- [tContainer#1-15] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:39.793+08:00  INFO 2008 --- [tContainer#1-15] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@18100de1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:39.793+08:00  INFO 2008 --- [tContainer#1-16] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:39.835+08:00 ERROR 2008 --- [tContainer#1-16] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:39.835+08:00  INFO 2008 --- [tContainer#1-16] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:44.662+08:00  WARN 2008 --- [tContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:44.662+08:00  INFO 2008 --- [tContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@27695ae6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:44.663+08:00  INFO 2008 --- [tContainer#0-17] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:44.685+08:00 ERROR 2008 --- [tContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:44.685+08:00  INFO 2008 --- [tContainer#0-17] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:45.032+08:00  WARN 2008 --- [tContainer#1-16] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:45.032+08:00  INFO 2008 --- [tContainer#1-16] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7c13f7c7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:45.033+08:00  INFO 2008 --- [tContainer#1-17] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:45.035+08:00 ERROR 2008 --- [tContainer#1-17] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:45.035+08:00  INFO 2008 --- [tContainer#1-17] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:49.851+08:00  WARN 2008 --- [tContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:49.852+08:00  INFO 2008 --- [tContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@556f241c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:49.852+08:00  INFO 2008 --- [tContainer#0-18] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:49.868+08:00 ERROR 2008 --- [tContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:49.868+08:00  INFO 2008 --- [tContainer#0-18] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:50.216+08:00  WARN 2008 --- [tContainer#1-17] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:50.216+08:00  INFO 2008 --- [tContainer#1-17] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@510c765c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:50.218+08:00  INFO 2008 --- [tContainer#1-18] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:50.235+08:00 ERROR 2008 --- [tContainer#1-18] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:50.235+08:00  INFO 2008 --- [tContainer#1-18] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:55.027+08:00  WARN 2008 --- [tContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:55.027+08:00  INFO 2008 --- [tContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@30023be8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:55.027+08:00  INFO 2008 --- [tContainer#0-19] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:55.062+08:00 ERROR 2008 --- [tContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:55.063+08:00  INFO 2008 --- [tContainer#0-19] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:55.446+08:00  WARN 2008 --- [tContainer#1-18] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:12:55.446+08:00  INFO 2008 --- [tContainer#1-18] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@7da2b23b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:12:55.446+08:00  INFO 2008 --- [tContainer#1-19] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:12:55.446+08:00 ERROR 2008 --- [tContainer#1-19] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:12:55.446+08:00  INFO 2008 --- [tContainer#1-19] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:00.252+08:00  WARN 2008 --- [tContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:00.252+08:00  INFO 2008 --- [tContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@b2e55ad: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:00.253+08:00  INFO 2008 --- [tContainer#0-20] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:00.256+08:00 ERROR 2008 --- [tContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:00.256+08:00  INFO 2008 --- [tContainer#0-20] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:00.632+08:00  WARN 2008 --- [tContainer#1-19] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:00.632+08:00  INFO 2008 --- [tContainer#1-19] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2a55ff8c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:00.635+08:00  INFO 2008 --- [tContainer#1-20] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:00.637+08:00 ERROR 2008 --- [tContainer#1-20] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:00.637+08:00  INFO 2008 --- [tContainer#1-20] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:05.431+08:00  WARN 2008 --- [tContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:05.431+08:00  INFO 2008 --- [tContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@530123b9: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:05.432+08:00  INFO 2008 --- [tContainer#0-21] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:05.434+08:00 ERROR 2008 --- [tContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:05.435+08:00  INFO 2008 --- [tContainer#0-21] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:05.841+08:00  WARN 2008 --- [tContainer#1-20] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:05.841+08:00  INFO 2008 --- [tContainer#1-20] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@236bde62: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:05.842+08:00  INFO 2008 --- [tContainer#1-21] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:05.842+08:00 ERROR 2008 --- [tContainer#1-21] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:05.844+08:00  INFO 2008 --- [tContainer#1-21] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:10.445+08:00  WARN 2008 --- [tContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:10.445+08:00  INFO 2008 --- [tContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@6a16b359: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:10.447+08:00  INFO 2008 --- [tContainer#0-22] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:10.481+08:00 ERROR 2008 --- [tContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:10.482+08:00  INFO 2008 --- [tContainer#0-22] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:10.999+08:00  WARN 2008 --- [tContainer#1-21] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:10.999+08:00  INFO 2008 --- [tContainer#1-21] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@13517d6f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:11.001+08:00  INFO 2008 --- [tContainer#1-22] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:11.015+08:00 ERROR 2008 --- [tContainer#1-22] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:11.016+08:00  INFO 2008 --- [tContainer#1-22] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:15.642+08:00  WARN 2008 --- [tContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2026-06-17T22:13:15.642+08:00  INFO 2008 --- [tContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@45393e07: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-06-17T22:13:15.643+08:00  INFO 2008 --- [tContainer#0-23] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-06-17T22:13:15.672+08:00 ERROR 2008 --- [tContainer#0-23] o.s.a.r.l.SimpleMessageListenerContainer : Failed to check/redeclare auto-delete queue(s).
+2026-06-17T22:13:15.672+08:00  INFO 2008 --- [tContainer#0-23] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]

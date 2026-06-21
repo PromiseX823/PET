@@ -213,8 +213,8 @@ const fetchHotPhotos = async () => {
     loadingPhotos.value = true
     const response = await api.getHotPhotos(3)
     
-    if (Array.isArray(response)) {
-      hotPhotos.value = response.map(photo => ({
+    if (response && response.data && Array.isArray(response.data)) {
+      hotPhotos.value = response.data.map(photo => ({
         id: photo.id,
         image_url: photo.image_url,
         caption: photo.caption,
@@ -236,13 +236,11 @@ const fetchLatestPets = async () => {
     loadingPets.value = true
     const response = await api.getPets()
     
-    if (response && response.pets) {
-      // 过滤出待领养的宠物，并取前3个
-      const pendingPets = response.pets
+    if (response && response.data && response.data.pets) {
+      const pendingPets = response.data.pets
         .filter(pet => pet.status === '待领养')
         .slice(0, 3)
       
-      // 转换数据格式
       latestPets.value = pendingPets.map(pet => ({
         id: pet.id,
         name: pet.name,
@@ -265,13 +263,13 @@ const fetchStats = async () => {
   try {
     const response = await api.getStats()
     
-    if (response && response.success && response.data) {
+    if (response && response.data) {
       const statsData = response.data
       stats.value = {
-        pending_pets: statsData.pets.available,
-        adopted_pets: statsData.adoptions.approved + statsData.adoptions.completed,
-        photos: statsData.photos.total,
-        users: statsData.users.total
+        pending_pets: statsData.pets?.available || 0,
+        adopted_pets: (statsData.adoptions?.approved || 0) + (statsData.adoptions?.completed || 0),
+        photos: statsData.photos?.total || 0,
+        users: statsData.users?.total || 0
       }
     }
   } catch (error) {

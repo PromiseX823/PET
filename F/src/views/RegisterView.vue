@@ -127,13 +127,13 @@ const handleRegister = () => {
       api.register(formData.value.username, formData.value.email, formData.value.password)
         .then(response => {
           console.log('注册API响应:', response)
-          if (response.success && response.user) {
+          if (response && response.code === 200) {
             ElMessage.success('注册成功，现在跳转到登录页面')
             setTimeout(() => {
               router.push('/login')
             }, 1500)
           } else {
-            ElMessage.error('注册失败：' + (response.error || '未知错误'))
+            ElMessage.error('注册失败：' + (response?.message || '未知错误'))
           }
         })
         .catch(error => {

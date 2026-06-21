@@ -10,6 +10,7 @@ import UploadView from '../views/UploadView.vue'
 import AdoptView from '../views/AdoptView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import AdminView from '../views/AdminView.vue'
+import AiChatView from '../views/AiChatView.vue'
 import { useUserStore } from '@/stores'
 
 const routes = [
@@ -28,7 +29,8 @@ const routes = [
     name: 'admin', 
     component: AdminView,
     meta: { requiresAuth: true, requiresAdmin: true }
-  }
+  },
+  { path: '/ai-chat', name: 'aiChat', component: AiChatView }
 ]
 
 const router = createRouter({

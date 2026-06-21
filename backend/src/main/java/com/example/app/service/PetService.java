@@ -109,13 +109,15 @@ public class PetService {
             throw new BusinessException("必须指定一张主照片");
         }
 
+        String status = normalizeStatus(request.getStatus());
+
         Pet pet = Pet.builder()
                 .name(request.getName())
                 .type(request.getType())
                 .age(request.getAge())
                 .breed(request.getBreed())
                 .gender(request.getGender() != null ? request.getGender() : "unknown")
-                .status(request.getStatus() != null ? request.getStatus() : "待领养")
+                .status(status)
                 .description(request.getDescription())
                 .healthInfo(request.getHealthInfo())
                 .location(request.getLocation())
@@ -148,12 +150,16 @@ public class PetService {
         Pet pet = petRepository.findById(petId)
                 .orElseThrow(() -> new BusinessException("宠物不存在"));
 
+        if (request.getOwnerId() != null && !pet.getOwnerId().equals(request.getOwnerId())) {
+            throw new BusinessException("无权编辑该宠物信息");
+        }
+
         if (request.getName() != null) pet.setName(request.getName());
         if (request.getType() != null) pet.setType(request.getType());
         if (request.getAge() != null) pet.setAge(request.getAge());
         if (request.getBreed() != null) pet.setBreed(request.getBreed());
         if (request.getGender() != null) pet.setGender(request.getGender());
-        if (request.getStatus() != null) pet.setStatus(request.getStatus());
+        if (request.getStatus() != null) pet.setStatus(normalizeStatus(request.getStatus()));
         if (request.getDescription() != null) pet.setDescription(request.getDescription());
         if (request.getHealthInfo() != null) pet.setHealthInfo(request.getHealthInfo());
         if (request.getLocation() != null) pet.setLocation(request.getLocation());
@@ -189,9 +195,13 @@ public class PetService {
     }
 
     @Transactional
-    public void deletePet(Long petId) {
+    public void deletePet(Long petId, Long userId) {
         Pet pet = petRepository.findById(petId)
                 .orElseThrow(() -> new BusinessException("宠物不存在"));
+        
+        if (!pet.getOwnerId().equals(userId)) {
+            throw new BusinessException("无权删除该宠物");
+        }
         
         photoRepository.deleteByPetId(petId);
         petRepository.delete(pet);
@@ -202,6 +212,11 @@ public class PetService {
         return petRepository.findByOwnerId(ownerId).stream()
                 .map(this::toPetResponse)
                 .toList();
+    }
+
+    @Transactional(readOnly = true)
+    public int getPetCountByOwner(Long ownerId) {
+        return petRepository.countByOwnerId(ownerId);
     }
 
     public static PetSimpleResponse toPetSimpleResponse(Pet pet) {
@@ -267,5 +282,18 @@ public class PetService {
                   .replace("http://localhost:8080", "")
                   .replace("https://localhost:5000", "")
                   .replace("https://localhost:8080", "");
+    }
+    
+    private String normalizeStatus(String status) {
+        if (status == null) {
+            return "待领养";
+        }
+        return switch (status.toLowerCase()) {
+            case "adoption", "available" -> "待领养";
+            case "share" -> "仅分享";
+            case "adopted" -> "已领养";
+            case "reserved" -> "已预定";
+            default -> status;
+        };
     }
 }

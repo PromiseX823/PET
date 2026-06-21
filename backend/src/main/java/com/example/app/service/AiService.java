@@ -4,9 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -83,7 +86,7 @@ public class AiService {
         return callDashScope(prompt);
     }
 
-    private String callDashScope(String prompt) {
+    public String chat(List<Map<String, String>> messages) {
         try {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
@@ -91,10 +94,17 @@ public class AiService {
 
             Map<String, Object> requestBody = new HashMap<>();
             requestBody.put("model", "qwen-turbo");
-            requestBody.put("input", Map.of("messages", new Object[]{
-                Map.of("role", "user", "content", prompt)
-            }));
-            requestBody.put("parameters", Map.of("temperature", 0.7, "max_tokens", 1024));
+
+            List<Map<String, Object>> formattedMessages = new ArrayList<>();
+            for (Map<String, String> message : messages) {
+                Map<String, Object> msg = new HashMap<>();
+                msg.put("role", message.get("role"));
+                msg.put("content", message.get("content"));
+                formattedMessages.add(msg);
+            }
+
+            requestBody.put("input", Map.of("messages", formattedMessages));
+            requestBody.put("parameters", Map.of("temperature", 0.7, "max_tokens", 2048));
 
             HttpEntity<Map<String, Object>> request = new HttpEntity<>(requestBody, headers);
             ResponseEntity<Map> response = restTemplate.exchange(baseUrl, HttpMethod.POST, request, Map.class);
@@ -103,15 +113,29 @@ public class AiService {
                 Map<String, Object> result = response.getBody();
                 if (result != null && result.containsKey("output")) {
                     Map<String, Object> output = (Map<String, Object>) result.get("output");
-                    return (String) output.get("text");
+                    if (output.containsKey("text")) {
+                        return (String) output.get("text");
+                    }
                 }
             }
 
             log.error("DashScope API call failed: {}", response);
             return "AI服务暂时不可用，请稍后重试";
+        } catch (HttpClientErrorException e) {
+            log.error("DashScope API HTTP error: {}, body: {}", e.getStatusCode(), e.getResponseBodyAsString());
+            if (e.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+                return "API密钥无效，请检查配置";
+            }
+            return "AI服务调用失败: " + e.getMessage();
         } catch (Exception e) {
             log.error("Error calling DashScope API", e);
             return "AI服务暂时不可用，请稍后重试";
         }
+    }
+
+    private String callDashScope(String prompt) {
+        List<Map<String, String>> messages = new ArrayList<>();
+        messages.add(Map.of("role", "user", "content", prompt));
+        return chat(messages);
     }
 }

@@ -184,13 +184,13 @@
                   <el-table-column prop="register_time" label="注册时间" min-width="150" />
                   <el-table-column prop="status" label="状态" min-width="100">
                     <template #default="{row}">
-                      <el-tag :type="row.status === 'active' ? 'success' : 'danger'">{{ row.status === 'active' ? '正常' : '禁用' }}</el-tag>
+                      <el-tag :type="row.status === 'enabled' ? 'success' : 'danger'">{{ row.status === 'enabled' ? '正常' : '禁用' }}</el-tag>
                     </template>
                   </el-table-column>
                   <el-table-column label="操作" min-width="150" fixed="right">
                     <template #default="{row}">
-                      <el-button type="primary" size="small" class="action-btn">编辑</el-button>
-                      <el-button type="danger" size="small" class="action-btn" @click="toggleUserStatus(row)">{{ row.status === 'active' ? '禁用' : '启用' }}</el-button>
+                      <el-button type="primary" size="small" class="action-btn" @click="editUser(row)">编辑</el-button>
+                      <el-button type="danger" size="small" class="action-btn" @click="toggleUserStatus(row)">{{ row.status === 'enabled' ? '禁用' : '启用' }}</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -278,11 +278,11 @@
                     </template>
                   </el-table-column>
                   <el-table-column prop="description" label="申请理由" min-width="180" />
-                  <el-table-column label="操作" min-width="180" fixed="right">
+                  <el-table-column label="操作" min-width="240" fixed="right">
                     <template #default="{row}">
                       <el-button type="primary" size="small" class="action-btn" @click="viewAdoptionDetail(row)">查看详情</el-button>
-                      <el-button type="success" size="small" class="action-btn" v-if="row.status === 'pending'" @click="quickApproveAdoption(row)">通过申请</el-button>
-                      <el-button type="danger" size="small" class="action-btn" v-if="row.status === 'pending'" @click="quickRejectAdoption(row)">拒绝申请</el-button>
+                      <el-button type="success" size="small" class="action-btn" v-if="row.status === 'pending' || row.status === 'rejected'" @click="quickApproveAdoption(row)">通过申请</el-button>
+                      <el-button type="danger" size="small" class="action-btn" v-if="row.status === 'pending' || row.status === 'approved'" @click="quickRejectAdoption(row)">拒绝申请</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -303,6 +303,38 @@
         </div>
       </div>
     </div>
+
+    <!-- 编辑用户对话框 -->
+    <el-dialog
+      v-model="editUserDialogVisible"
+      title="编辑用户"
+      width="500px"
+      :close-on-click-modal="false"
+    >
+      <el-form :model="editingUser" label-width="80px">
+        <el-form-item label="用户名">
+          <el-input v-model="editingUser.username" />
+        </el-form-item>
+        <el-form-item label="邮箱">
+          <el-input v-model="editingUser.email" />
+        </el-form-item>
+        <el-form-item label="手机号">
+          <el-input v-model="editingUser.phone" />
+        </el-form-item>
+        <el-form-item label="地区">
+          <el-input v-model="editingUser.area" />
+        </el-form-item>
+        <el-form-item label="简介">
+          <el-input v-model="editingUser.description" type="textarea" :rows="3" />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="editUserDialogVisible = false">取消</el-button>
+          <el-button type="primary" @click="saveUserEdit">保存</el-button>
+        </span>
+      </template>
+    </el-dialog>
     
     <!-- 领养申请详情对话框 -->
     <el-dialog
@@ -348,7 +380,7 @@
           <h4>申请信息</h4>
           <div class="detail-row">
             <span class="label">申请日期：</span>
-            <span class="value">{{ currentAdoption.apply_time }}</span>
+            <span class="value">{{ currentAdoption.applyTime ? formatDate(currentAdoption.applyTime) : '-' }}</span>
           </div>
           <div class="detail-row">
             <span class="label">申请状态：</span>
@@ -358,7 +390,15 @@
           </div>
           <div class="detail-row">
             <span class="label">申请理由：</span>
-            <span class="value">{{ currentAdoption.applicant_note || '-' }}</span>
+            <div class="value note-content">{{ currentAdoption.applicantNote || '无' }}</div>
+          </div>
+          <div class="detail-row" v-if="currentAdoption.reviewTime">
+            <span class="label">审核时间：</span>
+            <span class="value">{{ formatDate(currentAdoption.reviewTime) }}</span>
+          </div>
+          <div class="detail-row" v-if="currentAdoption.adminNote">
+            <span class="label">审核意见：</span>
+            <div class="value note-content">{{ currentAdoption.adminNote }}</div>
           </div>
         </div>
         
@@ -377,14 +417,14 @@
         <span class="dialog-footer">
           <el-button @click="adoptionDialogVisible = false">取消</el-button>
           <el-button
-            v-if="currentAdoption && currentAdoption.status === 'pending'"
+            v-if="currentAdoption && (currentAdoption.status === 'pending' || currentAdoption.status === 'rejected')"
             type="success"
             @click="approveAdoption"
           >
             批准申请
           </el-button>
           <el-button
-            v-if="currentAdoption && currentAdoption.status === 'pending'"
+            v-if="currentAdoption && (currentAdoption.status === 'pending' || currentAdoption.status === 'approved')"
             type="danger"
             @click="rejectAdoption"
           >
@@ -469,7 +509,7 @@ const loadAdminData = async () => {
     ])
     
     // 处理统计数据
-    if (statsResponse && statsResponse.success && statsResponse.data) {
+    if (statsResponse && statsResponse.code === 200 && statsResponse.data) {
       const statsData = statsResponse.data
       stats.value.users = statsData.users.total
       stats.value.pets = statsData.pets.available
@@ -482,8 +522,8 @@ const loadAdminData = async () => {
     }
     
     // 处理宠物数据
-    if (petsResponse && petsResponse.pets) {
-      pets.value = petsResponse.pets.map(pet => ({
+    if (petsResponse && petsResponse.code === 200 && petsResponse.data && petsResponse.data.pets) {
+      pets.value = petsResponse.data.pets.map(pet => ({
         id: pet.id,
         name: pet.name,
         type: pet.type,
@@ -497,8 +537,8 @@ const loadAdminData = async () => {
     }
     
     // 处理领养数据
-    if (adoptionsResponse && adoptionsResponse.adoptions && Array.isArray(adoptionsResponse.adoptions)) {
-      adoptions.value = adoptionsResponse.adoptions.map(adoption => ({
+    if (adoptionsResponse && adoptionsResponse.code === 200 && adoptionsResponse.data && adoptionsResponse.data.pets && Array.isArray(adoptionsResponse.data.pets)) {
+      adoptions.value = adoptionsResponse.data.pets.map(adoption => ({
         id: adoption.id,
         pet_id: adoption.pet_id,
         user_name: adoption.user ? adoption.user.username : adoption.applicant_id,
@@ -516,14 +556,16 @@ const loadAdminData = async () => {
     }
     
     // 处理用户数据
-    if (usersResponse && usersResponse.users) {
-      users.value = usersResponse.users.map(user => ({
+    if (usersResponse && usersResponse.code === 200 && usersResponse.data && Array.isArray(usersResponse.data)) {
+      users.value = usersResponse.data.map(user => ({
         id: user.id,
         name: user.username,
         email: user.email,
         phone: user.phone || '-',
-        register_time: user.created_at ? user.created_at.split(' ')[0] : '-',
-        status: 'active'
+        register_time: user.createdAt ? user.createdAt.split('T')[0] : '-',
+        status: user.status || 'enabled',
+        area: user.area || '',
+        description: user.description || ''
       }))
       userTotal.value = users.value.length
     }
@@ -616,6 +658,18 @@ const getStatusType = (status) => {
   }
 }
 
+// 格式化日期
+const formatDate = (dateStr) => {
+  if (!dateStr) return '-'
+  const date = new Date(dateStr)
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  const hours = String(date.getHours()).padStart(2, '0')
+  const minutes = String(date.getMinutes()).padStart(2, '0')
+  return `${year}-${month}-${day} ${hours}:${minutes}`
+}
+
 // 获取状态文本
 const getStatusText = (status) => {
   switch (status) {
@@ -627,10 +681,16 @@ const getStatusText = (status) => {
   }
 }
 
-// 切换用户状态
-const toggleUserStatus = (user) => {
-  user.status = user.status === 'active' ? 'disabled' : 'active'
-  ElMessage.success(`用户 ${user.name} ${user.status === 'active' ? '启用' : '禁用'}成功`)
+// 切换用户状态（模拟功能）
+const toggleUserStatus = async (user) => {
+  try {
+    // 模拟状态切换
+    user.status = user.status === 'active' ? 'disabled' : 'active'
+    ElMessage.success(`用户 ${user.name} ${user.status === 'active' ? '启用' : '禁用'}成功`)
+  } catch (error) {
+    console.error('切换用户状态失败:', error)
+    ElMessage.error('操作失败')
+  }
 }
 
 // 查看宠物
@@ -650,6 +710,57 @@ const rejectPet = (pet) => {
   ElMessage.success(`宠物 ${pet.name} 已拒绝`)
 }
 
+// 编辑用户对话框
+const editUserDialogVisible = ref(false)
+const editingUser = ref({
+  id: null,
+  username: '',
+  email: '',
+  phone: '',
+  area: '',
+  description: ''
+})
+
+const editUser = (user) => {
+  editingUser.value = {
+    id: user.id,
+    username: user.name,
+    email: user.email,
+    phone: user.phone || '',
+    area: user.area || '',
+    description: user.description || ''
+  }
+  editUserDialogVisible.value = true
+}
+
+const saveUserEdit = async () => {
+  try {
+    const response = await api.put(`/users/${editingUser.value.id}`, {
+      username: editingUser.value.username,
+      email: editingUser.value.email,
+      phone: editingUser.value.phone,
+      address: editingUser.value.area,
+      bio: editingUser.value.description
+    })
+    if (response.code === 200) {
+      // 更新本地数据
+      const index = users.value.findIndex(u => u.id === editingUser.value.id)
+      if (index !== -1) {
+        users.value[index].name = editingUser.value.username
+        users.value[index].email = editingUser.value.email
+        users.value[index].phone = editingUser.value.phone
+        users.value[index].area = editingUser.value.area
+        users.value[index].description = editingUser.value.description
+      }
+      ElMessage.success('用户信息更新成功')
+      editUserDialogVisible.value = false
+    }
+  } catch (error) {
+    console.error('更新用户信息失败:', error)
+    ElMessage.error('更新失败')
+  }
+}
+
 // 领养申请对话框
 const adoptionDialogVisible = ref(false)
 const currentAdoption = ref(null)
@@ -661,7 +772,7 @@ const viewAdoptionDetail = async (adoption) => {
   try {
     // 获取所有领养申请数据
     const allAdoptions = await api.getAdoptions()
-    const adoptionDetail = allAdoptions.adoptions.find(a => a.id === adoption.id)
+    const adoptionDetail = allAdoptions.data.pets.find(a => a.id === adoption.id)
     
     if (adoptionDetail) {
       currentAdoption.value = adoptionDetail
@@ -1281,6 +1392,7 @@ const quickRejectAdoption = async (adoption) => {
   margin-bottom: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
 .detail-section:last-of-type {
@@ -1311,6 +1423,16 @@ const quickRejectAdoption = async (adoption) => {
   display: flex;
   margin-bottom: 12px;
   align-items: flex-start;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(64, 158, 255, 0.04) 0%, rgba(64, 158, 255, 0.02) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(64, 158, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.detail-row:hover {
+  background: linear-gradient(135deg, rgba(64, 158, 255, 0.08) 0%, rgba(64, 158, 255, 0.04) 100%);
+  border-color: rgba(64, 158, 255, 0.15);
 }
 
 .detail-row .label {
@@ -1318,6 +1440,8 @@ const quickRejectAdoption = async (adoption) => {
   font-size: 14px;
   color: var(--text-color-secondary);
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .detail-row .value {
@@ -1327,10 +1451,56 @@ const quickRejectAdoption = async (adoption) => {
   line-height: 1.6;
 }
 
+.note-content {
+  background: linear-gradient(135deg, rgba(103, 194, 58, 0.06) 0%, rgba(103, 194, 58, 0.02) 100%);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--success-color);
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-color-primary);
+  line-height: 1.8;
+}
+
+.note-content:empty::before {
+  content: '暂无备注';
+  color: var(--text-color-secondary);
+  font-style: italic;
+}
+
 .dialog-footer {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.dialog-footer .el-button {
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dialog-footer .el-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dialog-footer .el-button--primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #66b1ff 100%);
+  border: none;
+}
+
+.dialog-footer .el-button--success {
+  background: linear-gradient(135deg, var(--success-color) 0%, #95d475 100%);
+  border: none;
+}
+
+.dialog-footer .el-button--danger {
+  background: linear-gradient(135deg, var(--danger-color) 0%, #f56c6c 100%);
+  border: none;
 }
 
 /* 响应式设计 - 领养详情对话框 */
@@ -1339,9 +1509,17 @@ const quickRejectAdoption = async (adoption) => {
     flex-direction: column;
     gap: 4px;
   }
-  
+
   .detail-row .label {
     min-width: auto;
+  }
+
+  .dialog-footer {
+    flex-direction: column;
+  }
+
+  .dialog-footer .el-button {
+    width: 100%;
   }
 }
 </style>

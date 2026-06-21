@@ -22,8 +22,8 @@ app.use(pinia)
 app.use(ElementPlus)
 app.use(router)
 
-// 初始化用户信息
+app.mount('#app')
+
+// 初始化用户信息（在应用挂载后）
 const userStore = useUserStore()
 userStore.initializeUser()
-
-app.mount('#app')

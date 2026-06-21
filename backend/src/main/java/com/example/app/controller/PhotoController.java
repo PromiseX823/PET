@@ -79,8 +79,11 @@ public class PhotoController {
         Long userId = ((Number) request.get("user_id")).longValue();
         photoService.likePhoto(photoId, userId);
         
+        int likeCount = photoService.getPhotoLikeCount(photoId);
+        
         Map<String, Object> result = new HashMap<>();
         result.put("message", "点赞成功");
+        result.put("like_count", likeCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -91,8 +94,11 @@ public class PhotoController {
         Long userId = ((Number) request.get("user_id")).longValue();
         photoService.unlikePhoto(photoId, userId);
         
+        int likeCount = photoService.getPhotoLikeCount(photoId);
+        
         Map<String, Object> result = new HashMap<>();
         result.put("message", "取消点赞成功");
+        result.put("like_count", likeCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -114,8 +120,11 @@ public class PhotoController {
         Long userId = ((Number) request.get("user_id")).longValue();
         photoService.collectPhoto(photoId, userId);
         
+        int collectionCount = photoService.getPhotoCollectionCount(photoId);
+        
         Map<String, Object> result = new HashMap<>();
         result.put("message", "收藏成功");
+        result.put("collection_count", collectionCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 
@@ -126,8 +135,11 @@ public class PhotoController {
         Long userId = ((Number) request.get("user_id")).longValue();
         photoService.uncollectPhoto(photoId, userId);
         
+        int collectionCount = photoService.getPhotoCollectionCount(photoId);
+        
         Map<String, Object> result = new HashMap<>();
         result.put("message", "取消收藏成功");
+        result.put("collection_count", collectionCount);
         return ResponseEntity.ok(ApiResponse.success(result));
     }
 

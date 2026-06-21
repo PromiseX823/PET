@@ -109,6 +109,13 @@ public class CommentService {
                 .build();
     }
     
+    @Transactional(readOnly = true)
+    public List<CommentResponse> getUserComments(Long userId) {
+        return commentRepository.findByUserIdAndIsDeletedFalse(userId).stream()
+                .map(this::toCommentResponse)
+                .toList();
+    }
+    
     private String cleanImageUrl(String url) {
         if (url == null) {
             return null;

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pet-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      JWT_SECRET: your-256-bit-secret-key-here-for-jwt-signing-must-be-at-least-32-characters
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    networks:
+      - pet-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./F
+      dockerfile: Dockerfile
+    container_name: pet-frontend
+    ports:
+      - "80:80"
+    networks:
+      - pet-network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  pet-network:
+    driver: bridge

@@ -33,13 +33,14 @@ const selectedPhoto = ref(null)
 
 // 加载照片数据
 const loadPhotos = async () => {
+  let photosData = []
   try {
     loading.value = true
     const response = await api.getPhotos()
-    const data = response.data || []
+    const data = response?.data || []
     
     // 将后端数据转换为前端所需格式
-    let photosData = data.map(photo => ({
+    photosData = data.map(photo => ({
       id: photo.id,
       title: photo.caption || `照片 ${photo.id}`,
       image_url: photo.image_url, // 保持与模板一致
@@ -57,15 +58,15 @@ const loadPhotos = async () => {
     }))
     
     // 如果用户已登录，获取用户的点赞和收藏状态
-    if (userStore.user) {
+    if (userStore.user && userStore.user.id) {
       try {
         // 获取用户点赞的照片ID列表
         const likedPhotosResponse = await api.getUserLikedPhotos(userStore.user.id)
-        const likedPhotoIds = likedPhotosResponse.liked_photo_ids || []
+        const likedPhotoIds = likedPhotosResponse?.data?.liked_photo_ids || []
         
         // 获取用户收藏的照片ID列表
         const collectedPhotosResponse = await api.getUserCollectedPhotos(userStore.user.id)
-        const collectedPhotoIds = collectedPhotosResponse.collected_photo_ids || []
+        const collectedPhotoIds = collectedPhotosResponse?.data?.collected_photo_ids || []
         
         // 更新照片的liked和collected状态
         photosData = photosData.map(photo => ({
@@ -77,14 +78,13 @@ const loadPhotos = async () => {
         console.error('获取用户点赞/收藏状态失败:', error)
       }
     }
-    
-    // 更新store中的数据
-    photosStore.setPhotos(photosData)
-    photosStore.setNeedRefresh(false)
   } catch (err) {
     error.value = '加载照片失败'
     console.error('加载照片失败:', err)
   } finally {
+    // 更新store中的数据
+    photosStore.setPhotos(photosData)
+    photosStore.setNeedRefresh(false)
     loading.value = false
   }
 }
@@ -106,7 +106,7 @@ const loadComments = async (photoId) => {
   try {
     const response = await api.getPhotoComments(photoId)
     console.log('加载的评论数据:', response)
-    const commentsList = response.data || []
+    const commentsList = response?.data || []
     comments.value = buildNestedComments(commentsList)
     console.log('构建后的评论数据:', comments.value)
   } catch (err) {
@@ -199,8 +199,9 @@ async function toggleLike(photo) {
     }
     
     // 更新前端状态
+    const resultData = response.data || response
     photo.liked = !photo.liked
-    photo.likes = response.like_count
+    photo.likes = resultData.like_count || (photo.liked ? photo.likes + 1 : photo.likes - 1)
     
     // 同时更新store中的数据
     photosStore.updatePhoto(photo.id, {
@@ -208,7 +209,7 @@ async function toggleLike(photo) {
       likes: photo.likes
     })
     
-    ElMessage.success(response.message)
+    ElMessage.success(response.message || '操作成功')
   } catch (error) {
     console.error('点赞操作失败:', error)
     ElMessage.error('点赞操作失败，请稍后重试')
@@ -233,8 +234,9 @@ async function toggleCollection(photo) {
     }
     
     // 更新前端状态
+    const resultData = response.data || response
     photo.collected = !photo.collected
-    photo.collections = response.collection_count
+    photo.collections = resultData.collection_count || (photo.collected ? photo.collections + 1 : photo.collections - 1)
     
     // 同时更新store中的数据
     photosStore.updatePhoto(photo.id, {
@@ -242,7 +244,7 @@ async function toggleCollection(photo) {
       collections: photo.collections
     })
     
-    ElMessage.success(response.message)
+    ElMessage.success(response.message || '操作成功')
   } catch (error) {
     console.error('收藏操作失败:', error)
     ElMessage.error('收藏操作失败，请稍后重试')

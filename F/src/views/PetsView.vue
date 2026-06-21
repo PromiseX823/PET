@@ -191,7 +191,7 @@ const fetchPets = async () => {
     }
     
     const response = await api.getPets(filters)
-    const data = response.data || {}
+    const data = response?.data || {}
     // 保存总宠物数和总页数
     totalPets.value = data.total || 0
     totalPages.value = data.total_pages || 1
@@ -221,8 +221,32 @@ const viewPet = (id) => {
 }
 
 // 添加到收藏
-const addToFavorite = (id) => {
-  ElMessage.success('已添加到收藏')
+const addToFavorite = async (id) => {
+  const user = localStorage.getItem('user')
+  if (!user) {
+    ElMessage.warning('请先登录')
+    router.push('/login')
+    return
+  }
+  const parsedUser = JSON.parse(user)
+  if (!parsedUser.id) {
+    ElMessage.warning('请先登录')
+    router.push('/login')
+    return
+  }
+  try {
+    await api.favoritePet(id, parsedUser.id)
+    ElMessage.success('已添加到收藏')
+  } catch (error) {
+    console.error('收藏失败:', error)
+    let msg = '收藏失败'
+    if (error.response?.data?.message) {
+      msg = error.response.data.message
+    } else if (error.message) {
+      msg = error.message
+    }
+    ElMessage.error(msg)
+  }
 }
 
 // 应用筛选

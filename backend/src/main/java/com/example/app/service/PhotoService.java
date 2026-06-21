@@ -15,12 +15,14 @@ import com.example.app.repository.PhotoCollectionRepository;
 import com.example.app.repository.PhotoRepository;
 import com.example.app.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PhotoService {
@@ -149,15 +151,19 @@ public class PhotoService {
         photoRepository.save(photo);
 
         if (!photo.getUserId().equals(userId)) {
-            User user = userRepository.findById(userId).orElse(null);
-            if (user != null) {
-                notificationService.createNotification(
-                        photo.getUserId(),
-                        "有人点赞了你的照片",
-                        user.getUsername() + " 点赞了你的照片",
-                        "like",
-                        photoId
-                );
+            try {
+                User user = userRepository.findById(userId).orElse(null);
+                if (user != null) {
+                    notificationService.createNotification(
+                            photo.getUserId(),
+                            "有人点赞了你的照片",
+                            user.getUsername() + " 点赞了你的照片",
+                            "like",
+                            photoId
+                    );
+                }
+            } catch (Exception e) {
+                log.warn("发送点赞通知失败，可能是消息队列不可用", e);
             }
         }
     }
@@ -194,15 +200,19 @@ public class PhotoService {
         photoCollectionRepository.save(collection);
 
         if (!photo.getUserId().equals(userId)) {
-            User user = userRepository.findById(userId).orElse(null);
-            if (user != null) {
-                notificationService.createNotification(
-                        photo.getUserId(),
-                        "有人收藏了你的照片",
-                        user.getUsername() + " 收藏了你的照片",
-                        "collection",
-                        photoId
-                );
+            try {
+                User user = userRepository.findById(userId).orElse(null);
+                if (user != null) {
+                    notificationService.createNotification(
+                            photo.getUserId(),
+                            "有人收藏了你的照片",
+                            user.getUsername() + " 收藏了你的照片",
+                            "collection",
+                            photoId
+                    );
+                }
+            } catch (Exception e) {
+                log.warn("发送收藏通知失败，可能是消息队列不可用", e);
             }
         }
     }
@@ -218,6 +228,28 @@ public class PhotoService {
     @Transactional(readOnly = true)
     public boolean isPhotoCollected(Long photoId, Long userId) {
         return photoCollectionRepository.existsByPhotoIdAndUserId(photoId, userId);
+    }
+
+    @Transactional(readOnly = true)
+    public int getPhotoLikeCount(Long photoId) {
+        return likeRepository.countByPhotoId(photoId);
+    }
+
+    @Transactional(readOnly = true)
+    public int getPhotoCollectionCount(Long photoId) {
+        return photoCollectionRepository.countByPhotoId(photoId);
+    }
+
+    @Transactional(readOnly = true)
+    public int getPhotoCountByUser(Long userId) {
+        return photoRepository.countByUserId(userId);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PhotoResponse> getPhotosByUser(Long userId) {
+        return photoRepository.findByUserId(userId).stream()
+                .map(this::toPhotoResponse)
+                .toList();
     }
 
     @Transactional(readOnly = true)

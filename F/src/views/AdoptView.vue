@@ -96,7 +96,7 @@ const loadAvailablePets = async () => {
   try {
     loading.value = true
     const response = await api.getPets()
-    const data = response.data || {}
+    const data = response?.data || {}
     availablePets.value = (data.pets || []).filter(pet => pet.status === '待领养')
   } catch (error) {
     console.error('加载宠物列表失败:', error)

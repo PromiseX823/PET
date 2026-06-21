@@ -1,13 +1,18 @@
 
 package com.example.app.controller;
 
+import com.example.app.dto.response.AdoptionResponse;
 import com.example.app.dto.response.ApiResponse;
+import com.example.app.dto.response.CommentResponse;
 import com.example.app.dto.response.PetResponse;
 import com.example.app.dto.response.PhotoResponse;
 import com.example.app.dto.response.UserResponse;
 import com.example.app.entity.User;
 import com.example.app.exception.BusinessException;
 import com.example.app.repository.UserRepository;
+import com.example.app.service.AdoptionService;
+import com.example.app.service.CommentService;
+import com.example.app.service.FollowService;
 import com.example.app.service.PetService;
 import com.example.app.service.PhotoService;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +35,9 @@ public class UserController {
     private final PasswordEncoder passwordEncoder;
     private final PetService petService;
     private final PhotoService photoService;
+    private final AdoptionService adoptionService;
+    private final CommentService commentService;
+    private final FollowService followService;
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<UserResponse>>> getAllUsers() {
@@ -97,6 +105,25 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success("用户删除成功", null));
     }
 
+    @PutMapping("/{user_id}/status")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> toggleUserStatus(@PathVariable("user_id") Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new BusinessException("用户不存在"));
+
+        String newStatus = "enabled".equals(user.getStatus()) ? "disabled" : "enabled";
+        user.setStatus(newStatus);
+        user = userRepository.save(user);
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("id", user.getId());
+        result.put("status", newStatus);
+
+        return ResponseEntity.ok(ApiResponse.success(
+                "disabled".equals(newStatus) ? "用户已禁用" : "用户已启用",
+                result
+        ));
+    }
+
     @GetMapping("/{user_id}/pets")
     public ResponseEntity<ApiResponse<List<PetResponse>>> getUserPets(@PathVariable("user_id") Long userId) {
         // 验证用户存在
@@ -134,14 +161,41 @@ public class UserController {
     }
 
     private UserResponse toUserResponse(User user) {
+        Long userId = user.getId();
         return UserResponse.builder()
-                .id(user.getId())
+                .id(userId)
                 .username(user.getUsername())
                 .email(user.getEmail())
                 .phone(user.getPhone())
                 .avatar(user.getAvatarUrl())
                 .role(user.getRole())
                 .createdAt(user.getCreatedAt())
+                .followingCount(followService.getFollowingCount(userId))
+                .followerCount(followService.getFollowerCount(userId))
+                .petCount(petService.getPetCountByOwner(userId))
+                .photoCount(photoService.getPhotoCountByUser(userId))
+                .description(user.getBio())
+                .area(user.getAddress())
+                .pets(petService.getPetsByOwner(userId))
+                .photos(photoService.getPhotosByUser(userId))
+                .applications(getUserAdoptions(userId))
+                .comments(getUserComments(userId))
                 .build();
+    }
+    
+    private List<AdoptionResponse> getUserAdoptions(Long userId) {
+        try {
+            return adoptionService.getUserAdoptions(userId);
+        } catch (Exception e) {
+            return java.util.Collections.emptyList();
+        }
+    }
+    
+    private List<CommentResponse> getUserComments(Long userId) {
+        try {
+            return commentService.getUserComments(userId);
+        } catch (Exception e) {
+            return java.util.Collections.emptyList();
+        }
     }
 }

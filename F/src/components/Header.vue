@@ -24,6 +24,9 @@
         <router-link to="/upload" class="nav-item">
           <el-icon><Upload /></el-icon> 上传照片
         </router-link>
+        <router-link to="/ai-chat" class="nav-item">
+          <el-icon><ChatDotRound /></el-icon> AI助手
+        </router-link>
       </nav>
       <div class="user-area">
         <!-- 通知图标 - 始终显示 -->
@@ -119,7 +122,7 @@ import { useUserStore } from '@/stores'
 import { ElMessage } from 'element-plus'
 import { computed, ref, onMounted, watch } from 'vue'
 import { api } from '@/api'
-import { Bell, House, User, Tools, Picture, Upload } from '@element-plus/icons-vue'
+import { Bell, House, User, Tools, Picture, Upload, ChatDotRound } from '@element-plus/icons-vue'
 
 const userStore = useUserStore()
 
@@ -148,17 +151,20 @@ const avatarUrl = computed(() => {
 // 获取用户通知
 const fetchNotifications = async () => {
   if (!userStore.isLoggedIn || !userStore.user.id) return
-  
+
   try {
-    const response = await api.get(`/api/notifications?user_id=${userStore.user.id}&limit=10`)
-    if (response.success) {
-      // 确保通知ID是数字类型
-      notifications.value = response.data.map(notification => ({
-        ...notification,
-        id: Number(notification.id),
-        user_id: Number(notification.user_id)
-      }))
-      unreadCount.value = notifications.value.filter(n => !n.is_read).length
+    const response = await api.get(`/notifications/users/${userStore.user.id}`)
+    if (response && response.data) {
+      // 只显示未读通知（后端返回isRead驼峰命名）
+      notifications.value = response.data
+        .filter(n => !n.isRead && !n.is_read)
+        .map(notification => ({
+          ...notification,
+          id: Number(notification.id),
+          user_id: Number(notification.userId || notification.user_id),
+          is_read: notification.isRead || notification.is_read || false
+        }))
+      unreadCount.value = notifications.value.length
     }
   } catch (error) {
     console.error('获取通知失败:', error)
@@ -169,10 +175,10 @@ const fetchNotifications = async () => {
 const markNotificationAsRead = async (notificationId) => {
   // 确保通知ID是数字类型
   const id = Number(notificationId)
-  
+
   try {
     // 传递user_id参数以验证用户权限
-    await api.post(`/api/notifications/${id}/read`, {
+    await api.post(`/notifications/${id}/read`, {
       user_id: userStore.user.id
     })
     // 从列表中移除该通知
@@ -238,9 +244,9 @@ const markNotificationAsRead = async (notificationId) => {
 // 标记所有通知为已读
 const markAllAsRead = async () => {
   if (!userStore.isLoggedIn || !userStore.user.id) return
-  
+
   try {
-    await api.post('/api/notifications/read-all', { user_id: userStore.user.id })
+    await api.post(`/notifications/users/${userStore.user.id}/read-all`)
     // 直接重新获取最新的通知列表，确保数据同步
     await fetchNotifications()
     ElMessage.success('所有通知已标记为已读')
@@ -258,7 +264,7 @@ const deleteNotification = async (notificationId) => {
   
   try {
     // 传递user_id参数以验证用户权限
-    await api.delete(`/api/notifications/${id}`, {
+    await api.delete(`/notifications/${id}`, {
       data: {
         user_id: userStore.user.id
       }

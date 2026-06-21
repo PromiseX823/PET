@@ -49,11 +49,50 @@
             </div>
           </div>
 
+          <!-- 宠物主人信息 -->
+          <div v-if="pet.owner_id && ownerInfo" class="owner-section">
+            <div class="owner-info">
+              <img :src="ownerInfo.avatar || defaultAvatar" :alt="ownerInfo.username" class="owner-avatar">
+              <div class="owner-details">
+                <div class="owner-name">{{ ownerInfo.username }}</div>
+                <div class="owner-label">宠物主人</div>
+              </div>
+            </div>
+            <el-button
+              v-if="!isPetOwner && userStore.user"
+              :type="isFollowingOwner ? 'info' : 'primary'"
+              :icon="isFollowingOwner ? 'el-icon-check' : 'el-icon-plus'"
+              size="medium"
+              class="follow-btn"
+              @click="toggleFollowOwner"
+            >
+              {{ isFollowingOwner ? '已关注' : '关注' }}
+            </el-button>
+          </div>
+
           <!-- 操作按钮 -->
           <div class="pet-actions">
-            <el-button type="primary" size="large" class="primary-action-btn" @click="openApplyDialog">
+            <!-- 申请领养按钮：只有待领养状态的宠物才能申请 -->
+            <el-button 
+              v-if="pet.status === '待领养'" 
+              type="primary" 
+              size="large" 
+              class="primary-action-btn" 
+              @click="openApplyDialog"
+            >
               <i class="el-icon-plus"></i>
               立即申请领养
+            </el-button>
+            <!-- 已领养/仅分享状态显示提示 -->
+            <el-button 
+              v-else 
+              type="info" 
+              size="large" 
+              class="primary-action-btn"
+              disabled
+            >
+              <i class="el-icon-check"></i>
+              {{ pet.status === '已领养' ? '已被领养' : '仅分享展示' }}
             </el-button>
             <el-button size="large" class="secondary-action-btn">
               <i class="el-icon-share"></i>
@@ -63,8 +102,14 @@
               <i class="el-icon-star-off"></i>
               收藏
             </el-button>
-            <!-- 编辑宠物按钮 -->
-            <el-button type="success" size="large" class="secondary-action-btn" @click="openEditDialog">
+            <!-- 编辑宠物按钮：只有宠物主人才能编辑 -->
+            <el-button 
+              v-if="isPetOwner" 
+              type="success" 
+              size="large" 
+              class="secondary-action-btn" 
+              @click="openEditDialog"
+            >
               <i class="el-icon-edit"></i>
               编辑宠物
             </el-button>
@@ -324,6 +369,11 @@ const pet = ref({
   owner_id: null // 添加宠物主人ID
 })
 
+// 宠物主人信息
+const ownerInfo = ref(null)
+const isFollowingOwner = ref(false)
+const defaultAvatar = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+
 // 编辑宠物相关
 const showEditDialog = ref(false)
 const editForm = ref({
@@ -403,34 +453,35 @@ const fetchPet = async () => {
   try {
     const id = route.params.id
     console.log('获取宠物信息:', id)
-    const data = await api.getPetById(id)
-    console.log('获取到的宠物数据:', data)
+    const response = await api.getPetById(id)
+    console.log('获取到的宠物数据:', response)
     
     // 处理返回的数据结构，确保与前端期望的pet对象结构匹配
+    const data = response.data || response
+    
     // 从photos数组中找到主照片
     const mainPhoto = data.photos && data.photos.length > 0 
       ? data.photos.find(photo => photo.is_main) || data.photos[0]
-      : null
+      : data.main_photo
     
     pet.value = {
       id: data.id,
       name: data.name,
       type: data.type,
-      breed: data.breed,
-      age: data.age,
-      gender: data.gender,
+      breed: data.breed || '未知',
+      age: data.age || 0,
+      gender: data.gender || 'unknown',
       weight: data.weight || 0,
       color: data.color || '未知',
-      location: data.location,
+      location: data.location || '未知',
       health_status: data.health_info || '健康',
       neutered: data.neutered || false,
       vaccinated: data.vaccinated || false,
-      status: data.status,
-      description: data.description,
-      image_url: mainPhoto ? mainPhoto.image_url : '/static/images/pet1_1.jpg',
-      // 处理更多照片数据结构
+      status: data.status === 'available' ? '待领养' : data.status === 'adopted' ? '已领养' : data.status,
+      description: data.description || '暂无详细描述',
+      image_url: mainPhoto?.image_url || '/static/images/pet1_1.jpg',
       more_photos: data.photos ? data.photos.map(photo => photo.image_url) : [],
-      owner_id: data.user_id || data.owner_id // 获取宠物主人ID
+      owner_id: data.owner_id || data.user_id
     }
   } catch (error) {
     console.error('获取宠物信息失败:', error)
@@ -446,15 +497,93 @@ const updatePetOwnerStatus = () => {
   console.log('检查是否是宠物主人:')
   console.log('当前登录用户ID:', userStore.user?.id, typeof userStore.user?.id)
   console.log('宠物主人ID:', pet.value.owner_id, typeof pet.value.owner_id)
-  
+
   if (userStore.user && userStore.user.id) {
     // 确保ID类型匹配
     isPetOwner.value = parseInt(userStore.user.id) === parseInt(pet.value.owner_id)
   } else {
     isPetOwner.value = false
   }
-  
+
   console.log('判断结果:', isPetOwner.value)
+}
+
+// 加载宠物主人信息
+const loadOwnerInfo = async () => {
+  if (!pet.value.owner_id) {
+    ownerInfo.value = null
+    return
+  }
+  try {
+    const response = await api.getUserById(pet.value.owner_id)
+    if (response && response.data && response.data.data) {
+      ownerInfo.value = response.data.data
+    } else if (response && response.data) {
+      ownerInfo.value = response.data
+    }
+  } catch (error) {
+    console.error('获取主人信息失败:', error)
+    ownerInfo.value = null
+  }
+}
+
+// 检查是否已关注主人
+const checkFollowStatus = async () => {
+  if (!pet.value.owner_id || !userStore.user || !userStore.user.id) {
+    isFollowingOwner.value = false
+    return
+  }
+  if (isPetOwner.value) {
+    isFollowingOwner.value = false
+    return
+  }
+  try {
+    const response = await api.checkFollowing(pet.value.owner_id)
+    if (response && response.data && response.data.data) {
+      isFollowingOwner.value = !!response.data.data.following
+    } else if (response && response.data) {
+      isFollowingOwner.value = !!response.data.following
+    }
+  } catch (error) {
+    console.error('检查关注状态失败:', error)
+    isFollowingOwner.value = false
+  }
+}
+
+// 切换关注宠物主人
+const toggleFollowOwner = async () => {
+  if (!userStore.user || !userStore.user.id) {
+    ElMessage.warning('请先登录')
+    router.push('/login')
+    return
+  }
+  if (isPetOwner.value) {
+    ElMessage.warning('不能关注自己')
+    return
+  }
+  if (!pet.value.owner_id) {
+    console.error('owner_id 为空:', pet.value)
+    ElMessage.error('无法获取宠物主人信息')
+    return
+  }
+  try {
+    const response = await api.toggleFollow(pet.value.owner_id)
+    if (response && response.data && response.data.data) {
+      isFollowingOwner.value = !!response.data.data.following
+    } else if (response && response.data) {
+      isFollowingOwner.value = !!response.data.following
+    }
+    ElMessage.success(isFollowingOwner.value ? '关注成功' : '已取消关注')
+  } catch (error) {
+    console.error('关注操作失败:', error)
+    let msg = '操作失败'
+    if (error.response?.data?.message) {
+      msg = error.response.data.message
+    } else if (error.message) {
+      msg = error.message
+    }
+    ElMessage.error(msg)
+  }
 }
 
 // 打开编辑宠物对话框
@@ -516,12 +645,15 @@ onMounted(() => {
   // 初始化用户状态
   userStore.initializeUser()
   console.log('当前登录用户:', userStore.user)
-  
-  fetchPet().then(() => {
+
+  fetchPet().then(async () => {
     console.log('宠物数据:', pet.value)
     // 获取宠物数据后检查是否是宠物主人
     updatePetOwnerStatus()
     console.log('是否是宠物主人:', isPetOwner.value)
+    // 加载主人信息和关注状态
+    await loadOwnerInfo()
+    await checkFollowStatus()
   })
 })
 </script>
@@ -715,6 +847,54 @@ onMounted(() => {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+}
+
+/* 主人信息区 */
+.owner-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.owner-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.owner-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.owner-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.owner-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.owner-label {
+  font-size: 12px;
+  color: #909399;
+}
+
+.follow-btn {
+  min-width: 90px;
 }
 
 .primary-action-btn {

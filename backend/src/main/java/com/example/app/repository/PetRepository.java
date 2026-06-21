@@ -22,4 +22,6 @@ public interface PetRepository extends JpaRepository<Pet, Long>, JpaSpecificatio
     Page<Pet> findByStatus(String status, Pageable pageable);
     
     Page<Pet> findByType(String type, Pageable pageable);
+    
+    int countByOwnerId(Long ownerId);
 }

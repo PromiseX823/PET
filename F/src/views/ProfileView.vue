@@ -22,11 +22,11 @@
           <h2 class="nickname">{{ user.nickname || '用户' }}</h2>
           <p class="username">@{{ user.username }}</p>
           <div class="user-stats">
-            <div class="stat-item">
+            <div class="stat-item clickable" @click="showFollowList('following')">
               <span class="stat-value">{{ user.followingCount || 0 }}</span>
               <span class="stat-label">关注</span>
             </div>
-            <div class="stat-item">
+            <div class="stat-item clickable" @click="showFollowList('followers')">
               <span class="stat-value">{{ user.followerCount || 0 }}</span>
               <span class="stat-label">粉丝</span>
             </div>
@@ -542,6 +542,37 @@
       </span>
     </template>
   </el-dialog>
+
+  <!-- 关注/粉丝列表弹窗 -->
+  <el-dialog
+    v-model="dialogVisible.followList"
+    :title="followListType === 'following' ? '我的关注' : '我的粉丝'"
+    width="500px"
+    class="follow-list-dialog"
+  >
+    <div v-if="followList.length === 0" class="empty-follow">
+      <p>{{ followListType === 'following' ? '还没有关注任何人' : '还没有粉丝' }}</p>
+    </div>
+    <div v-else class="follow-list">
+      <div
+        v-for="item in followList"
+        :key="item.id"
+        class="follow-item"
+      >
+        <img
+          :src="(followListType === 'following' ? item.followingAvatar : item.followerAvatar) || defaultAvatar"
+          class="follow-avatar"
+          alt="头像"
+        />
+        <div class="follow-info">
+          <div class="follow-username">
+            {{ followListType === 'following' ? item.followingUsername : item.followerUsername }}
+          </div>
+          <div class="follow-time">{{ formatDate(item.createdAt) }}</div>
+        </div>
+      </div>
+    </div>
+  </el-dialog>
 </template>
 
 <script setup>
@@ -586,8 +617,13 @@ const dialogVisible = ref({
   deletePet: false,
   deleteAccount: false,
   editAdoption: false,
-  deleteAdoption: false
+  deleteAdoption: false,
+  followList: false
 })
+
+// 关注/粉丝列表
+const followListType = ref('following') // 'following' 或 'followers'
+const followList = ref([])
 
 // 要删除的宠物ID
 const petToDeleteId = ref(null)
@@ -720,28 +756,30 @@ async function loadUserDetail() {
       throw new Error('用户ID不存在')
     }
     
-    const response = await api.getUserById(userStore.user.id)
-    
-    // 检查响应数据是否有效
+    const result = await api.getUserById(userStore.user.id)
+    const response = result.data || result
+
     if (!response) {
       throw new Error('API返回的数据为空')
     }
-    
-    // 确保返回的数据包含所有必要的用户信息字段，特别是id字段
+
     const completeUser = {
       ...userStore.user,
       ...response,
-      id: userStore.user.id, // 明确保留id字段，防止服务器不返回
-      // 确保个人信息字段存在
+      id: userStore.user.id,
       description: response.description || userStore.user.description || '',
       phone: response.phone || userStore.user.phone || '',
       area: response.area || userStore.user.area || '',
-      // 确保数组字段存在
-      pets: response.pets || [],
-      photos: response.photos || [],
+      pets: response.pets ? response.pets.map(pet => ({
+        ...pet,
+        avatar: pet.main_photo?.image_url || pet.photos?.[0]?.image_url || ''
+      })) : [],
+      photos: response.photos ? response.photos.map(photo => ({
+        ...photo,
+        url: photo.image_url
+      })) : [],
       applications: response.applications || [],
       comments: response.comments || [],
-      // 确保统计字段存在
       followingCount: response.followingCount || 0,
       followerCount: response.followerCount || 0,
       petCount: response.petCount || 0,
@@ -1297,6 +1335,29 @@ async function deleteAccount() {
   } finally {
     dialogVisible.value.deleteAccount = false
     deletePassword.value = ''
+  }
+}
+
+// 显示关注/粉丝列表
+async function showFollowList(type) {
+  if (!userStore.user || !userStore.user.id) return
+  followListType.value = type
+  dialogVisible.value.followList = true
+  try {
+    const response = type === 'following'
+      ? await api.getFollowingList(userStore.user.id)
+      : await api.getFollowerList(userStore.user.id)
+    if (response && response.data && response.data.data) {
+      followList.value = response.data.data
+    } else if (response && response.data) {
+      followList.value = response.data
+    } else {
+      followList.value = []
+    }
+  } catch (error) {
+    console.error('获取' + (type === 'following' ? '关注' : '粉丝') + '列表失败:', error)
+    ElMessage.error('获取列表失败')
+    followList.value = []
   }
 }
 </script>
@@ -2058,5 +2119,67 @@ body {
     flex-direction: column;
     gap: 12px;
   }
+}
+
+/* 关注/粉丝列表样式 */
+.clickable {
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.clickable:hover {
+  background-color: rgba(64, 158, 255, 0.1);
+}
+
+.empty-follow {
+  text-align: center;
+  padding: 40px 20px;
+  color: #909399;
+}
+
+.follow-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.follow-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.follow-item:hover {
+  background-color: #f5f7fa;
+}
+
+.follow-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid #f0f0f0;
+}
+
+.follow-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.follow-username {
+  font-size: 15px;
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 4px;
+}
+
+.follow-time {
+  font-size: 12px;
+  color: #909399;
 }
 </style>

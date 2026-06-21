@@ -31,6 +31,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/health").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 .requestMatchers("/api/public/**").permitAll()
                 .requestMatchers("/api/pets/**").permitAll()
@@ -39,6 +40,9 @@ public class SecurityConfig {
                 .requestMatchers("/api/notifications/**").permitAll()
                 .requestMatchers("/api/stats/**").permitAll()
                 .requestMatchers("/api/comments/**").permitAll()
+                .requestMatchers("/api/follows/**").permitAll()
+                .requestMatchers("/api/favorites/**").permitAll()
+                .requestMatchers("/api/adoptions/**").permitAll()
                 .requestMatchers("/api/ai/**").permitAll()
                 .requestMatchers("/uploads/**").permitAll()
                 .requestMatchers("/static/**").permitAll()

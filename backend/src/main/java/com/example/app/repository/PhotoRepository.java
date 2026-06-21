@@ -18,6 +18,8 @@ public interface PhotoRepository extends JpaRepository<Photo, Long> {
     
     List<Photo> findByUserId(Long userId);
     
+    int countByUserId(Long userId);
+    
     Optional<Photo> findByPetIdAndIsMainTrue(Long petId);
     
     @Query("SELECT p FROM Photo p WHERE p.petId = :petId AND p.isMain = true")
