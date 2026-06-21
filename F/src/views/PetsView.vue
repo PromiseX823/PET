@@ -95,8 +95,9 @@
           >
             <div class="pet-image-container">
               <img :src="pet.image_url" :alt="pet.name" class="pet-image">
-              <div v-if="pet.status && pet.status.trim() === '待领养'" class="pet-status-badge">{{ pet.status }}</div>
-            <div v-else class="pet-status-badge share-badge">仅分享</div>
+              <div v-if="pet.status === '待领养'" class="pet-status-badge">待领养</div>
+              <div v-else-if="pet.status === 'adopted' || pet.status === '已领养'" class="pet-status-badge adopted-badge">已领养</div>
+              <div v-else class="pet-status-badge share-badge">仅分享</div>
             </div>
             <div class="pet-info">
               <h3 class="pet-name">{{ pet.name }}</h3>
@@ -520,6 +521,12 @@ onMounted(() => {
 .pet-status-badge.share-badge {
   background: linear-gradient(135deg, #4ecdc4, #45b7d1);
   box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+}
+
+/* 已领养徽章样式 */
+.pet-status-badge.adopted-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .pet-info {
