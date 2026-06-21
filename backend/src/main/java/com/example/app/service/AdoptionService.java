@@ -83,7 +83,7 @@ public class AdoptionService {
                     .petId(request.getPetId())
                     .applicantId(request.getUserId())
                     .status("pending")
-                    .applicantNote(request.getReason() != null ? request.getReason() : "")
+                    .applicantNote(request.getApplicantNote() != null ? request.getApplicantNote() : (request.getReason() != null ? request.getReason() : ""))
                     .build();
 
             adoption = adoptionRepository.save(adoption);

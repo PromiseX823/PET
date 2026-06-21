@@ -251,8 +251,8 @@ export default {
     return api.get(`/notifications/users/${userId}/unread-count`)
   },
   
-  favoritePet(petId, userId) {
-    return api.post(`/favorites/pets/${petId}`, { user_id: userId })
+  favoritePet(petId) {
+    return api.post(`/favorites/pets/${petId}`)
   },
   
   unfavoritePet(petId, userId) {

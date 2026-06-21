@@ -2,9 +2,13 @@
 package com.example.app.controller;
 
 import com.example.app.dto.response.ApiResponse;
+import com.example.app.entity.User;
+import com.example.app.repository.UserRepository;
 import com.example.app.service.FavoriteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -15,13 +19,15 @@ import java.util.Map;
 public class FavoriteController {
 
     private final FavoriteService favoriteService;
+    private final UserRepository userRepository;
 
     @PostMapping("/pets/{pet_id}")
-    public ResponseEntity<ApiResponse<Void>> favoritePet(
-            @PathVariable("pet_id") Long petId,
-            @RequestBody Map<String, Object> request) {
-        Long userId = ((Number) request.get("user_id")).longValue();
-        favoriteService.favoritePet(petId, userId);
+    public ResponseEntity<ApiResponse<Void>> favoritePet(@PathVariable("pet_id") Long petId) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("用户不存在"));
+        favoriteService.favoritePet(petId, user.getId());
         return ResponseEntity.ok(ApiResponse.success("收藏成功", null));
     }
 
