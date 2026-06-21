@@ -39,7 +39,7 @@
           </el-form-item>
           <el-form-item v-if="previewUrl" label="预览">
             <div class="preview-wrapper">
-              <img :src="previewUrl" alt="预览" class="preview-image" />
+              <img :src="previewUrl" alt="预览" class="preview-image" @error="previewUrl = ''" />
             </div>
           </el-form-item>
           <el-form-item label="描述">
@@ -181,18 +181,20 @@ const handleUpload = async () => {
         throw error
       }
       
-      if (!uploadResponse || !uploadResponse.file_url) {
+      // 从 response.data.image_url 获取服务器返回的URL
+      const fileUrl = uploadResponse?.data?.image_url
+      if (!fileUrl) {
         throw new Error('文件上传失败，返回数据格式错误')
       }
       
-      console.log('文件上传成功，file_url:', uploadResponse.file_url)
+      console.log('文件上传成功，image_url:', fileUrl)
       
       // 2. 创建照片记录
       const photoData = {
         pet_id: form.value.pet_id ? parseInt(form.value.pet_id) : null,
         user_id: userStore.user.id,
-        image_url: uploadResponse.file_url,
-        thumbnail_url: uploadResponse.file_url,
+        image_url: fileUrl,
+        thumbnail_url: fileUrl,
         caption: form.value.description,
         is_main: false
       }

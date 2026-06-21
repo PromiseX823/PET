@@ -163,6 +163,44 @@
       </div>
     </div>
 
+    <!-- 我的收藏 -->
+    <div class="section">
+      <div class="section-header">
+        <h3>我的收藏</h3>
+      </div>
+      <div class="pets-grid" v-if="myFavorites && myFavorites.length > 0">
+        <div
+          v-for="pet in myFavorites"
+          :key="pet.id"
+          class="pet-item"
+          @click="viewPetDetail(pet.id)"
+        >
+          <div class="pet-item-content">
+            <div class="pet-image-wrapper">
+              <el-image
+                :src="pet.main_photo?.image_url || defaultPetAvatar"
+                fit="cover"
+                class="pet-image"
+              >
+                <template #error>
+                  <div class="image-slot">
+                    <el-icon><Picture /></el-icon>
+                  </div>
+                </template>
+              </el-image>
+            </div>
+            <div class="pet-info">
+              <div class="pet-name">{{ pet.name }}</div>
+              <div class="pet-breed">{{ pet.breed || '未知品种' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-else class="empty-state">
+        <p>暂无收藏，去收藏一些可爱的宠物吧</p>
+      </div>
+    </div>
+
     <!-- 申请记录 -->
     <div class="section">
       <div class="section-header">
@@ -277,7 +315,7 @@
           :on-change="handleAvatarChange"
           :before-upload="beforeAvatarUpload"
         >
-          <img v-if="editForm.avatar" :src="editForm.avatar" class="avatar" />
+          <img v-if="editForm.avatar" :src="editForm.avatar" class="avatar" @error="editForm.avatar = ''" />
           <el-icon v-else class="avatar-uploader-icon"><Plus /></el-icon>
         </el-upload>
       </el-form-item>
@@ -317,9 +355,11 @@
       </el-form-item>
       <el-form-item label="宠物类型">
         <el-select v-model="addPetForm.type" placeholder="请选择宠物类型">
-          <el-option label="猫" value="猫" />
-          <el-option label="狗" value="狗" />
-          <el-option label="其他" value="其他" />
+          <el-option label="猫咪" value="cat" />
+          <el-option label="狗狗" value="dog" />
+          <el-option label="鸟类" value="bird" />
+          <el-option label="兔兔" value="rabbit" />
+          <el-option label="其他" value="other" />
         </el-select>
       </el-form-item>
       <el-form-item label="宠物品种">
@@ -397,7 +437,7 @@
           :on-change="handlePetAvatarChange"
           :before-upload="beforeAvatarUpload"
         >
-          <img v-if="addPetForm.avatar" :src="addPetForm.avatar" class="avatar" />
+          <img v-if="addPetForm.avatar" :src="addPetForm.avatar" class="avatar" @error="addPetForm.avatar = ''" />
           <el-icon v-else class="avatar-uploader-icon"><Plus /></el-icon>
         </el-upload>
       </el-form-item>
@@ -689,6 +729,8 @@ const editFormRef = ref(null)
 const deletePassword = ref('')
 
 // 编辑领养信息表单数据
+const myFavorites = ref([])
+
 const editAdoptionForm = ref({
   description: '',
   phone: '',
@@ -786,6 +828,15 @@ async function loadUserDetail() {
       photoCount: response.photoCount || 0
     }
     userStore.setUser(completeUser)
+    
+    // 获取收藏列表
+    try {
+      const favResult = await api.getMyFavorites()
+      myFavorites.value = favResult.data || []
+    } catch (e) {
+      console.error('获取收藏列表失败:', e)
+      myFavorites.value = []
+    }
   } catch (error) {
     let errorMessage = '加载用户详细信息失败，使用本地存储的用户信息'
     
@@ -919,14 +970,16 @@ async function handleAvatarChange(file) {
     // 上传头像到服务器
     const response = await api.uploadAvatar(formData)
     
-    // 设置表单的头像URL
-    editForm.value.avatar = response.file_url || URL.createObjectURL(file.raw)
-    ElMessage.success('头像上传成功')
+    // 设置表单的头像URL - 只使用服务器返回的URL
+    if (response && response.data && response.data.image_url) {
+      editForm.value.avatar = response.data.image_url
+      ElMessage.success('头像上传成功')
+    } else {
+      ElMessage.warning('头像上传失败，请重试')
+    }
   } catch (error) {
     console.error('头像上传失败:', error)
-    ElMessage.error('头像上传失败，使用本地预览')
-    // 失败时使用本地预览
-    editForm.value.avatar = URL.createObjectURL(file.raw)
+    ElMessage.error('头像上传失败')
   }
 }
 
@@ -961,7 +1014,7 @@ function addPet() {
     color: '',
     neutered: false,
     vaccinated: false,
-    status: 'adoption' // 'adoption'表示可领养，'share'表示仅分享
+    status: '待领养' // '待领养'表示可领养，'share'表示仅分享
   }
   dialogVisible.value.addPet = true
 }
@@ -969,28 +1022,36 @@ function addPet() {
 // 保存宠物信息
 async function savePet() {
   try {
-    // 确保表单数据包含owner_id字段
-    // 转换avatar为photos数组，满足后端要求
+    // 转换数据格式以匹配后端要求
     const petData = {
-      ...addPetForm.value,
-      owner_id: userStore.user.id,
-      // 构造photos数组，将avatar作为主照片
-      photos: [
+      name: addPetForm.value.name,
+      type: addPetForm.value.type,
+      breed: addPetForm.value.breed,
+      age: addPetForm.value.age || 0,
+      gender: addPetForm.value.gender,
+      description: addPetForm.value.description,
+      healthInfo: addPetForm.value.health_info,
+      location: addPetForm.value.location,
+      weight: addPetForm.value.weight || 0,
+      color: addPetForm.value.color,
+      neutered: addPetForm.value.neutered,
+      vaccinated: addPetForm.value.vaccinated,
+      status: addPetForm.value.status,
+      ownerId: userStore.user.id,
+      photos: addPetForm.value.avatar ? [
         {
-          image_url: addPetForm.value.avatar,
+          imageUrl: addPetForm.value.avatar,
           caption: '',
-          is_main: true
+          isMain: true
         }
-      ]
+      ] : []
     }
-    // 移除单独的avatar字段，避免后端混淆
-    delete petData.avatar
     
     const response = await api.createPet(petData)
     // 更新用户的宠物列表
     const updatedUser = {
       ...user.value,
-      pets: [...(user.value.pets || []), response],
+      pets: [...(user.value.pets || []), response.data],
       petCount: (user.value.petCount || 0) + 1
     }
     userStore.setUser(updatedUser)
@@ -1002,7 +1063,7 @@ async function savePet() {
     if (error.response) {
       const status = error.response.status
       if (status === 400) {
-        errorMessage = '提交的数据格式错误'
+        errorMessage = error.response.data?.error || '提交的数据格式错误'
       } else if (status === 401) {
         errorMessage = '登录已过期，请重新登录'
         setTimeout(() => router.push('/login'), 1500)
@@ -1036,14 +1097,16 @@ async function handlePetAvatarChange(file) {
     // 上传头像到服务器
     const response = await api.uploadPetAvatar(formData)
     
-    // 设置表单的头像URL
-    addPetForm.value.avatar = response.file_url || URL.createObjectURL(file.raw)
-    ElMessage.success('宠物头像上传成功')
+    // 设置表单的头像URL - 只使用服务器返回的URL
+    if (response && response.data && response.data.image_url) {
+      addPetForm.value.avatar = response.data.image_url
+      ElMessage.success('宠物头像上传成功')
+    } else {
+      ElMessage.warning('头像上传失败，请重试')
+    }
   } catch (error) {
     console.error('宠物头像上传失败:', error)
-    ElMessage.error('宠物头像上传失败，使用本地预览')
-    // 失败时使用本地预览
-    addPetForm.value.avatar = URL.createObjectURL(file.raw)
+    ElMessage.error('宠物头像上传失败')
   }
 }
 

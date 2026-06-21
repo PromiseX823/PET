@@ -142,6 +142,10 @@ export default {
   getUserCollectedPhotos(userId) {
     return api.get(`/users/${userId}/collected-photos`)
   },
+
+  getMyFavorites() {
+    return api.get('/favorites/my')
+  },
   
   getUserById(id) {
     return api.get(`/users/${id}`)

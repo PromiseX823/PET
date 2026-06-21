@@ -529,7 +529,11 @@ const loadOwnerInfo = async () => {
 
 // 检查是否已关注主人
 const checkFollowStatus = async () => {
-  if (!pet.value.owner_id || !userStore.user || !userStore.user.id) {
+  if (!pet.value.owner_id) {
+    isFollowingOwner.value = false
+    return
+  }
+  if (!userStore.isLoggedIn || !userStore.user?.id) {
     isFollowingOwner.value = false
     return
   }
@@ -539,13 +543,12 @@ const checkFollowStatus = async () => {
   }
   try {
     const response = await api.checkFollowing(pet.value.owner_id)
-    if (response && response.data && response.data.data) {
+    if (response?.data?.data) {
       isFollowingOwner.value = !!response.data.data.following
-    } else if (response && response.data) {
+    } else if (response?.data) {
       isFollowingOwner.value = !!response.data.following
     }
   } catch (error) {
-    console.error('检查关注状态失败:', error)
     isFollowingOwner.value = false
   }
 }

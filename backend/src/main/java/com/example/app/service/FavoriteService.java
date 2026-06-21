@@ -12,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class FavoriteService {
@@ -62,5 +65,19 @@ public class FavoriteService {
     @Transactional(readOnly = true)
     public boolean isPetFavorited(Long petId, Long userId) {
         return favoriteRepository.existsByPetIdAndUserId(petId, userId);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Pet> getUserFavorites(Long userId) {
+        List<Favorite> favorites = favoriteRepository.findByUserId(userId);
+        List<Long> petIds = favorites.stream()
+                .map(Favorite::getPetId)
+                .collect(Collectors.toList());
+        
+        if (petIds.isEmpty()) {
+            return List.of();
+        }
+        
+        return petRepository.findAllById(petIds);
     }
 }
