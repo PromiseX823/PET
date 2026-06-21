@@ -26,7 +26,8 @@
             <el-select v-model="selectedStatus" placeholder="选择宠物状态" class="filter-select" size="large">
               <el-option label="全部" value="all"></el-option>
               <el-option label="可领养" value="待领养"></el-option>
-              <el-option label="仅分享" value="已领养"></el-option>
+              <el-option label="已领养" value="adopted"></el-option>
+              <el-option label="仅分享" value="share"></el-option>
             </el-select>
           </div>
 
